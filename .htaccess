@@ -1,0 +1,73 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^(.*)/$
+RewriteCond %{REQUEST_URI} !^(.*)(\.)(.*)$
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
+
+##### Prevenir listado de directorios:
+#Options -Indexes
+
+
+#AddType video/webm .webm
+#AddType video/mp4 .mp4
+
+##### Compresion de archivos:
+#php_flag zlib.output_compression On
+#php_value zlib.output_compression_level 2
+#<FilesMatch "\.js$">
+#AddHandler application/x-httpd-php .js
+#php_value default_mimetype "text/javascript"
+#</FilesMatch>
+#<FilesMatch "\.css$">
+#AddHandler application/x-httpd-php .css
+#php_value default_mimetype "text/css"
+#</FilesMatch>
+
+
+##### Configuraciones:
+#php_flag magic_quotes_gpc Off
+#php_value register_globals	0
+#php_value max_execution_time 20000
+#php_value max_input_time		1800
+#php_value upload_max_filesize 3M
+#php_value memory_limit 16M
+#php_value post_max_size 15M
+
+##### Forzar el uso de www en la URL:
+#RewriteCond %{REQUEST_URI}\\/%{HTTP_HOST}/www. ^/+(.+/)?[^.]*[^/]\\(/)([^w][^w][^w][^.].*/(www\.)�.*)$ [OR,NC]
+#RewriteCond %{HTTP_HOST}/www. ^(/)?(/)?([^w][^w][^w][^.].*/(www\.))$ [NC]
+#RewriteRule ^ http://%4%{HTTP_HOST}%{REQUEST_URI}%2 [L,R=301]
+
+##### Pagina de error:
+#dev
+#ErrorDocument 404 /ojoalprejuicio/app/frontend/error_404.php 
+
+#produccion
+#ErrorDocument 404 /app/frontend/error_404.php 
+
+##### Redireccion de peticiones:
+
+#REGLAS BACKEND
+RewriteRule			^studentcms/$                               controller/backend/login/login.php                          [NC,L]
+RewriteRule			^studentcms/forgot_password/$               controller/backend/login/forgot_password.php                [NC,L]
+RewriteRule			^studentcms/forgot_password/(.*)/$          controller/backend/login/recovery_password.php?token=$1     [NC,L]
+RewriteRule			^studentcms/home/$                          controller/backend/category/list.php                        [NC,L]
+RewriteRule			^studentcms/admin_user/$                    controller/backend/user/list.php                            [NC,L]
+RewriteRule			^studentcms/admin_user/new/$                controller/backend/user/edit.php                            [NC,L]
+RewriteRule			^studentcms/admin_user/([0-9]+)/$           controller/backend/user/edit.php?id=$1                      [NC,L]
+RewriteRule			^studentcms/activate_account/(.*)/$         controller/backend/user/activate_account.php?token=$1       [NC,L]
+RewriteRule			^studentcms/logout/$                        controller/backend/user/logout.php                          [NC,L]
+RewriteRule			^studentcms/institution/$                   controller/backend/institution/list.php                     [NC,L]
+RewriteRule			^studentcms/institution/new/$               controller/backend/institution/edit.php                     [NC,L]
+RewriteRule			^studentcms/institution/([0-9]+)/$          controller/backend/institution/edit.php?id=$1               [NC,L]
+RewriteRule			^studentcms/right/$                         controller/backend/right/list.php                       [NC,L]
+RewriteRule			^studentcms/right/new/$                     controller/backend/right/edit.php                       [NC,L]
+RewriteRule			^studentcms/right/([0-9]+)/$                controller/backend/right/edit.php?id=$1                 [NC,L]
+RewriteRule			^studentcms/category/$                      controller/backend/category/list.php                        [NC,L]
+RewriteRule			^studentcms/category/new/$                  controller/backend/category/edit.php                        [NC,L]
+RewriteRule			^studentcms/category/([0-9]+)/$             controller/backend/category/edit.php?id=$1                  [NC,L]
+RewriteRule			^studentcms/tutorial/$                      controller/backend/tutorial.php                             [NC,L]
+
+
+#REGLAS FRONTEND
+
+RewriteRule                     ^$                                          controller/frontend/home.php                          [NC,L]   
