@@ -1,0 +1,72 @@
+
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+<div class="content">
+
+
+
+    <!-- START CONTAINER -->
+    <div class="container-padding">
+
+
+
+        <!-- Start Row -->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel panel-default">
+
+                    <div class="panel-title">
+                        Crear institución
+                        <ul class="panel-tools">
+                            <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-body">
+                        <form id="institutionEdit">
+
+                            <input type="hidden" name="id" id="id" value="{id}"/>
+
+                            <div class="form-group">
+                                <label for="input1" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{name}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="location" class="form-label">Departamento</label>
+                                <div>
+                                    <select class="selectpicker" name="location" id="location">
+                                        <option value="">Seleccione departamento</option>
+                                        <!-- START BLOCK : LOCATION -->
+                                        <option value="{locationId}" {locationSelected}>{locationName}</option>
+                                        <!-- END BLOCK : LOCATION -->
+                                    </select>  
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-default">Guardar</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End Row -->
+
+        <!-- Start an Alert -->
+        <!--        <div id="alerttopright" style="display:block;" class="kode-alert kode-alert-img alert2 kode-alert-top-right">
+                    <img src="img/profileimg.png" class="img" alt="img">
+                    <a href="#" class="closed">&times;</a>
+                    <h4>El usuario fue creado!</h4>
+                    Encontralo en el listado de usuarios
+                </div>-->
+        <!-- End an Alert -->
+
+    </div>
+    <!-- End Content -->
+    <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    <script src="{COMMON_JS_URL}backend/messages.js"></script>
+    <script src="{COMMON_JS_URL}utilities/common.js"></script>
+    <script src="{COMMON_JS_URL}backend/institution/edit.js"></script>

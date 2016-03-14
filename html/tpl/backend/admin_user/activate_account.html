@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ojo al prejuicio - Login</title>
+
+        <!-- ========== Css Files ========== -->
+        <link href="{WEB_PATH}html/css/backend/root.css" rel="stylesheet">
+        <style type="text/css">
+            body{background: #F5F5F5;}
+        </style>
+    </head>
+    <body>
+        <!-- Start Page Loading -->
+        <div class="loading" id="loading"><img src="{WEB_PATH}html/img/backend/loading.gif" alt="loading-img"></div>
+        <!-- End Page Loading -->
+        <div class="login-form">
+            <form action="#" id="loginForm">
+                <div class="top">
+         <img src="{WEB_PATH}html/img/backend/logoprejuicio.png" alt="icon" class="icon">
+                    <h4>Administrador</h4>
+                </div>
+                <div class="form-area">
+
+                    <input type="hidden" name="token" value="{token}"/>
+
+                    <div class="group">
+                        <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password">
+                        <i class="fa fa-key"></i>
+                    </div>
+
+                    <div class="group">
+                        <input type="password" class="form-control" placeholder="Confirme contraseña" id="re-password" name="re-password">
+                        <i class="fa fa-key"></i>
+                    </div>
+
+                    <button type="submit" class="btn btn-default btn-block">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+        <div id="alerttop" style="display:none" class="kode-alert kode-alert-icon alert3 kode-alert-top">
+            <i id="alerttopIco" class="fa fa-check"></i>
+            <a href="#" class="closed">×</a>
+            <span id="alerttopMessage"></span>
+        </div>
+        <script>
+            var WEB_PATH = "{WEB_PATH}";
+            var ADMIN_URL = "{ADMIN_URL}";
+        </script>
+        <script src="{WEB_PATH}html/js/jquery.min.js"></script>
+        <script src="{WEB_PATH}html/js/utilities/common.js"></script>
+        <script src="{WEB_PATH}html/js/backend/messages.js"></script>
+        <script src="{WEB_PATH}html/js/backend/activate_account.js"></script>
+        <script src="{WEB_PATH}html/js/backend/alert.js"></script>
+
+    </body>
+</html>

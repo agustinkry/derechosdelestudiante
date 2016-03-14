@@ -1,0 +1,144 @@
+
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+<!-- START CONTENT -->
+<div class="content">
+    <!-- START CONTAINER -->
+    <div class="container-padding">
+        <div role="tabpanel">
+
+
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="prejudice">
+                    <!-- Start Row -->
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+
+                                <div class="panel-title">
+                                    Crear categoría
+                                    <ul class="panel-tools">
+                                        <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="panel-body">
+                                    <form id="categoryEdit">
+
+                                        <input type="hidden" name="id" id="id" value="{id}"/>
+
+                                        <div class="form-group">
+                                            <label for="input1" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="title" name="name" value="{name}" placeholder="Genero">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="status" class="form-label">Categoría padre</label>
+                                            <div>
+                                                <select class="selectpicker" name="parentId" id="parentId">
+                                                    <option value="">Seleccione a que categoria va</option>
+                                                    <!-- START BLOCK : PARENT_CATEGORY -->
+                                                    <option value="{categoryId}" {categorySelected}>{categoryName}</option>
+                                                    <!-- END BLOCK : PARENT_CATEGORY -->
+                                                </select>  
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Descripci&oacute;n</label>
+                                            <textarea placeholder="Breve descripcion del categoría" class="form-control" rows="3" id="description" name="description">{description}</textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-default">Guardar</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row -->
+
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="message">
+                    <!-- Start Row -->
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+
+                                <div class="panel-title">
+                                    <ul class="panel-tools">
+                                        <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="panel-body">
+                                    <!-- historico mensajes -->
+                                    <div id="messagesContainer" class="chat">
+                                        <!--START BLOCK : MESSAGE -->
+                                        <div class="{position} conv"> <!-- left - right -->
+
+                                            <p class="ballon color{colorNumber}">
+                                                <i class="fa fa-pencil"></i>
+                                                <!-- START BLOCK : USER_NAME -->
+                                                <small><b>{user}</b></small>
+                                                <!-- END BLOCK : USER_NAME -->
+                                                {message}
+                                            </p>
+
+                                            <!--  <label for="message{messageId}">Publico</label>
+                                             <input type="checkbox" name="msgPublic[]" value="{messageId}" {messagePublic}/> -->
+                                        </div>
+                                        <!--END BLOCK : MESSAGE -->
+                                    </div>
+                                    <!-- fin historico -->
+
+                                    <!--JS TPL -->
+                                    <div id="messageTpl" class="left conv" style="display: none;">
+
+                                        <p class="ballon color2">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="messageText"></span>
+                                        </p>
+                                        <!-- <label class="messageStatusLbl">Publico</label>
+                                        <input class="messageStatusChk" type="checkbox" name="msgPublic[]" value=""/> -->
+                                    </div>
+                                    <!-- end JS TPL -->
+
+                                    <form id="newMessage">
+                                        <div class="form-group">
+                                            <label class="form-label">Mensaje</label>
+                                            <textarea class="form-control" rows="3" id="messageInput" name="message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row -->
+                </div>
+            </div>
+        </div>
+        <!-- Start an Alert -->
+        <!--        <div id="alerttopright" style="display:block;" class="kode-alert kode-alert-img alert2 kode-alert-top-right">
+                    <img src="img/profileimg.png" class="img" alt="img">
+                    <a href="#" class="closed">&times;</a>
+                    <h4>El usuario fue creado!</h4>
+                    Encontralo en el listado de usuarios
+                </div>-->
+        <!-- End an Alert -->
+
+    </div>
+    <!-- End Content -->
+
+    <script src="{COMMON_JS_URL}backend/messages.js"></script>
+    <script src="{COMMON_JS_URL}utilities/common.js"></script>
+    <script src="{COMMON_JS_URL}backend/category/edit.js"></script>

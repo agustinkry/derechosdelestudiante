@@ -1,0 +1,170 @@
+
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+<div class="content">
+    <!-- START CONTAINER -->
+    <div class="container-padding">
+        <div role="tabpanel">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-line" role="tablist">
+                <li role="presentation" class="active"><a href="#right" aria-controls="right" role="tab" data-toggle="tab">Prejuicio</a></li>
+                <li role="presentation" ><a href="#message" aria-controls="message" role="tab" {toggle_tab}>Mensajes</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="right">
+                    <!-- Start Row -->
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+
+                                <div class="panel-title">
+                                    {ACTION_NAME} Derecho
+                                    <ul class="panel-tools">
+                                        <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="panel-body">
+                                    <form id="rightEdit">
+
+                                        <input type="hidden" name="id" id="id" value="{id}"/>
+
+                                        <div class="form-group">
+                                            <label for="input1" class="form-label">T&iacute;tulo</label>
+                                            <input type="text" class="form-control" id="title" name="title" value="{title}">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="form-label">Descripci&oacute;n</label>
+                                            <textarea class="form-control" rows="3" id="description" name="description">{description}</textarea>
+                                        </div>
+
+
+                                        <div id="categoryContainer">
+                                            <!-- START BLOCK : CATEGORY -->
+                                            <div class="form-group">
+                                                <label for="category_{category_id}" class="col-sm-2 control-label form-label">{category_name}</label>
+                                                <div class="col-sm-10">
+                                                    <input type="checkbox" class="form-control {is_parent} parent_id_{parent_id}"  {category_checked} name="category[]" id="category_{category_id}" value="{category_id}">
+                                                </div>
+                                            </div>
+                                            <!-- END BLOCK : CATEGORY -->
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-default">Guardar</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row -->
+
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="message">
+                    <!-- Start Row -->
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+
+                                <div class="panel-title">
+                                    <ul class="panel-tools">
+                                        <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="panel-body">
+                                    <!-- historico mensajes -->
+                                    <div id="messagesContainer" class="chat">
+                                        <!--START BLOCK : MESSAGE -->
+                                        <div class="{position} conv"> <!-- left - right -->
+
+                                            <p class="ballon color{colorNumber}">
+                                                <!-- START BLOCK : REPLY -->
+                                                <a class="fancybox replyMessage" href="#newMessage"><i class="fa fa-reply"></i></a>
+                                                <!-- END BLOCK : REPLY -->
+                                                <!-- START BLOCK : USER_NAME -->
+                                                <small class="message_user_email"><b>{user}</b></small>
+                                                <!-- END BLOCK : USER_NAME -->
+                                                <span class="message_user_text">{message}</span>
+                                                <input type="hidden" value="{messageId}" class="messageId"/>
+                                            </p>
+
+                                            <!--  <label for="message{messageId}">Publico</label>
+                                             <input type="checkbox" name="msgPublic[]" value="{messageId}" {messagePublic}/> -->
+                                        </div>
+                                        <!--END BLOCK : MESSAGE -->
+                                    </div>
+                                    <!-- fin historico -->
+
+                                    <!--JS TPL -->
+                                    <div id="messageTpl" class="left conv" style="display: none;">
+
+                                        <p class="ballon color2">
+                                            <span class="messageText"></span>
+                                        </p>
+                                        <!-- <label class="messageStatusLbl">Publico</label>
+                                        <input class="messageStatusChk" type="checkbox" name="msgPublic[]" value=""/> -->
+                                    </div>
+                                    <!-- end JS TPL -->
+
+                                    <form id="newMessage" style="display: none;">
+                                        
+                                        <input type="hidden" value="" name="parentMessageId" id="parentMessageId"/>
+                                        <input type="hidden" value="" name="rightId" id="rightId"/>
+                                        <input type="hidden" value="" name="userEmail" class="userEmail" id="userEmail"/>
+                                        
+                                        <div class="form-group">
+                                            <label class="form-label">De:</label>
+                                            <span id="userEmailLabel" class="userEmail">pprodriguez</span>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="form-label">Consulta:</label>
+                                            <div id="userMessage">bla bla bla bla</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Mensaje</label>
+                                            <textarea class="form-control" rows="3" id="messageInput" name="message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row -->
+                </div>
+            </div>
+        </div>
+        <!-- Start an Alert -->
+        <!--        <div id="alerttopright" style="display:block;" class="kode-alert kode-alert-img alert2 kode-alert-top-right">
+                    <img src="img/profileimg.png" class="img" alt="img">
+                    <a href="#" class="closed">&times;</a>
+                    <h4>El usuario fue creado!</h4>
+                    Encontralo en el listado de usuarios
+                </div>-->
+        <!-- End an Alert -->
+
+    </div>
+    <!-- End Content -->
+    <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    <link rel="stylesheet" href="{COMMON_JS_URL}/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="{COMMON_JS_URL}/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script src="{COMMON_JS_URL}file-input/fileinput.min.js"></script>
+    <script src="{COMMON_JS_URL}file-input/fileinput_locale_es.js"></script>
+    <script src="{COMMON_JS_URL}backend/messages.js"></script>
+    <script src="{COMMON_JS_URL}utilities/common.js"></script>
+    <script src="{COMMON_JS_URL}backend/right/edit.js"></script>

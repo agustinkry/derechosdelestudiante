@@ -1,0 +1,102 @@
+
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+<div class="content">
+
+    <!-- Start Page Header -->
+    <div class="page-header">
+        <h1 class="title">Usuarios</h1>
+        <ol class="breadcrumb">
+            <li class="active">Dar de alta un usuario en el sistema</li>
+        </ol>
+
+
+
+    </div>
+    <!-- End Page Header -->
+
+    <!-- START CONTAINER -->
+    <div class="container-padding">
+
+
+
+        <!-- Start Row -->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel panel-default">
+
+                    <div class="panel-title">
+                        Crear usuario
+                        <ul class="panel-tools">
+                            <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="#" id="userEdit">
+
+                            <input type="hidden" id="id" name="id" value="{id}"/>
+                            <div class="form-group">
+                                <label for="input002" class="col-sm-2 control-label form-label">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" id="name" value="{name}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input003" class="col-sm-2 control-label form-label">Apellido</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="lastName" id="lastName" value="{lastName}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input004" class="col-sm-2 control-label form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" name="email" id="email" value="{email}">
+                                </div>
+                            </div>
+                            <!-- START BLOCK : ROOT_ASSIGN -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label form-label">Permisos</label>
+                                <div class="col-sm-10">
+                                    <select class="selectpicker" name="permission" id="permission">
+                                        <option {adminSelected} value="0">Admin</option>
+                                        <option {rootSelected} value="1">Super Admin</option>
+                                    </select>                  
+                                </div>
+                            </div>
+                            <!-- END BLOCK : ROOT_ASSIGN -->
+
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <button style="margin-left:180px"  type="submit" class="btn btn-rounded btn-default">Guardar</button>
+                                </div>
+                            </div>
+                        </form> 
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End Row -->
+
+        <!-- Start an Alert -->
+        <!--        <div id="alerttopright" style="display:block;" class="kode-alert kode-alert-img alert2 kode-alert-top-right">
+                    <img src="img/profileimg.png" class="img" alt="img">
+                    <a href="#" class="closed">&times;</a>
+                    <h4>El usuario fue creado!</h4>
+                    Encontralo en el listado de usuarios
+                </div>-->
+        <!-- End an Alert -->
+
+    </div>
+    <!-- End Content -->
+    <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+    <script src="{COMMON_JS_URL}backend/messages.js"></script>
+    <script src="{COMMON_JS_URL}utilities/common.js"></script>
+    <script src="{COMMON_JS_URL}backend/admin_user/edit.js"></script>

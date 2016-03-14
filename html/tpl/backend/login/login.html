@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ojo al prejuicio - Login</title>
+
+  <!-- ========== Css Files ========== -->
+  <link href="{WEB_PATH}html/css/backend/root.css" rel="stylesheet">
+  <style type="text/css">
+    body{background: #F5F5F5;}
+  </style>
+  </head>
+  <body>
+
+    <div class="login-form">
+      <form action="#" id="loginForm">
+        <div class="top">
+         <img src="{WEB_PATH}html/img/backend/logoprejuicio.png" alt="icon" class="icon">
+          <h4>Administrador</h4>
+        </div>
+        <div class="form-area">
+          <div class="group">
+            <input type="email" class="form-control" placeholder="E-mail" id="email" name="email">
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="group">
+              <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password">
+            <i class="fa fa-key"></i>
+          </div>
+          <div class="checkbox checkbox-primary">
+            <input id="rememberme" type="checkbox"  checked>
+            <label for="rememberme"> Recordar mi cuenta</label>
+          </div>
+          <button type="submit" class="btn btn-default btn-block">INGRESAR</button>
+        </div>
+      </form>
+      <div class="footer-links row">
+        <div class="col-xs-12 text-right"><a href="{ADMIN_URL}forgot_password"><i class="fa fa-lock"></i> Olvide mi contraseña</a></div>
+      </div>
+    </div>
+      <script>
+          var WEB_PATH = "{WEB_PATH}";
+          var ADMIN_URL = "{ADMIN_URL}";
+      </script>
+    <script src="{WEB_PATH}html/js/jquery.min.js"></script>
+    <script src="{WEB_PATH}html/js/utilities/common.js"></script>
+    <script src="{WEB_PATH}html/js/backend/messages.js"></script>
+    <script src="{WEB_PATH}html/js/backend/login.js"></script>
+    
+</body>
+</html>
