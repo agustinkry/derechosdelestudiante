@@ -1792,7 +1792,7 @@ Login Pages
   margin: 0;
 }
 .login-form form .top h1 {
-  color: #37363E;
+  color: #fff;
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -1800,7 +1800,7 @@ Login Pages
 }
 .login-form form .top h4 {
   font-weight: normal;
-  color: #76757B;
+  color: #fff;
   font-size: 15px;
 }
 .login-form form .form-area {
