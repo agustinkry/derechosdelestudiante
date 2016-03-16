@@ -1770,8 +1770,7 @@ Login Pages
   text-shadow: none;
 }
 .login-form form {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #399bff;
   border-radius: 3px;
 }
 .login-form form img {
@@ -1825,7 +1824,11 @@ Login Pages
 .login-form form .form-area .btn {
   height: 42px;
   font-weight: 600;
+  background: #fff;
+  color: #399bff;
 }
+.login-form form label { color: #fff}
+
 .login-form form .form-area .checkbox {
   margin-bottom: 20px;
 }
