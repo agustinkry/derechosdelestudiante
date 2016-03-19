@@ -60,8 +60,7 @@ class TplBckRight extends TplBckContainer {
 
 
         $oDbaCategory = New DbaBckCategory();
-        $categories = $oDbaCategory->getCategories($rightCategories);
-
+        $categories = $oDbaCategory->getCategories();
 
         foreach ($categories as $category) {
             $oTpl->newBlock("CATEGORY");
