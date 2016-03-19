@@ -21,6 +21,7 @@ class TplFrtMail {
         $oTpl->assignGlobal("IMG_URL", IMG_URL);
         $oTpl->assignGlobal("CSS_URL", CSS_URL);
         $oTpl->assignGlobal("COMMON_JS_URL", COMMON_JS_URL);
+        $oTpl->assignGlobal("WEB_URL",WEB_PATH);
     }
 
 }
