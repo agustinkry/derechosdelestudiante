@@ -3,6 +3,7 @@
 html {
     color: #222;
     line-height: 1.4;
+    overflow: hidden;
 
 }
 
@@ -139,6 +140,21 @@ body {
 }
 
 /* ==========================================================================
+   Loading styles 
+   ========================================================================== */
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display:none;
+  background:#fff url(../../img/frontend/loading.gif) no-repeat center center;
+}
+.loading:before {}
+
+
+/* ==========================================================================
    Form styles 
    ========================================================================== */
 #sent {
@@ -146,10 +162,12 @@ body {
   width: 80%;
   margin:10% auto;
   text-align: center;
-  display: none;
+  display:none;
 }
+#sent h3 { margin: 30px 0 0 0;}
+#sent p { margin: 30px 0}
 
-#sent .okmessage { width: 40%; margin: auto}
+#sent .okmessage { width: 30%; margin: auto}
 
 #container_form { margin-top: 50px;}
 
@@ -177,54 +195,52 @@ form .input-container {
 
 form .textarea-container {
     position: relative;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+    float: right;
 }
 form .textarea-container label { position: relative; margin-bottom: 32px;}
-
+form .textarea-container:before {
+} 
 form .input-container.error { border-color:#ED2387}
 
-form #first-name, form #email {
-  float: left;
-  box-sizing: border-box;
-  display: inline-block;
-}
-form #age, form #institution {
-  float: right;
-  box-sizing: border-box;
-  display: inline-block;
-}
+form .input-container { display: inline-block; width: 45%; margin-right: 3%}
 
-form #age + *, form #institution + * {
-  clear: both;
+form .btn { float: right;margin: 0 40px 0 0}
+
+form .checkbox-container {
+    position: relative;
+    margin-bottom: 20px;
+    float: left;
+    width: 50%;
 }
-form #first-name, form #age, form #institution, form #email, form #consulta_sobre{
-  width: 45%;
-}
+form .checkbox-container p { font-size: 14px;display: inline-block; margin: 0}
+form .checkbox-container input {display: inline-block;}
 
 form textarea {
     border: 2px solid #fff;
     background: none;
-    width: 97%;
+    width: 89%;
     min-height: 100px;
     color: #fff;
     padding: 1%;
     border-radius: 10px;
+    font-size: 13px;
 }
 
-form input {
+form .input-container input {
   display: block;
   position: absolute;
-  font-family: 'Montserrat';
   font-weight:normal;
   box-sizing: border-box;
   width: 100%;
   border: 0;
-  top: 1.5em;
+  top:27px;
   color: #fff;
   background: none;
   z-index: 1;
   padding: 5px 0;
-  font-size: 1em;
+  font-size: 14px;
   letter-spacing: 0.012em;
 }
 
@@ -232,12 +248,11 @@ form input {
 form label {
   display: block;
   position: absolute;
-  font-family: 'Montserrat';
   margin-top: 2px;
-  padding: 1px;
+  padding: 1px
   letter-spacing: 0.012em;
   color: #fff;
-  font-size: 17px;
+  font-size: 10px;
   -webkit-animation-name: labelIn;
           animation-name: labelIn;
   -webkit-animation-duration: 0.35s;
@@ -266,11 +281,11 @@ form input:focus + label, form input:valid + label {
     left: 1px;
     opacity: 1;
     top: 1.2em;
-    font-size: 1em;
+    font-size: 13px;
     font-weight: 300;
   }
   50% {
-    font-size: 1em;
+    font-size: 13px;
     left: 1em;
     opacity: 0;
     top: 1.2em;
@@ -298,11 +313,11 @@ form input:focus + label, form input:valid + label {
     left: 1px;
     opacity: 1;
     top: 1.2em;
-    font-size: 1em;
+    font-size: 13px;
     font-weight: 300;
   }
   50% {
-    font-size: 1em;
+    font-size: 13px;
     left: 1em;
     opacity: 0;
     top: 1.2em;
@@ -330,11 +345,11 @@ form input:focus + label, form input:valid + label {
     left: 1px;
     opacity: 1;
     top: 1.2em;
-    font-size: 1em;
+    font-size: 13px;
     font-weight: 300;
   }
   50% {
-    font-size: 1em;
+    font-size: 13px;
     left: 1em;
     opacity: 0;
     top: 1.2em;
@@ -362,11 +377,11 @@ form input:focus + label, form input:valid + label {
     left: 1px;
     opacity: 1;
     top: 1.2em;
-    font-size: 1em;
+    font-size:13px;
     font-weight: 300;
   }
   50% {
-    font-size: 1em;
+    font-size: 13px;
     left: 1em;
     opacity: 0;
     top: 1.2em;
@@ -415,22 +430,109 @@ form *:focus {
    ========================================================================== */
 .info { position: relative;z-index: 2;top:100px}
 #circle_zigzag { width: 60%; position: absolute;z-index: 0;top: 0; margin-left: -30%; left: 50% !important}
-.centered { width: 60%; position: absolute; margin-left: -30%; left: 50%;top: 5cat%;z-index: 3}    
+.centered { width: 60%; position: absolute; margin-left: -30%; left: 50%;top: 5%;z-index: 3}    
 .centered .logoderechos { width: 70%; margin: auto}
-.centered h2 { font-size: 35px; font-weight: 400;text-align: center;}
-.centered p { color: #fff; text-align: center;}
+.centered .info h2 { font-size: 40px; font-weight: 400;text-align: center;}
+.centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 13px; line-height: 20px;}
+/* ==========================================================================
+   Categories styles 
+   ========================================================================== */
+.dialog  { margin-top: 5%}
+.dialog .user { display: inline-block;}
+.dialog .user figure { width: 20%; position: absolute; }
+.dialog .user figure p {text-transform: uppercase; font-size: 15px;}
+
+
+.dialog .student .message {float: left;margin: 60px 0px 0 150px}
+.dialog .professor .message {float: right;margin: 60px 150px 0 0px}
+
+.dialog .student figure {left: 0}
+.dialog .professor figure {right: 0}
+
+.dialog .student .message_inner  {border-color: #02929E}
+.dialog .professor .message_inner  {border-color: #ED2387}
+
+.dialog .message_inner { border:2px solid; border-radius:80px;padding:22px; text-align: left;}
+.dialog .message p { margin: 0; font-size: 15px}
+.dialog small {text-align: left; display: inline-block; width: 100%;padding: 10px 0 0 30px}
+
+.btns .comment { font-size: 14px;text-decoration: none; vertical-align: top; width: 100%;display: inline-block; margin: 4% 0;letter-spacing: 1px;  }
+.btns .comment i {font-size: 20px; padding-right: 12px}
+.btns .comment:hover { }
+/* ==========================================================================
+   Layout Derecho styles 
+   ========================================================================== */
+
+nav.notvisible {
+      -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    -webkit-transition: -webkit-transform 300ms ease 0s;
+    transition: -webkit-transform 300ms ease 0s;
+    transition: transform 300ms ease 0s;
+    transition: transform 300ms ease 0s, -webkit-transform 300ms ease 0s;
+    position: fixed;
+    right: 20px;
+    top: 39px;
+    z-index: 10;
+}
+
+
+.page {  position: absolute; height: 100%}
+.page_inner { height: 100%; overflow-y:auto;}
+.page-left:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent #02929E;
+  position: absolute;
+  top: 90px;
+  right: -20px;
+
+}
+.page_inner article {padding:100px;text-align: left; margin-top: 20px}
+.page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 40px 0}
+.page object { width: 80%}
+.page p  {color: #fff;font-size: 13px; line-height: 20px }
+.page-right {
+      height:100%;
+      left: auto;
+      right: 0;
+      width: 65%;
+}
+.page-left { width: 35%; text-align: center;}
+.page-left .back {
+      text-decoration: none;
+    font-size: 13px;
+    vertical-align: top;
+    line-height: 27px;
+}
+.page-left .back i {font-size: 30px;}
+
+.card { border-radius: 20px;padding: 20px;display: inline-block; width: 40%; margin-right: 2%}
+.card h4 {font-size: 15px;text-transform: uppercase;}
+
+/* ==========================================================================
+   Animation Characters 
+   ========================================================================== */
 
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
 
-#logocolor   { width: 20%; position: absolute;top: 3%; left: 3%}
+#logocolor   { width: 15%; position: absolute;top: 3%; left: 3%; z-index: 2}
 .categories { text-align: center;}
+#category_slide { margin-top:15%}
+.categories .title {display: inline-block; width: 100%;}
 .categories .title h3 { font-size: 40px;display: inline-block;}
-.categories .title p { display: inline-block;text-align: left; width: 30%}
-.categories  .arm {cursor: pointer; width: 75px; position: absolute;top:50%;left: 3%;transition: all .2s ease-in-out;}
-.categories  .arm:hover {transform:translate(0,-1em);}
-.categories  .arm.svg { width: 100% }
+.categories .title p { display: inline-block;text-align: left; width: 40%;}
+
+.arm {cursor: pointer; width: 45px; position: absolute;top:30%;transition: all .2s ease-in-out;}
+.arm:hover {transform:translate(0,-1em);}
+.arm.svg { width: 100% }
+
+.arm_right { right: 3%;}
 
 .category {
     text-align: center;
@@ -442,7 +544,7 @@ form *:focus {
     cursor: pointer;
 
 }
-
+.category label {font-size: 14px;}
 
 .category i {font-size: 5em;}
 
@@ -451,7 +553,9 @@ form *:focus {
 /* ==========================================================================
    Footer  styles 
    ========================================================================== */
-footer { position:absolute;bottom: 0; width: 100%;z-index: 2}
+footer { position:absolute;bottom: 0;left: 5%; width: 90%;z-index: 2;}
+.no-color footer { border-color:#02929E }
+
 footer .container {
   padding: 0;
   margin: 0;
@@ -464,7 +568,25 @@ footer .container {
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
-footer a.svg { max-width: 8%; width: 8%; min-width:100px}
+
+footer ul {}
+
+footer ul li { display: inline-block; margin-right: 10px;}
+footer ul li p {color: #fff;font-size: 13px;}
+footer ul li a i {
+    font-size: 14px;
+    background: #fff;
+    border-radius: 24px;
+    padding:4px 2px;
+    color: #02929E;
+    transition: all .2s ease-in-out;
+}
+footer ul li a i:hover { background:#E3DBC3;}
+
+.no-color footer ul li p {color: #02929E}
+.no-color footer ul li a i {background: #02929E; color: #fff}
+
+footer a.svg { max-width: 6%; width: 6%; min-width:90px}
 footer a.svg {
  position: relative;
  display: inline-block; 
@@ -609,27 +731,27 @@ h2, h3 { font-family: 'Amatic SC', cursive;}
 /* ==========================================================================
    Nav  styles 
    ========================================================================== */
-nav { margin-right: 3%}
-nav a {transition: all .2s ease-in-out;font-family: 'Montserrat', sans-serif;color: #fff;font-size: 14px;font-weight:normal;text-decoration: none; margin: 0 10px;}
-nav a:hover {color: #FAF39D;}
-nav i {
-      font-size: 17px;
-    background: #fff;
-    border-radius: 24px;
-    padding: 6px 5px;
-    color: #02929E;
-    transition: all .2s ease-in-out;
+nav { 
+    margin:1% 2%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    position: relative;
+    z-index: 4;
 }
-nav i:hover { background:#FAF39D;}
+nav a {transition: all .2s ease-in-out;font-family: 'Montserrat', sans-serif;color: #E3DBC3;font-size: 14px;font-weight:normal;text-decoration: none; margin: 0 10px;}
+nav a:hover {color: #FAF39D;}
+nav a i { font-size: 22px;}
+
+nav li input {background: none;border:2px solid #fff; padding: 5px;border-radius: 12px;font-size: 12px;color: #fff; display: none;}
 
 .no-color nav a { color:#02929E}
-.no-color nav i { background:#02929E;color: #fff}
+.no-color nav a:hover {color: red}
 /* ==========================================================================
    Btn  styles 
    ========================================================================== */
 
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
-.btn { border-radius:10px;letter-spacing:1px;padding: 12px 35px;font-family: 'Montserrat', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
+.btn {border-radius:10px;letter-spacing:1px;padding: 12px 35px;font-family: 'Montserrat', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
 .btn:hover { background: }
 .btns small { color: #fff;float: left;}
 
@@ -644,19 +766,29 @@ nav i:hover { background:#FAF39D;}
     height:100%;
     width: 100%;
     z-index: 2000;
-    display: none;
+    display:none;
 /*    backface-visibility: hidden;
     transform: translateX(-50%) translateY(-50%);*/
 }
 .md-modal h3 {
-    font-size: 66px;
+    font-size: 40px;
     font-weight: normal;
     margin:30px 0;
 }
 .md-modal p { color: #fff; margin: 40px 0}
 .md-modal .container { max-width: 50%; margin: auto}
 
-
+.md-modal .info_txt {width: 100%; display: inline-block;}
+.md-modal .info_txt h4 {font-size: 14px; display: inline-block; color: #FAF39D;font-weight: normal;vertical-align: top; margin: 15px 0}
+.md-modal .info_txt p {
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 0 0 30px;
+    width: 60%;
+    border-left: 1px solid #FAF39D;
+    padding-left: 20px;
+    line-height: 19px;
+}
 .md-show {
    display: block;
 }
@@ -667,6 +799,8 @@ border-radius: 100px; border:2px solid #fff;top: 20px;right: 20px;cursor: pointe
 
 .md-modal .btns { margin: 0}
 .md-modal .btns a { float: right;}
+
+.guy { width: 20%;float:left;}
 
 /* ==========================================================================
    Icons styles
@@ -706,15 +840,14 @@ border-radius: 100px; border:2px solid #fff;top: 20px;right: 20px;cursor: pointe
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+ 
+
 .icon-cross:before { content: '\e800'; } /* '' */
 .icon-facebook:before { content: '\e801'; } /* '' */
 .icon-twitter:before { content: '\e802'; } /* '' */
-.icon-carpa:before { content: '\e803'; } /* '' */
-.icon-religion:before { content: '\e804'; } /* '' */
-.icon-deporte:before { content: '\e805'; } /* '' */
-.icon-genero:before { content: '\e806'; } /* '' */
-.icon-salud:before { content: '\e807'; } /* '' */
-.icon-participacion:before { content: '\e808'; } /* '' */
+.icon-comment:before { content: '\e803'; } /* '' */
+.icon-lupa:before { content: '\e804'; } /* '' */
+.icon-arrow:before { content: '\e805'; } /* '' */
 /* ==========================================================================
    Media Queries
    ========================================================================== */
