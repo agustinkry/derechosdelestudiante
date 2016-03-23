@@ -73,7 +73,8 @@ textarea {
 
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px;
+    font-family: 'Varela Round', sans-serif;
     position: relative;
     border: 20px solid;
   
@@ -137,6 +138,9 @@ body {
 }
 .white_border {
   border-color:rgba(255,255,255,0.6);
+}
+.blue_border {
+  border-color:#00AEEF;
 }
 
 /* ==========================================================================
@@ -437,15 +441,28 @@ form *:focus {
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
-.dialog  { margin-top: 5%}
-.dialog .user { display: inline-block;}
-.dialog .user figure { width: 20%; position: absolute; }
-.dialog .user figure p {text-transform: uppercase; font-size: 15px;}
+.derecho .dialog .message p {  }
+.derecho .dialog .user { margin-bottom: 30px;}
+.derecho .btn {float: left;}
+.derecho .title { text-transform: uppercase;  }
 
+.dialog  { margin-top: 10%}
+.dialog .user figure { width: 18%; position: absolute; }
+.dialog .user figure p {text-transform: uppercase; font-size: 13px;font-weight: bold;}
 
-.dialog .student .message {float: left;margin: 60px 0px 0 150px}
-.dialog .professor .message {float: right;margin: 60px 150px 0 0px}
-
+.dialog .student  {float: left;}
+.dialog .professor  {float: right;}
+.dialog .student .message {
+    float: left;
+    margin: 50px 0px 0 200px;
+    max-width: 60%;
+}
+.dialog .professor .message {
+    text-align: right;
+    float: right;
+    margin: 50px 200px 0 0px;
+    max-width: 60%;
+}
 .dialog .student figure {left: 0}
 .dialog .professor figure {right: 0}
 
@@ -454,11 +471,29 @@ form *:focus {
 
 .dialog .message_inner { border:2px solid; border-radius:80px;padding:22px; text-align: left;}
 .dialog .message p { margin: 0; font-size: 15px}
-.dialog small {text-align: left; display: inline-block; width: 100%;padding: 10px 0 0 30px}
+.dialog small {text-align: left; display: inline-block; width: 100%;padding: 10px 0 0 30px;font-size:12px;}
 
-.btns .comment { font-size: 14px;text-decoration: none; vertical-align: top; width: 100%;display: inline-block; margin: 4% 0;letter-spacing: 1px;  }
+.btns .comment { font-size: 14px;text-decoration: none; vertical-align: top; display:inline-block; position: relative; margin:0% 0 4% 0;letter-spacing: 1px;
+   -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+
+  }
 .btns .comment i {font-size: 20px; padding-right: 12px}
-.btns .comment:hover { }
+.btns .comment:hover {
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
+    color:#ED2387;
+}
+#btn_consult {
+    display: block;
+    max-width: 10%;
+    margin: auto;
+}
 /* ==========================================================================
    Layout Derecho styles 
    ========================================================================== */
@@ -491,28 +526,53 @@ nav.notvisible {
   right: -20px;
 
 }
-.page_inner article {padding:100px;text-align: left; margin-top: 20px}
-.page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 40px 0}
+.page_inner article {padding:100px;text-align: left; margin-top: 20px;display: inline-block;}
+.page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0}
 .page object { width: 80%}
-.page p  {color: #fff;font-size: 13px; line-height: 20px }
+.page p  {font-size: 13px; line-height: 20px }
 .page-right {
       height:100%;
       left: auto;
       right: 0;
       width: 65%;
 }
-.page-left { width: 35%; text-align: center;}
+.page-left { width: 35%; text-align: center;
+ -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.6s, opacity 0.6s, transform 0.6s;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+
+
 .page-left .back {
       text-decoration: none;
     font-size: 13px;
     vertical-align: top;
     line-height: 27px;
+    display:inline-flex;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
 }
+.page-left .back:hover {
+   -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px);
+}
+
 .page-left .back i {font-size: 30px;}
+.page-left p {color: #fff;font-size: 14px;}
 
-.card { border-radius: 20px;padding: 20px;display: inline-block; width: 40%; margin-right: 2%}
-.card h4 {font-size: 15px;text-transform: uppercase;}
-
+.card { border-radius: 20px;padding: 20px;display: inline-block; width: 35%; margin: 2%}
+.card p {font-size: 15px;color: #fff;}
+.card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
+.card a { font-size: 12px; text-transform: uppercase; color: #fff}
 /* ==========================================================================
    Animation Characters 
    ========================================================================== */
@@ -553,7 +613,7 @@ nav.notvisible {
 /* ==========================================================================
    Footer  styles 
    ========================================================================== */
-footer { position:absolute;bottom: 0;left: 5%; width: 90%;z-index: 2;}
+footer { position:absolute;bottom: 0;left: 0; width:100%;z-index: 2;}
 .no-color footer { border-color:#02929E }
 
 footer .container {
@@ -569,7 +629,9 @@ footer .container {
   justify-content: space-around;
 }
 
-footer ul {}
+footer ul {float: left;}
+footer ul:nth-child(2) {float: right;}
+
 
 footer ul li { display: inline-block; margin-right: 10px;}
 footer ul li p {color: #fff;font-size: 13px;}
@@ -616,7 +678,7 @@ a.svg:after {
     -moz-box-shadow: 2px 2px 4px #888;
     box-shadow: 2px 2px 4px #888; 
     color: #fff;
-    font-family: 'Montserrat';
+    font-family: 'Varela Round', sans-serif;
     display: none;
 }
 
@@ -646,6 +708,8 @@ h2, h3 { font-family: 'Amatic SC', cursive;}
    ========================================================================== */
 #elements { z-index: 1;}
 
+.no-color .circle { border-color: }
+
     .circle {
     width: 40px;
     height: 40px;
@@ -654,7 +718,7 @@ h2, h3 { font-family: 'Amatic SC', cursive;}
     border-style: solid;
     position: absolute;
     text-align: center;
-
+    opacity: 0.5;
 }
 .circle i {
     font-size: 4em;
@@ -738,20 +802,50 @@ nav {
     position: relative;
     z-index: 4;
 }
-nav a {transition: all .2s ease-in-out;font-family: 'Montserrat', sans-serif;color: #E3DBC3;font-size: 14px;font-weight:normal;text-decoration: none; margin: 0 10px;}
-nav a:hover {color: #FAF39D;}
+nav a {transition: all .2s ease-in-out;font-family: 'Varela Round', sans-serif;color: #E3DBC3;font-size: 14px;font-weight:normal;text-decoration: none; margin: 0 10px;position: relative;}
 nav a i { font-size: 22px;}
 
 nav li input {background: none;border:2px solid #fff; padding: 5px;border-radius: 12px;font-size: 12px;color: #fff; display: none;}
+nav .highlight a { border-radius: 10px; border:1px solid;padding:0px 10px}
 
 .no-color nav a { color:#02929E}
-.no-color nav a:hover {color: red}
+.no-color nav a:hover {}
+.no-color nav li a:after {
+  background: #02929E;
+}
+
+#search:after { display: none;}
+
+nav li a:after {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background:#E3DBC3;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+nav li a:hover:after {
+    height: 2px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+    }
+
 /* ==========================================================================
    Btn  styles 
    ========================================================================== */
 
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
-.btn {border-radius:10px;letter-spacing:1px;padding: 12px 35px;font-family: 'Montserrat', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
+.btn {border-radius:10px;letter-spacing:1px;padding: 12px 35px;font-family: 'Varela Round', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
 .btn:hover { background: }
 .btns small { color: #fff;float: left;}
 
@@ -864,7 +958,7 @@ border-radius: 100px; border:2px solid #fff;top: 20px;right: 20px;cursor: pointe
     }
 
     nav li:first-child a {
-        margin-left: 0;
+        margin-top:-4px;
     }
 
     nav li:last-child a {
