@@ -130,7 +130,7 @@
             <!--Dialog-->
 
             <div class="btns">
-              <a class="green_txt comment" href="#"> <i class="icon-comment icon"></i>Ver conversacion completa</a>
+              <a class="green_txt comment" href="#"> <i class="icon-comment icon"></i>Ver conversación completa</a>
               <a id="btn_consult" href="#" class="btn yellow_bg pink_txt">Consultar</a>
               </div>
               
@@ -141,6 +141,7 @@
             <a class="arm arm_right" href="http://www.google.com" class="svg">
               <object data="../img/frontend/armviewcategories.svg" type="image/svg+xml">
               </object>
+              <p>ver categorias</p>
               </a>
 
 
@@ -259,6 +260,7 @@
 
                 
           </div>
+          <div class="ripple-wrap"><div class="ripple green_border"></div></div>
 
 
 
@@ -266,6 +268,49 @@
         <script>window.jQuery || document.write('<script src="../js/frontend/vendor/jquery-1.11.2.min.js"><\/script>')</script>
           <script src="../js/frontend/home.js"></script>
           <script src="../js/parallax.js"></script>
+          <script type="text/javascript">
+
+          //Animacion de transicion
+            $(document).ready(function() {
+              var ripple_wrap = $('.ripple-wrap'),
+                  rippler = $('.ripple'),
+                  finish = false,
+                  monitor = function(el) {
+                    var computed = window.getComputedStyle(el, null),
+                        borderwidth = parseFloat(computed.getPropertyValue('border-left-width'));
+                    if (!finish && borderwidth >= 4000) {
+                      el.style.WebkitAnimationPlayState = "paused";
+                      el.style.animationPlayState = "paused";
+                      swapContent();
+                    }
+                    if (finish) {
+                      el.style.WebkitAnimationPlayState = "running";
+                      el.style.animationPlayState = "running";
+                      return;
+                    } else {
+                      window.requestAnimationFrame(function() {monitor(el)});
+                    }
+                  };
+              
+              
+              rippler.bind("webkitAnimationEnd oAnimationEnd msAnimationEnd mozAnimationEnd animationend", function(e){
+                ripple_wrap.removeClass('goripple');
+              });
+
+              $('body').on('click', '.btn', function(e) {
+                rippler.css('left', e.clientX + 'px');
+                rippler.css('top', e.clientY + 'px');
+                e.preventDefault();
+                finish = false;
+                ripple_wrap.addClass('goripple');
+                window.requestAnimationFrame(function() {monitor(rippler[0])});
+                
+              });
+              
+              
+              
+            });
+          </script>
 
 
 

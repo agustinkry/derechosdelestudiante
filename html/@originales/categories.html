@@ -33,7 +33,9 @@
 
             <nav class="">
                 <ul>
-                    <li><a id="search" href="#"><i class="icon-lupa icon"></i></a></li>
+                    <li><a id="search" href="#"><i class="icon-lupa icon"></i></a>
+                      <input type="text" placeholder="Que estas buscando">
+                    </li>
                     <li><a href="#">Sobre nosotros</a></li>
                     <li><a href="#">Consultas</a></li>
                     <li><a class="active" href="#">Categorias</a></li>
@@ -48,6 +50,15 @@
               </a>
 
             
+
+            
+            <a class="arm arm_right" href="http://www.google.com" class="svg">
+              <object data="../img/frontend/armviewcategories.svg" type="image/svg+xml">
+              </object>
+              <p>ver consultas</p>
+              </a>
+
+
 
 
 
@@ -106,34 +117,39 @@
 
 
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Inclusión</label>
 
               </div>
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Reglamento</label>
 
               </div>
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                 <a href="#">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Embarazo</label>
+              </a>
 
               </div>
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                <a href="#">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Deporte</label>
-
+                </a>
               </div>
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                <a href="#">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Salud</label>
-
+                </a>
               </div>
               <div class="category">
-                <img src="../img/frontend/discapacidad.svg">
+                <a href="#">
+                <img src="../img/frontend/girl01.svg">
                 <label class="green_txt">Acceso a la información</label>
-
+                </a>
               </div>
               <div class="category">
                 <img src="../img/frontend/discapacidad.svg">
@@ -150,16 +166,8 @@
             </div>
 
           </div>
-
-
-            <a class="arm arm_right" href="http://www.google.com" class="svg">
-              <object data="../img/frontend/armviewcomments.svg" type="image/svg+xml">
-              </object>
-              </a>
-
-
           
-            </div>  
+       </div>  
 
               <div id="elements">
                     <div class="elements">
@@ -284,13 +292,61 @@
                 
           </div>
 
+          <div class="ripple-wrap"><div class="ripple green_border"></div></div>
+
 
 
               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../js/frontend/vendor/jquery-1.11.2.min.js"><\/script>')</script>
           <script src="../js/frontend/home.js"></script>
           <script src="../js/parallax.js"></script>
+          <script type="text/javascript">
+            $("#search").click(function(){
+                  $("nav li input").toggleClass("show");
+              });
 
+            //Animacion de transicion
+            $(document).ready(function() {
+              var ripple_wrap = $('.ripple-wrap'),
+                  rippler = $('.ripple'),
+                  finish = false,
+                  monitor = function(el) {
+                    var computed = window.getComputedStyle(el, null),
+                        borderwidth = parseFloat(computed.getPropertyValue('border-left-width'));
+                    if (!finish && borderwidth >= 4000) {
+                      el.style.WebkitAnimationPlayState = "paused";
+                      el.style.animationPlayState = "paused";
+                      swapContent();
+                    }
+                    if (finish) {
+                      el.style.WebkitAnimationPlayState = "running";
+                      el.style.animationPlayState = "running";
+                      return;
+                    } else {
+                      window.requestAnimationFrame(function() {monitor(el)});
+                    }
+                  };
+              
+              
+              rippler.bind("webkitAnimationEnd oAnimationEnd msAnimationEnd mozAnimationEnd animationend", function(e){
+                ripple_wrap.removeClass('goripple');
+              });
+
+              $('body').on('click', '.category a', function(e) {
+                rippler.css('left', e.clientX + 'px');
+                rippler.css('top', e.clientY + 'px');
+                e.preventDefault();
+                finish = false;
+                ripple_wrap.addClass('goripple');
+                window.requestAnimationFrame(function() {monitor(rippler[0])});
+                
+              });
+              
+              
+              
+            });
+
+          </script>
 
 
       

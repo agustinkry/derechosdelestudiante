@@ -34,8 +34,8 @@
             <nav>
                 <ul>
                     <li>
-                      <a href="#"><i class="icon-lupa icon"></i></a>
-                      <input type="text">
+                      <a id="search" href="#"><i class="icon-lupa icon"></i></a>
+                      <input type="text" placeholder="Que estas buscando">
                     </li>
                     <li><a href="#">Sobre nosotros</a></li>
                     <li><a href="#">Consultar</a></li>
@@ -83,6 +83,14 @@
                         <div class="layer circle tiny white_border" data-depth="-0.4">
                         </div>
                         </div>
+                        <div style="position:absolute;top:320px;left:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.4">
+                        </div>
+                        </div>
+                         <div style="position:absolute;top:320px;right:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.5">
+                        </div>
+                        </div>
 
 
                         <div style="position:absolute;top:120px;left:0px;">
@@ -94,22 +102,7 @@
                         <div class="layer white_border circle big" data-depth="1">
                         </div>
                         </div>
-<!-- 
-                        <div class="layer circle big" data-depth="7">
-                          <i class="yellow_txt icon-carpa"></i>
-                        </div>
-                       <div class="layer circle tiny" data-depth="2"></div>
-                       <div class="layer circle big" data-depth="1">
-                        <i class="beige_txt icon-participacion"></i>
-                       </div>
-                       <div class="layer icon-cross" data-depth="4"></div>
-                       <div class="layer circle pink_border" data-depth="4"></div>
-                       <div class="layer lines" data-depth="4">
-                       </div>
-                       <div class="layer circle big" data-depth="2">
-                        <i class="pink_txt icon-salud"></i>
-                       </div> 
- -->
+
                        
                      </div>   
 
@@ -137,19 +130,7 @@
              
         </div>   
 
-        <!--  Borrar   <div id="carousel">
-                <div class="content">
-                  <div class="circle one"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="icon-cross"></div>
-                </div>
-              </div>  
 
- -->
         <footer>
 
 
@@ -232,8 +213,11 @@ Quisque consectetur id leo sit amet vehicula. </p>
                       </div>
 
                       <div class="input-container" id="departamento">
-                        <input type="text" name="departamento" required/>
-                        <label for="departamento">Departamento</label>
+                        <select>
+                          <option>Durazno</option>
+                          <option>Montevideo</option>
+                          <option>Flores</option>
+                        </select>
                       </div>
 
                       <div class="input-container" id="email">
@@ -248,7 +232,11 @@ Quisque consectetur id leo sit amet vehicula. </p>
 
                       <div class="input-container" id="consulta_sobre">
                         <input type="text" name="consulta_sobre" required/>
-                        <label for="consulta_sobre">Grado</label>
+                        <select>
+                          <option>Grado</option>
+                          <option>1ero</option>
+                          <option>2do</option>
+                        </select>
                       </div>
 
                 
@@ -278,6 +266,63 @@ Quisque consectetur id leo sit amet vehicula. </p>
               </div>
           </div>
 
+
+            <div class="centered">
+                
+                 <div id="modalelements">
+                    <div class="elements">
+                        
+                        <div style="position:absolute;top:20px;left:20px;">
+                        <div class="layer circle small white_border" data-depth="1.00">
+                        </div>
+                        </div>
+
+                       
+                        <div style="position:absolute;top:20px;right:190px;">
+                        <div class="layer" data-depth="-0.2">
+                           <i class="beige_txt icon-cross"></i>
+
+                        </div>
+                        </div>
+                      
+                         <div style="position:absolute;top:320px;left:90px;">
+                        <div class="layer circle tiny blue_border" data-depth="0.2">
+                        </div>
+                        </div>
+
+                         <div style="position:absolute;top:120px;right:90px;">
+                        <div class="layer" data-depth="0.5">
+                           <i class="icon-cross tiny yellow_txt"></i>
+
+                        </div>
+                        </div>
+
+                        <div style="position:absolute;top:320px;left:0px;">
+                        <div class="layer circle tiny white_border" data-depth="-0.4">
+                        </div>
+                        </div>
+                       
+                         <div style="position:absolute;top:320px;right:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.5">
+                        </div>
+                        </div>
+
+
+                        <div style="position:absolute;top:120px;left:0px;">
+                        <div class="layer circle tiny yellow_border" data-depth="1">
+                        </div>
+                        </div>
+
+                         <div style="position:absolute;top:500px;left:0px;">
+                        <div class="layer white_border circle big" data-depth="1">
+                        </div>
+                        </div>
+
+                       
+                     </div>   
+
+                 </div>    
+
                 
           </div>
 
@@ -291,7 +336,11 @@ Quisque consectetur id leo sit amet vehicula. </p>
         <script>window.jQuery || document.write('<script src="../js/frontend/vendor/jquery-1.11.2.min.js"><\/script>')</script>
           <script src="../js/frontend/home.js"></script>
           <script src="../js/parallax.js"></script>
-
+          <script type="text/javascript">
+            $("#search").click(function(){
+                  $("nav li input").toggleClass("show");
+              });
+          </script>
        
 
                
