@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../css/frontend/carrousel.css">
         <link rel="stylesheet" href="../css/frontend/perspectiveRules.css">
         <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 
         <script src="../js/frontend/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
@@ -25,16 +25,21 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="loading">
+
+        </div> 
 
         <div class="container">
 
             <nav>
                 <ul>
+                    <li>
+                      <a id="search" href="#"><i class="icon-lupa icon"></i></a>
+                      <input type="text" placeholder="Que estas buscando">
+                    </li>
                     <li><a href="#">Sobre nosotros</a></li>
                     <li><a href="#">Consultar</a></li>
-                    <li><a href="#">Derechos</a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li class="highlight"><a href="#">Derechos</a></li>
                 </ul>
             </nav>
             <div class="centered">
@@ -49,22 +54,16 @@
 
                         <div style="position:absolute;top:120px;left:10px;">
                         <div class="layer circle big white_border" data-depth="-1">
-                          <i class="yellow_txt icon-genero"></i>
-
                         </div>
                         </div>
 
                         <div style="position:absolute;top:10px;right:0px;">
                         <div class="layer circle white_border big" data-depth="1">
-                           <i class="yellow_txt  icon-participacion"></i>
-
                         </div>
                         </div>
 
                         <div style="position:absolute;top:200px;right:90px;">
                         <div class="layer white_border circle big" data-depth="-0.3">
-                           <i class="beige_txt icon-salud"></i>
-
                         </div>
                         </div>
 
@@ -84,6 +83,14 @@
                         <div class="layer circle tiny white_border" data-depth="-0.4">
                         </div>
                         </div>
+                        <div style="position:absolute;top:320px;left:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.4">
+                        </div>
+                        </div>
+                         <div style="position:absolute;top:320px;right:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.5">
+                        </div>
+                        </div>
 
 
                         <div style="position:absolute;top:120px;left:0px;">
@@ -93,26 +100,9 @@
 
                          <div style="position:absolute;top:400px;left:90px;">
                         <div class="layer white_border circle big" data-depth="1">
-                           <i class="beige_txt icon-carpa"></i>
+                        </div>
+                        </div>
 
-                        </div>
-                        </div>
-<!-- 
-                        <div class="layer circle big" data-depth="7">
-                          <i class="yellow_txt icon-carpa"></i>
-                        </div>
-                       <div class="layer circle tiny" data-depth="2"></div>
-                       <div class="layer circle big" data-depth="1">
-                        <i class="beige_txt icon-participacion"></i>
-                       </div>
-                       <div class="layer icon-cross" data-depth="4"></div>
-                       <div class="layer circle pink_border" data-depth="4"></div>
-                       <div class="layer lines" data-depth="4">
-                       </div>
-                       <div class="layer circle big" data-depth="2">
-                        <i class="pink_txt icon-salud"></i>
-                       </div> 
- -->
                        
                      </div>   
 
@@ -126,7 +116,7 @@
 </p>
                 <div class="btns">
                 <a href="" class="btn pink_bg yellow_txt">Conocelos</a>
-                <a href="#" id="btn_consulta" class="btn pink_bg yellow_txt yellow_border">Consultar</a>  
+                <a href="#" id="btn_consulta" class="btn pink_bg yellow_txt">Consultar</a>  
                 </div>
                 </div>
 
@@ -140,37 +130,38 @@
              
         </div>   
 
-        <!--  Borrar   <div id="carousel">
-                <div class="content">
-                  <div class="circle one"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="icon-cross"></div>
-                </div>
-              </div>  
 
- -->
         <footer>
-            <div class="container">
 
-             <a href="http://www.datauy.org" class="svg">
-            <object data="../img/frontend/logodata.svg" type="image/svg+xml" class="mailicon">
-            </object>
-            </a>
-                
-            <a href="http://www.datauy.org" class="svg">
-            <object data="../img/frontend/uniceflogo.svg" type="image/svg+xml" class="mailicon">
-            </object>
-            </a>
-           
-            <a href="http://www.datauy.org" class="svg">
-            <object data="../img/frontend/logoces.svg" type="image/svg+xml" class="mailicon">
-            </object>
-            </a>
-            </div>
+
+               <ul>
+                   <li><p>Seguinos en:</p></li>
+                   <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+
+               </ul>
+
+               <ul>
+                <li>
+               <a href="http://www.datauy.org" class="svg">
+              <object data="../img/frontend/logodata.svg" type="image/svg+xml" class="mailicon">
+              </object>
+              </a>
+                <li>
+                  <li>
+               <a href="http://www.datauy.org" class="svg">
+              <object data="../img/frontend/uniceflogo.svg" type="image/svg+xml" class="mailicon">
+              </object>
+              </a>
+                <li>
+                   <li>
+               <a href="http://www.datauy.org" class="svg">
+              <object data="../img/frontend/logoces.svg" type="image/svg+xml" class="mailicon">
+              </object>
+              </a>
+                <li>
+               </ul>
+
 
 
         </footer>
@@ -188,18 +179,30 @@
                 <img src="../img/frontend/okmessage.svg">
                 </div>
                 <h3 class="yellow_txt">Tu consulta fue enviada</h3>
-                <p>Cuando respondan tu pregunta te avisaremos.</p>
+                <p>Los adscriptos van a estar evaluando tu consulta
+                y en las próximas 24hs. tendras unas respuesta.</p>
                 <a href="#" class="btn pink_bg yellow_txt">Realizar otra consulta</a>
+                <a href="#" class="btn pink_bg yellow_txt">Ver mis derechos</a>
 
                 </div>
             </div>
            
             <div class="container" id="container_form">
-                 <h3 class="beige_txt">Mi consulta</h3>               
+                 <h3 class="yellow_txt">Mi consulta</h3>
+
+                 <!--Modulo info-->
+                 <div class="info_txt">
+                  <h4>¿Qué es una consulta?</h4>
+                 <p>Praesent dictum orci sit amet arcu euismod, eu molestie enim euismod.
+Proin laoreet mattis neque ut interdum. Vestibulum accumsan ut justo.
+Quisque consectetur id leo sit amet vehicula. </p>               
+                 </div>
+                 <!--Modulo info-->
 
                  <div id="form">
                   <form id="register_form" action="null">
                     <fieldset id="personal-details">
+
                       <div class="input-container" id="first-name">
                         <input type="text" name="first-name" required/>
                         <label for="first-name">Tu nombre*</label>
@@ -207,6 +210,14 @@
                       <div class="input-container" id="age">
                         <input type="number" name="age" required/>
                         <label for="age">Tu edad</label>
+                      </div>
+
+                      <div class="input-container" id="departamento">
+                        <select>
+                          <option>Durazno</option>
+                          <option>Montevideo</option>
+                          <option>Flores</option>
+                        </select>
                       </div>
 
                       <div class="input-container" id="email">
@@ -221,32 +232,96 @@
 
                       <div class="input-container" id="consulta_sobre">
                         <input type="text" name="consulta_sobre" required/>
-                        <label for="consulta_sobre">Consulta sobre</label>
+                        <select>
+                          <option>Grado</option>
+                          <option>1ero</option>
+                          <option>2do</option>
+                        </select>
                       </div>
 
-                  
+                
+                       <div class="guy">
+                        <img src="../img/frontend/consultaguy.svg">
+                      </div>  
                       
                       <div class="textarea-container" id="consulta">
-                        <label for="consulta_sobre">Consulta*</label>
                         <textarea></textarea>
                       </div>
+
+                   
+                      <a href="#" class="btn pink_bg yellow_txt">Enviar</a>
+
                       
                     </fieldset>
                   </form>
                 </div>
 
-                 <div class="btns">
-                 <a href="#" class="btn pink_bg yellow_txt">Enviar</a>
-                 <small>Campos obligatorios *</small>
-                 <small>Los datos no seran publicados *</small>
-                 </div>
-
+                
+                
+                
                  <div class="error-message pink_bg">
                     <p>Ocurrio un error, completa el campo nombre</p>
 
                    </div>   
               </div>
           </div>
+
+
+            <div class="centered">
+                
+                 <div id="modalelements">
+                    <div class="elements">
+                        
+                        <div style="position:absolute;top:20px;left:20px;">
+                        <div class="layer circle small white_border" data-depth="1.00">
+                        </div>
+                        </div>
+
+                       
+                        <div style="position:absolute;top:20px;right:190px;">
+                        <div class="layer" data-depth="-0.2">
+                           <i class="beige_txt icon-cross"></i>
+
+                        </div>
+                        </div>
+                      
+                         <div style="position:absolute;top:320px;left:90px;">
+                        <div class="layer circle tiny blue_border" data-depth="0.2">
+                        </div>
+                        </div>
+
+                         <div style="position:absolute;top:120px;right:90px;">
+                        <div class="layer" data-depth="0.5">
+                           <i class="icon-cross tiny yellow_txt"></i>
+
+                        </div>
+                        </div>
+
+                        <div style="position:absolute;top:320px;left:0px;">
+                        <div class="layer circle tiny white_border" data-depth="-0.4">
+                        </div>
+                        </div>
+                       
+                         <div style="position:absolute;top:320px;right:0px;">
+                        <div class="layer circle tiny blue_border" data-depth="-0.5">
+                        </div>
+                        </div>
+
+
+                        <div style="position:absolute;top:120px;left:0px;">
+                        <div class="layer circle tiny yellow_border" data-depth="1">
+                        </div>
+                        </div>
+
+                         <div style="position:absolute;top:500px;left:0px;">
+                        <div class="layer white_border circle big" data-depth="1">
+                        </div>
+                        </div>
+
+                       
+                     </div>   
+
+                 </div>    
 
                 
           </div>
@@ -261,7 +336,11 @@
         <script>window.jQuery || document.write('<script src="../js/frontend/vendor/jquery-1.11.2.min.js"><\/script>')</script>
           <script src="../js/frontend/home.js"></script>
           <script src="../js/parallax.js"></script>
-
+          <script type="text/javascript">
+            $("#search").click(function(){
+                  $("nav li input").toggleClass("show");
+              });
+          </script>
        
 
                
