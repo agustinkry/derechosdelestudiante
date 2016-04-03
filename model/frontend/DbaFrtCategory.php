@@ -59,34 +59,4 @@ class DbaFrtCategory {
         }
         return $return;
     }
-
-    public function getChildrenCategories($parentId) {
-        $db = new medoo();
-
-        $return = array();
-
-        $where = array(
-            "AND" => array(
-                "parent_id" => $parentId
-            )
-        );
-
-        $categoryList = $db->select(self::$table, array(
-            "id",
-            "name",
-            "icon",
-            "parent_id"), $where
-        );
-
-        if ($categoryList) {
-            foreach ($categoryList as $category) {
-                $oDataCategory = new DataCategory();
-                $oDataCategory->loadFromArray($category);
-                $return[] = $oDataCategory;
-            }
-        }
-
-        return $return;
-    }
-
 }
