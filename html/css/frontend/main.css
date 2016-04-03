@@ -553,6 +553,18 @@ nav.notvisible {
 
 }
 .page_inner article {padding:100px;text-align: left; margin-top: 20px;display: inline-block;}
+.page_inner ul { margin: 0}
+.page_inner ul li { display: inline-block; margin-right: 10px;}
+.page_inner ul li p {color: #02929E;font-size: 15px;}
+.page_inner ul li a i {
+    font-size: 20px;
+    background: #02929E;
+    border-radius: 24px;
+    padding:4px 2px;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+.page_inner ul li a i:hover { background:#E3DBC3;}
 .page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0}
 .page object { width: 80%}
 .page p  {font-size: 13px; line-height: 20px }
@@ -697,14 +709,14 @@ nav.notvisible {
    Animation Dialog 
    ========================================================================== */
 
-   .student .message .message_inner {
+  /* .student .message .message_inner {
     transition: all .5s ease-in-out;
    }
    .student .message .small {
     transition: all .6s ease-in-out;
    }
   .student .message .message_inner:hover  {transform:translateY(-20px); opacity:0;}
-
+*/
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
@@ -714,7 +726,7 @@ nav.notvisible {
 #category_slide { margin-top:5%}
 .categories .title {display: inline-block; width: 100%;}
 .categories .title h3 { font-size: 40px;display: inline-block;}
-.categories .title p { display: inline-block;text-align: left; width: 40%;}
+.categories .title p { display: inline-block;text-align: left; width: 40%; color: #6A7272}
 
 .arm {cursor: pointer; width: 45px; position: absolute;top:30%;transition: all .2s ease-in-out;}
 .arm:hover {transform:translate(0,-1em);}
@@ -983,9 +995,10 @@ nav li input {
     top: -2px;
     color: #E3DBC3;
     transition: all .2s ease-in-out;
-    width: 150px;
-}
-nav li .show { width:0;opacity: 0}
+    width: 0px;
+    opacity: 0;
+  }
+nav li .show { width:150px;opacity:1}
 
 .no-color nav li input {border: 2px solid #02929E; color:#02929E;}
 .no-color nav li input::-webkit-input-placeholder { color:#02929E; }
@@ -998,6 +1011,13 @@ nav li .show { width:0;opacity: 0}
 .no-color nav li a:after,.derecho nav a:after {
   background: #02929E;
 }
+nav li .active {color:#C52375 }
+nav li .active:after { background: #C52375 !important;
+  -webkit-transform: translateY(1px);
+    -moz-transform: translateY1px);
+    transform: translateY(1px);
+    opacity: 1;
+}
 
 #search {transition: all .1s ease-in-out;}
 #search:hover {transform:scale(1.3);}
@@ -1008,7 +1028,7 @@ nav li a:after {
     bottom: -8px;
     left: 0;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background:#E3DBC3;
     content: '';
     opacity: 0;
