@@ -5,7 +5,7 @@ class TplBckCategory extends TplBckContainer {
     private $categoriesIcon = array(
         array("name" => "Inclusi&oacute;n", "value" => "inclusion"),
         array("name" => "Reglamento", "value" => "reglamento"),
-        array("name" => "Embarazo", "value" => "emabrazo"),
+        array("name" => "Embarazo", "value" => "embarazo"),
         array("name" => "Deporte", "value" => "deporte"),
         array("name" => "Salud", "value" => "salud"),
         array("name" => "Acceso a la informaci&oacute;n", "value" => "access"),

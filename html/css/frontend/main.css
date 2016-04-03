@@ -457,7 +457,7 @@ form *:focus {
 .centered {
     width: 60%;
     position: absolute;
-    margin-left: -345px;
+    margin-left: -30%;
     left: 50%;
     top: 5%;
     z-index: 3;
