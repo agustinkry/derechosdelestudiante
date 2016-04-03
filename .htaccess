@@ -71,3 +71,5 @@ RewriteRule			^studentcms/tutorial/$                      controller/backend/tut
 #REGLAS FRONTEND
 
 RewriteRule                     ^$                                          controller/frontend/home.php                          [NC,L]   
+RewriteRule                     ^nosotros/$                                 controller/frontend/aboutus.php                          [NC,L]   
+RewriteRule                     ^consultas/$                                 controller/frontend/general_info.php                          [NC,L]   
