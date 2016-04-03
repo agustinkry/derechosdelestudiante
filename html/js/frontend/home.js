@@ -16,25 +16,6 @@ $(document).ready(function () {
     var scene = document.getElementById('elements');
     var parallax = new Parallax(scene);
 
-
-    // global vars
-    var winWidth = $(window).width() - 40;
-    var winHeight = $(window).height() - 40;
-
-    // set initial div height / width
-    $('body').css({
-        'width': winWidth,
-        'height': winHeight,
-    });
-
-    // make sure div stays full width/height on resize
-    $(window).resize(function () {
-        $('body').css({
-            'width': winWidth,
-            'height': winHeight,
-        });
-    });
-
     //contact form
     var sendingInfo = false;
     var hideMessageTimer;
