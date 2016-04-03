@@ -454,7 +454,15 @@ form *:focus {
    ========================================================================== */
 .info { position: relative;z-index: 2;top:100px}
 #circle_zigzag { width: 60%; position: absolute;z-index: 0;top: 0; margin-left: -30%; left: 50% !important}
-.centered { width: 60%; position: absolute; margin-left: -30%; left: 50%;top: 5%;z-index: 3}    
+.centered {
+    width: 60%;
+    position: absolute;
+    margin-left: -345px;
+    left: 50%;
+    top: 5%;
+    z-index: 3;
+    min-width: 690px;
+ }
 .centered .logoderechos { width: 68%; margin: auto}
 .centered .info h2 { font-size: 40px; font-weight: 400;text-align: center;}
 .centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 13px; line-height: 20px;}
@@ -520,6 +528,8 @@ form *:focus {
     max-width: 10%;
     margin: auto;
 }
+
+
 /* ==========================================================================
    Layout Derecho styles 
    ========================================================================== */
@@ -721,7 +731,7 @@ nav.notvisible {
    Categories styles 
    ========================================================================== */
 
-#logocolor   { width: 15%; position: absolute;top: 3%; left: 3%; z-index: 2}
+#logocolor   { width: 15%; position: absolute;top: 3%; left: 3%; z-index: 2; min-width: 210px}
 .categories .centered { text-align: center;}
 #category_slide { margin-top:5%}
 .categories .title {display: inline-block; width: 100%;}
@@ -745,7 +755,6 @@ nav.notvisible {
 
 .category {
     text-align: center;
-    width: 20%;
     margin: 2%;
     transition: all .2s ease-in-out;
     display: inline-block; 
@@ -760,6 +769,19 @@ nav.notvisible {
 
 .category:hover {transform: scale(1.1);}
 .category:hover > i { transform:translate(2em,0);}
+
+@media  only screen and (min-width:681px) {
+  
+  .category { width: 20%}
+
+}
+
+@media only screen and (max-width: 720px) {
+
+  .category { width: 50%}
+
+}
+
 /* ==========================================================================
    Footer  styles 
    ========================================================================== */
@@ -1164,6 +1186,8 @@ transition: all .1s ease-in-out;
     INTERMEDIATE: Menu
    ==================== */
 
+
+
     nav a {
         float: left;
         margin-bottom: 0;
@@ -1352,4 +1376,18 @@ transition: all .1s ease-in-out;
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* ==========================================================================
+   Mobile styles 
+   ========================================================================== */
+.mobile { border:none;overflow: auto}
+.mobile body {border: none}
+.mobile .centered {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    top: 0;
+}
 }
