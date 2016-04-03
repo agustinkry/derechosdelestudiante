@@ -39,6 +39,7 @@ $(document).ready(function () {
 function validateForm() {
     var nombre = $("#name").val();
     var description = $("#description").val();
+    var icon = $("#icon").val();
 
     hideInputError($("#categoryEdit"));
 
@@ -49,6 +50,10 @@ function validateForm() {
     } else if (description == "") {
         showInputError($("#description"));
         customAlert(EMPTY_DESCRIPTION, true);
+        return false;
+    } else if (icon == "") {
+        showInputError($("#icon"));
+        customAlert(EMPTY_ICON, true);
         return false;
     } else {
         return true;

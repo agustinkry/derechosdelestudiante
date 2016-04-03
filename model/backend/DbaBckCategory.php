@@ -16,7 +16,7 @@ class DbaBckCategory {
         );
 
         $categoryList = $db->select(
-                self::$table, array("id", "name", "parent_id", "description", "created", "modified"), $where
+                self::$table, array("id", "name", "parent_id", "icon", "description", "created", "modified"), $where
         );
 
 
@@ -37,6 +37,7 @@ class DbaBckCategory {
             "name" => $oCategory->getName(),
             "parent_id" => $oCategory->getParentId(),
             "description" => $oCategory->getDescription(),
+            "icon" => $oCategory->getIcon(),
             "#created" => "NOW()"
         );
 
@@ -49,6 +50,7 @@ class DbaBckCategory {
         $data = array(
             "name" => $oCategory->getName(),
             "parent_id" => $oCategory->getParentId(),
+            "icon" => $oCategory->getIcon(),
             "description" => $oCategory->getDescription()
         );
 
@@ -122,6 +124,7 @@ class DbaBckCategory {
         $categoryList = $db->select(self::$table, array(
             "id",
             "name",
+            "icon",
             "parent_id"), $where
         );
 
@@ -149,6 +152,7 @@ class DbaBckCategory {
         $categoryList = $db->select(self::$table, array(
             "id",
             "name",
+            "icon",
             "parent_id"), $where
         );
 

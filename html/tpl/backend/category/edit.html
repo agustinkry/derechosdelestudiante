@@ -36,13 +36,24 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="status" class="form-label">Categoría padre</label>
+                                            <label for="parentId" class="form-label">Categoría padre</label>
                                             <div>
                                                 <select class="selectpicker" name="parentId" id="parentId">
                                                     <option value="">Seleccione a que categoria va</option>
                                                     <!-- START BLOCK : PARENT_CATEGORY -->
                                                     <option value="{categoryId}" {categorySelected}>{categoryName}</option>
                                                     <!-- END BLOCK : PARENT_CATEGORY -->
+                                                </select>  
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label for="icon" class="form-label">Icono</label>
+                                            <div>
+                                                <select class="selectpicker" name="icon" id="icon">
+                                                    <option value="">Seleccione Icono</option>
+                                                    <!-- START BLOCK : ICON_TYPE -->
+                                                    <option value="{iconValue}" {iconSelected}>{iconName}</option>
+                                                    <!-- END BLOCK : ICON_TYPE -->
                                                 </select>  
                                             </div>
                                         </div>

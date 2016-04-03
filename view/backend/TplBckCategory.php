@@ -2,6 +2,17 @@
 
 class TplBckCategory extends TplBckContainer {
 
+    private $categoriesIcon = array(
+        array("name" => "Inclusi&oacute;n", "value" => "inclusion"),
+        array("name" => "Reglamento", "value" => "reglamento"),
+        array("name" => "Embarazo", "value" => "emabrazo"),
+        array("name" => "Deporte", "value" => "deporte"),
+        array("name" => "Salud", "value" => "salud"),
+        array("name" => "Acceso a la informaci&oacute;n", "value" => "access"),
+        array("name" => "Participaci&oacute;n", "value" => "participacion"),
+        array("name" => "Recreaci&oacute;n", "value" => "recreacion")
+    );
+
     public function getList() {
         $oTpl = new UtlTemplate('list.html', TPL_PATH . "category/");
         $this->assignConstants($oTpl);
@@ -23,7 +34,7 @@ class TplBckCategory extends TplBckContainer {
             $oTpl->assign("name", $oCategory->getName());
             $oTpl->assign("description", $oCategory->getDescription());
         }
-        
+
         if ($parentsList) {
 
             foreach ($parentsList as $parent) {
@@ -34,6 +45,16 @@ class TplBckCategory extends TplBckContainer {
                     $oTpl->assign("categorySelected", "selected");
                 }
                 $oTpl->gotoBlock("_ROOT");
+            }
+        }
+
+
+        foreach ($this->categoriesIcon as $icon) {
+            $oTpl->newBlock("ICON_TYPE");
+            $oTpl->assign("iconName", $icon["name"]);
+            $oTpl->assign("iconValue", $icon["value"]);
+            if ($id && $oCategory->getIcon() == $icon["value"]) {
+                $oTpl->assign("iconSelected", "selected");
             }
         }
 

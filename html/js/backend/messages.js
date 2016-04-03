@@ -12,6 +12,7 @@ var EMPTY_LAST_NAME = "Debes de ingresar un apellido";
 var EMPTY_WEB_PAGE = "Debes de ingresar la p&aacute;gina web";
 var EMPTY_TITLE = "Debes de ingresar un t&iacute;tulo";
 var EMPTY_DESCRIPTION = "Debes de una descripci&oacute;n";
+var EMPTY_ICON = "Debes de un icono";
 var EMPTY_DENOUNCED = "Debes seleccionar a quien denunciar";
 var EMPTY_CATEGORY = "Debes seleccionar al menos una categoría";
 var EMPTY_URL_CORRECTION = "Debes ingresar url de correción o retracción";
