@@ -12,10 +12,6 @@ $(document).ready(function () {
 
 
 
-    // Pretty simple huh?
-    var scene = document.getElementById('elements');
-    var parallax = new Parallax(scene);
-
     //contact form
     var sendingInfo = false;
     var hideMessageTimer;
