@@ -15,4 +15,11 @@ $(document).ready(function () {
     $(window).resize();
 });
 
+$("#search").click(function(){
+      $("nav li input").toggleClass("show");
+  });
 
+
+    // Pretty simple huh?
+    var scene = document.getElementById('elements');
+    var parallax = new Parallax(scene);

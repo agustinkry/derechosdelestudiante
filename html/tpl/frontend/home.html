@@ -82,10 +82,12 @@
             <h2 class="beige_txt">Bienvenidos</h2>
             <div class="logoderechos">
                 <img src="{IMG_URL}logoderechos.svg">
-            </div>  
+            </div>
+              <p>As always, Build is filled with strong technical sessions as well as opportunities to meet and learn from others in the industry. We’ll make sure the schedule is filled with solid content, and will strive to deliver some fun surprises along the way. 
+</p>  
             <div class="btns">
-                <a href="" class="btn pink_bg yellow_txt">Conocelos</a>
-                <a href="#" id="btn_consulta" class="btn pink_bg yellow_txt yellow_border">Consultá</a>  
+                <a href="{WEB_PATH}categorias" class="btn pink_bg yellow_txt">Conocelos</a>
+                <a href="" id="btn_consulta" class="btn pink_bg yellow_txt yellow_border">Consultá</a>  
             </div>
         </div>
 
@@ -115,7 +117,17 @@
         </div>
 
         <div class="container" id="container_form">
-            <h3 class="beige_txt">Mi consulta</h3>               
+            <h3 class="yellow_txt">Mi consulta</h3> 
+
+
+                 <!--Modulo info-->
+                 <div class="info_txt">
+                  <h4>¿Qué es una consulta?</h4>
+                 <p>Praesent dictum orci sit amet arcu euismod, eu molestie enim euismod.
+Proin laoreet mattis neque ut interdum. Vestibulum accumsan ut justo.
+Quisque consectetur id leo sit amet vehicula. </p>               
+                 </div>
+                 <!--Modulo info-->              
 
             <div id="form">
                 <form id="contact_form" action="null">
@@ -134,16 +146,26 @@
                             <label for="email">Tu email*</label>
                         </div>
 
+                        <div class="input-container" id="departamento">
+                        <select>
+                          <option>Durazno</option>
+                          <option>Montevideo</option>
+                          <option>Flores</option>
+                        </select>
+                      </div>
+
                         <div class="input-container" id="institution">
                             <input type="text" name="institution" required/>
                             <label for="institution">Instiucion o liceo que pertecences*</label>
                         </div>
 
                         <div class="input-container" id="consulta_sobre">
-                            <input type="text" name="subject" required/>
-                            <label for="consulta_sobre">Consulta sobre</label>
-                        </div>
-
+                        <select>
+                          <option>Grado</option>
+                          <option>1ero</option>
+                          <option>2do</option>
+                        </select>
+                      </div>
 
 
                         <div class="textarea-container" id="consulta">
@@ -151,15 +173,22 @@
                             <textarea name="message"></textarea>
                         </div>
 
+
+                        <div class="guy">
+                              <img src="{IMG_URL}consultaguy.svg">
+                         </div>  
+
+                         <a href="#" class="btn pink_bg yellow_txt" id="sendMessage">Enviar</a>
+
+
+
                     </fieldset>
                 </form>
             </div>
 
-            <div class="btns">
-                <a href="#" class="btn pink_bg yellow_txt" id="sendMessage">Enviar</a>
-                <small>Campos obligatorios *</small>
-                <small>Los datos no seran publicados *</small>
-            </div>
+           
+               
+        
 
             <div class="error-message pink_bg">
                 <p>Ocurrio un error, completa el campo nombre</p>
