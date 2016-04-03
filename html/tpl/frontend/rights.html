@@ -7,13 +7,13 @@
 <div class="page page-left green_bg">
     <div class="page_inner">
         <article>
-            <a href="#" class="back yellow_txt"><i class="icon-arrow icon"></i>volver a los derechos</a>
+            <a href="{WEB_PATH}categorias/" class="back yellow_txt"><i class="icon-arrow icon"></i>volver a los derechos</a>
 
-            <h2>Recreacion</h2>
+            <h2>{category_name}</h2>
 
-            <p>Obtén más información acerca de los tres métodos de uso compartido disponibles para los administradores de Dropbox Business.</p>
+            <p>{category_description}</p>
 
-            <object data="{IMG_URL}recreacion.svg" type="image/svg+xml">
+            <object data="{IMG_URL}{category_icon}.svg" type="image/svg+xml">
             </object>
 
             <div class="btns">
@@ -26,89 +26,75 @@
     <div class="page_inner">
         <article>
 
+            <!-- START BLOCK : RIGHT -->
             <!--Ficha-->
             <div class="card green_bg">
-                <h4 class="yellow_txt">Campamento</h4>
-                <p>Para los campamentos, salidas recreativas o didacticas:</p>
-                <a href="{WEB_PATH}derechos/1_a/1_a/">Ver detalle</a>
+                <h4 class="yellow_txt">{title}</h4>
+                <p>{description}</p>
+                <a href="{WEB_PATH}derechos/{category_path}/{right_path}/">Ver detalle</a>
 
             </div>
             <!--Ficha--> 
-            <!--Ficha-->
-            <div class="card green_bg">
-                <h4 class="yellow_txt">Campamento</h4>
-                <p>Para los campamentos, salidas recreativas o didacticas:</p>
-                <a href="#">Ver detalle</a>
-
-            </div>
-            <!--Ficha-->
-            <!--Ficha-->
-            <div class="card green_bg">
-                <h4 class="yellow_txt">Campamento</h4>
-                <p>Para los campamentos, salidas recreativas o didacticas:</p>
-                <a href="#">Ver detalle</a>
-
-            </div>
-            <!--Ficha-->  
+            <!-- END BLOCK : RIGHT -->
 
 
             <!--Dialog-->
-            <div class="dialog">
-
-                <div class="user student">
-
-                    <div class="message">
-                        <p class="green_txt title">Estudiante</p>
-
-                        <div class="message_inner">
-                            <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                y llevar una certificación</p>
-                        </div>
-                        <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                    </div>
-
-                </div>
-
-                <div class="user professor">
-
-                    <div class="message">
-                        <p class="pink_txt title">Docente</p>
-
-                        <div class="message_inner">
-                            <p class="pink_txt">¿Comó hago para validar mis faltas si soy federada
-                                en ping pong?</p>
-                        </div>
-                        <small class="pink_txt">Enviado hoy 13:23 PM</small>  
-                    </div>
-
-                </div>
-                <div class="user student">
-
-                    <div class="message">
-                        <p class="green_txt title">Estudiante</p>
-
-                        <div class="message_inner">
-                            <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                y llevar una certificación</p>
-                        </div>
-                        <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                    </div>
-
-                </div>
-                <div class="user student">
-
-                    <div class="message">
-                        <p class="green_txt title">Estudiante</p>
-
-                        <div class="message_inner">
-                            <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                y llevar una certificación</p>
-                        </div>
-                        <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                    </div>
-
-                </div>    
-            </div>  
+            <!--            <div class="dialog">
+            
+                            <div class="user student">
+            
+                                <div class="message">
+                                    <p class="green_txt title">Estudiante</p>
+            
+                                    <div class="message_inner">
+                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
+                                            y llevar una certificación</p>
+                                    </div>
+                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
+                                </div>
+            
+                            </div>
+            
+                            <div class="user professor">
+            
+                                <div class="message">
+                                    <p class="pink_txt title">Docente</p>
+            
+                                    <div class="message_inner">
+                                        <p class="pink_txt">¿Comó hago para validar mis faltas si soy federada
+                                            en ping pong?</p>
+                                    </div>
+                                    <small class="pink_txt">Enviado hoy 13:23 PM</small>  
+                                </div>
+            
+                            </div>
+                            <div class="user student">
+            
+                                <div class="message">
+                                    <p class="green_txt title">Estudiante</p>
+            
+                                    <div class="message_inner">
+                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
+                                            y llevar una certificación</p>
+                                    </div>
+                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
+                                </div>
+            
+                            </div>
+                            <div class="user student">
+            
+                                <div class="message">
+                                    <p class="green_txt title">Estudiante</p>
+            
+                                    <div class="message_inner">
+                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
+                                            y llevar una certificación</p>
+                                    </div>
+                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
+                                </div>
+            
+                            </div>    
+                        </div>  -->
 
         </article>
 

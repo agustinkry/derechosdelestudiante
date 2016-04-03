@@ -10,11 +10,11 @@ class TplFrtCategories extends TplFrtContainer {
         $categories = $oDbaCategory->getAllChildrenCategories();
 
         if ($categories) {
-            foreach ($categories as $cat){
+            foreach ($categories as $cat) {
                 $oTpl->newBlock("CATEGORY");
                 $oTpl->assign("name", $cat->getName());
                 $oTpl->assign("icon", $cat->getIcon());
-                $url = UtlText::urlOptimize($cat->getName())."_".$cat->getId()."/";
+                $url = $cat->getId() . "/" . UtlText::urlOptimize($cat->getName()) . "/";
                 $oTpl->assign("url", $url);
                 //
             }

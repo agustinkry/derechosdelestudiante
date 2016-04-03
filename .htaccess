@@ -70,9 +70,9 @@ RewriteRule			^studentcms/tutorial/$                      controller/backend/tut
 
 #REGLAS FRONTEND
 
-RewriteRule                     ^$                                              controller/frontend/home.php                          [NC,L]   
-RewriteRule                     ^nosotros/$                                     controller/frontend/aboutus.php                          [NC,L]   
-RewriteRule                     ^consultas/$                                    controller/frontend/general_info.php                          [NC,L]   
-RewriteRule                     ^categorias/$                                   controller/frontend/categories.php                          [NC,L]   
-RewriteRule                     ^derechos/$                                     controller/frontend/rights.php                          [NC,L]   
-RewriteRule                     ^derechos/([0-9]+)_(.*)/([0-9]+)_(.*)/$         controller/frontend/rights_detail.php?id=$3                          [NC,L]   
+RewriteRule                     ^$                                              controller/frontend/home.php                                        [NC,L]   
+RewriteRule                     ^nosotros/$                                     controller/frontend/aboutus.php                                     [NC,L]   
+RewriteRule                     ^consultas/$                                    controller/frontend/general_info.php                                [NC,L]   
+RewriteRule                     ^categorias/$                                   controller/frontend/categories.php                                  [NC,L]
+RewriteRule                     ^derechos/([0-9]+)/(.*)/([0-9]+)/(.*)/$         controller/frontend/rights_detail.php?category_id=$1&right_id=$3    [NC,L]   
+RewriteRule                     ^derechos/([0-9]+)/(.*)/$                       controller/frontend/rights.php?id=$1                                [NC,L]   
