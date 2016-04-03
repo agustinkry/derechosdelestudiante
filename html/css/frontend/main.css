@@ -1033,8 +1033,8 @@ nav li .show { width:150px;opacity:1}
 .no-color nav li a:after,.derecho nav a:after {
   background: #02929E;
 }
-nav li .active {color:#C52375 }
-nav li .active:after { background: #C52375 !important;
+nav .active a{color:#C52375 }
+nav .active a:after { background: #C52375 !important;
   -webkit-transform: translateY(1px);
     -moz-transform: translateY1px);
     transform: translateY(1px);
@@ -1389,5 +1389,30 @@ transition: all .1s ease-in-out;
     margin: auto;
     left: 0;
     top: 0;
+    min-width:auto;
 }
+.mobile .info {top: 0}
+.mobile .centered .logoderechos { width: 80%}
+.mobile .categories .title p, .centered .info p {
+  width: 90%;
+  text-align:left;
 }
+.mobile footer {position: relative;}
+.mobile footer ul { float: none;}
+.mobile footer ul:nth-child(2) {
+  display: block;
+}
+.mobile .no-color footer ul li { display: block;}
+.mobile .no-color footer ul li p {
+    width: 100%;
+    display: block;
+    font-size: 20px;
+}
+
+.mobile .no-color footer ul li a { padding:8px 4px}
+.mobile .no-color footer ul li a i {font-size: 27px}
+.mobile .arm { display: none;}
+.mobile .elements { display: none;}
+.mobile #circle_zigzag {width: 100%}
+.mobile .home {width: 100%}
+.mobile .home .btn { display: block; margin: 5px 0; width: 90%}
