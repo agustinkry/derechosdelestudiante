@@ -79,4 +79,42 @@ class DbaFrtRight {
         return $return;
     }
 
+    public function getRights() {
+
+        $db = new medoo();
+        $rightsArr = $db->select(self::$table, array("id", "title", "description"));
+
+        $return = array();
+
+        if ($rightsArr) {
+            foreach ($rightsArr as $right) {
+                $oDataRight = new DataRight();
+                $oDataRight->loadFromArray($right);
+
+                $where = array(
+                    "AND" => array(
+                        "id_right" => $oDataRight->getId()
+                    )
+                );
+
+
+                $categoriesArr = $db->select(self::$tableRelCategory, array("id_category"), $where);
+
+                $categories = array();
+
+                if ($categoriesArr) {
+                    foreach ($categoriesArr as $cat) {
+                        $categories[] = $cat["id_category"];
+                    }
+                }
+
+                $oDataRight->setCategories($categories);
+
+                $return[] = $oDataRight;
+            }
+        }
+
+        return $return;
+    }
+
 }

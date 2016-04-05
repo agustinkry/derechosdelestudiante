@@ -36,45 +36,176 @@
             <nav>
                 <ul>
                     <li>
-                      <a id="search" href="#"><i class="icon-lupa icon"></i></a>
-                      <input type="text" placeholder="Que estas buscando">
+                        <a id="search" href="#"><i class="icon-lupa icon"></i></a>
+                        <input type="text" placeholder="Que estas buscando">
                     </li>
                     <li><a href="{WEB_PATH}nosotros/">Sobre nosotros</a></li>
                     <li><a href="{WEB_PATH}consultas/">Consultas</a></li>
                     <li class="active"><a href="{WEB_PATH}categorias/">Derechos</a></li>
-            
+
                 </ul>
             </nav>
             {CONTENT}
+
+            <div class="green_bg md-modal md-effect-12" id="modal-12">
+                <div class="md-content">
+
+                    <a id="btn-close" class="md-close"><i class="icon-cross"></i></a>
+
+                    <div id="sent">
+                        <div class="container">
+
+                            <div class="okmessage">
+                                <img src="{IMG_URL}okmessage.svg">
+                            </div>
+                            <h3 class="yellow_txt">Tu consulta fue enviada</h3>
+                            <p>Cuando respondan tu pregunta te avisaremos.</p>
+                            <a href="#" id="showContact" class="btn pink_bg yellow_txt">Realizar otra consulta</a>
+
+                        </div>
+                    </div>
+
+                    <div class="container" id="container_form">
+                        <h3 class="yellow_txt">Mi consulta</h3> 
+
+
+                        <!--Modulo info-->
+                        <div class="info_txt">
+                            <h4>¿Qué es una consulta?</h4>
+                            <p>Praesent dictum orci sit amet arcu euismod, eu molestie enim euismod.
+                                Proin laoreet mattis neque ut interdum. Vestibulum accumsan ut justo.
+                                Quisque consectetur id leo sit amet vehicula. </p>               
+                        </div>
+                        <!--Modulo info-->              
+
+                        <div id="form">
+                            <form id="contact_form" action="null">
+                                <fieldset id="personal-details">
+                                    <div class="input-container" id="first-name">
+                                        <input type="text" name="first-name" required/>
+                                        <label for="first-name">Tu nombre*</label>
+                                    </div>
+                                    <div class="input-container" id="age">
+                                        <input type="number" name="age" required/>
+                                        <label for="age">Tu edad</label>
+                                    </div>
+
+                                    <div class="input-container" id="email">
+                                        <input type="text" name="email" required/>
+                                        <label for="email">Tu email*</label>
+                                    </div>
+
+
+                                    <div class="input-container" id="category">
+                                        <select>
+                                            <option value="-1">Categoria</option>
+                                            <!-- START BLOCK : CATEGORY-->
+                                            <option value="{cateogry_id}">{category_name}</option>
+                                            <!-- END BLOCK : CATEGORY-->
+                                        </select>
+                                    </div>
+                                    <div class="input-container" id="right">
+                                        <select>
+                                            <option value="-1">Derecho *</option>
+                                            <!-- START BLOCK : RIGHT-->
+                                            <option data-category="{right_categories}" value="{right_id}">{right_title}</option>
+                                            <!-- END BLOCK : RIGHT-->
+                                        </select>
+                                    </div>
+
+                                    <div class="input-container" id="departamento">
+                                        <select>
+                                            <option value="-1">Departamento</option>
+                                            <!-- START BLOCK : LOCATION -->
+                                            <option value="{location_id}">{location_name}</option>
+                                            <!-- END BLOCK : LOCATION -->
+                                        </select>
+                                    </div>
+
+
+                                    <div class="input-container" id="institution">
+                                        <select>
+                                            <option value="-1">Instiucion o liceo que pertecences*</option>
+                                            <!-- START BLOCK : INSTITUTION-->
+                                            <option  value="{institution_id}">{institution_name}</option>
+                                            <!-- END BLOCK : INSTITUTION-->
+                                        </select>
+                                    </div>
+
+                                    <div class="input-container" id="consulta_sobre">
+                                        <select>
+                                            <option value="-1">Grado</option>
+                                            <option value="1">1ero</option>
+                                            <option value="2">2do</option>
+                                            <option value="3">3ero</option>
+                                            <option value="4">4to</option>
+                                            <option value="5">5to</option>
+                                            <option value="6">6to</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="textarea-container" id="consulta">
+                                        <label for="consulta_sobre">Consulta*</label>
+                                        <textarea name="message"></textarea>
+                                    </div>
+
+
+                                    <div class="guy">
+                                        <img src="{IMG_URL}consultaguy.svg">
+                                    </div>  
+
+                                    <a href="#" class="btn pink_bg yellow_txt" id="sendMessage">Enviar</a>
+
+
+
+                                </fieldset>
+                            </form>
+                        </div>
+
+
+
+
+
+                        <div class="error-message pink_bg">
+                            <p>Ocurrio un error, completa el campo nombre</p>
+
+                        </div>   
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+
         <footer>
 
-                <ul>
-                   <li><p>Seguinos en:</p></li>
-                   <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-               </ul>
+            <ul>
+                <li><p>Seguinos en:</p></li>
+                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-facebook"></i></a></li>
+            </ul>
 
-               <ul>
+            <ul>
                 <li>
-                <a href="http://www.datauy.org" class="svg">
-                    <object data="{IMG_URL}logodata.svg" type="image/svg+xml" class="mailicon">
-                    </object>
-                </a>
-               </li> 
-               <li>
-                <a href="http://www.unicef.org/uruguay/" class="svg">
-                    <object data="{IMG_URL}uniceflogo.svg" type="image/svg+xml" class="mailicon">
-                    </object>
-                </a>
-               </li>
-               <li>
-                <a href="http://www.ces.edu.uy/ces/" class="svg">
-                    <object data="{IMG_URL}logoces.svg" type="image/svg+xml" class="mailicon">
-                    </object>
-                </a>
+                    <a href="http://www.datauy.org" class="svg">
+                        <object data="{IMG_URL}logodata.svg" type="image/svg+xml" class="mailicon">
+                        </object>
+                    </a>
+                </li> 
+                <li>
+                    <a href="http://www.unicef.org/uruguay/" class="svg">
+                        <object data="{IMG_URL}uniceflogo.svg" type="image/svg+xml" class="mailicon">
+                        </object>
+                    </a>
                 </li>
-              </ul>  
+                <li>
+                    <a href="http://www.ces.edu.uy/ces/" class="svg">
+                        <object data="{IMG_URL}logoces.svg" type="image/svg+xml" class="mailicon">
+                        </object>
+                    </a>
+                </li>
+            </ul>  
 
         </footer>
 
