@@ -20,6 +20,7 @@ class TplBckMail {
         $oTpl->assign("MESSAGE", $responseMessage);
         $oTpl->assign("USER_MESSAGE", $userMessage);
         $oTpl->assign("NAME", $name);
+        $oTpl->assignGlobal("IMG_URL", COMMON_HTML_URL . 'img/frontend/');
         
         return $oTpl->getOutputContent();
     }
