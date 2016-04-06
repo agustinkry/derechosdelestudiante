@@ -105,7 +105,7 @@
                                         </select>
                                     </div>
                                     <div class="input-container" id="right">
-                                        <select>
+                                        <select name="right" required>
                                             <option value="-1">Derecho *</option>
                                             <!-- START BLOCK : RIGHT-->
                                             <option data-category="{right_categories}" value="{right_id}">{right_title}</option>
@@ -114,7 +114,7 @@
                                     </div>
 
                                     <div class="input-container" id="departamento">
-                                        <select>
+                                        <select name="location">
                                             <option value="-1">Departamento</option>
                                             <!-- START BLOCK : LOCATION -->
                                             <option value="{location_id}">{location_name}</option>
@@ -124,7 +124,7 @@
 
 
                                     <div class="input-container" id="institution">
-                                        <select>
+                                        <select name="institution" required>
                                             <option value="-1">Instiucion o liceo que pertecences*</option>
                                             <!-- START BLOCK : INSTITUTION-->
                                             <option  value="{institution_id}">{institution_name}</option>
@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="input-container" id="consulta_sobre">
-                                        <select>
+                                        <select name="grade">
                                             <option value="-1">Grado</option>
                                             <option value="1">1ero</option>
                                             <option value="2">2do</option>

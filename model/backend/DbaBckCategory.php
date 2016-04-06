@@ -120,7 +120,7 @@ class DbaBckCategory {
                 )
             );
         }
-        
+
         $categoryList = $db->select(self::$table, array(
             "id",
             "name",
@@ -165,6 +165,30 @@ class DbaBckCategory {
         }
 
         return $return;
+    }
+
+    public function getCategoryByRight($rightId) {
+        $join = array(
+            '[><]rights_category' => array(
+                'id' => 'id_category'
+            )
+        );
+
+        $where = array(
+            "AND" => array(
+                "rights_category.id_right" => $rightId
+            )
+        );
+
+        $db = new medoo();
+        $categoryItem = $db->get(self::$table, $join, array("id", "name", "parent_id", "icon", "description", "created", "modified"), $where);
+
+
+        if ($categoryItem) {
+            $oDataCategory = new DataCategory();
+            $oDataCategory->loadFromArray($categoryItem);
+            return $oDataCategory;
+        }
     }
 
 }

@@ -13,7 +13,7 @@ class UtlConfigMail {
         $oMail->SMTPSecure = "tls";
         $oMail->Port = 587;
         $oMail->CharSet = "UTF-8";
-        $oMail->From = MAIL_USERNAME;
+        $oMail->From = FROM_MAIL;
         $oMail->FromName = MAIL_FROM_NAME;
         $oMail->isHtml(true);
         

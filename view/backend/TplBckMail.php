@@ -13,4 +13,15 @@ class TplBckMail {
         return $oTpl->getOutputContent();
     }
 
+    public static function getContactMail($name, $userMessage, $responseMessage, $rightUrl) {
+        $oTpl = new UtlTemplate('contact.html', TPL_PATH . "mail/");
+        
+        $oTpl->assign("RIGHT_URL", $rightUrl);
+        $oTpl->assign("MESSAGE", $responseMessage);
+        $oTpl->assign("USER_MESSAGE", $userMessage);
+        $oTpl->assign("NAME", $name);
+        
+        return $oTpl->getOutputContent();
+    }
+
 }

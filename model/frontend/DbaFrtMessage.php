@@ -1,6 +1,6 @@
 <?php
 
-class DbaBckMessage {
+class DbaFrtMessage {
 
     public static $table = "message";
 
@@ -16,7 +16,7 @@ class DbaBckMessage {
         );
 
         $messageList = $db->select(
-                self::$table, "*", $where
+                self::$table, '*', $where
         );
 
 
@@ -69,10 +69,14 @@ class DbaBckMessage {
         $data = array(
             "right_id" => $oMessage->getRightId(),
             "message" => $oMessage->getMessage(),
-            "parent_message_id"=>$oMessage->getParentMessageId(),
-            "inBox" => $oMessage->getInBox(),
-            "status"=> $oMessage->getStatus(),
-            "mailBoxId"=>$oMessage->getMailBoxId(),
+            "inBox" => true,
+            "status" => 0,
+            "name" => $oMessage->getName(),
+            "age" => $oMessage->getAge(),
+            "location" => $oMessage->getLocation(),
+            "institution_id" => $oMessage->getInstitutionId(),
+            "grade" => $oMessage->getGrade(),
+            "email" => $oMessage->getEmail(),
             "#created" => "NOW()"
         );
 

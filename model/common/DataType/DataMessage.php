@@ -10,16 +10,26 @@ class DataMessage {
     private $mailBoxId;
     private $email;
     private $parentMessageId;
+    private $name;
+    private $age;
+    private $location;
+    private $institutionId;
+    private $grade;
 
     function loadFromArray($messageArray) {
-        $this->setId($messageArray["id"]);
-        $this->setRightId($messageArray["right_id"]);
-        $this->setMessage($messageArray["message"]);
-        $this->setInBox($messageArray["inBox"]);
-        $this->setStatus($messageArray["status"]);
-        $this->setEmail($messageArray["email"]);
-        $this->setMailBoxId($messageArray["mailBoxId"]);
-        $this->setParentMessageId($messageArray["parent_message_id"]);
+        isset($messageArray["id"]) ? $this->setId($messageArray["id"]) : false;
+        isset($messageArray["right_id"]) ? $this->setRightId($messageArray["right_id"]) : false;
+        isset($messageArray["message"]) ? $this->setMessage($messageArray["message"]) : false;
+        isset($messageArray["inBox"]) ? $this->setInBox($messageArray["inBox"]) : false;
+        isset($messageArray["status"]) ? $this->setStatus($messageArray["status"]) : false;
+        isset($messageArray["email"]) ? $this->setEmail($messageArray["email"]) : false;
+        isset($messageArray["mailBoxId"]) ? $this->setMailBoxId($messageArray["mailBoxId"]) : false;
+        isset($messageArray["parent_message_id"]) ? $this->setParentMessageId($messageArray["parent_message_id"]) : false;
+        isset($messageArray["name"]) ? $this->setName($messageArray["name"]) : false;
+        isset($messageArray["age"]) ? $this->setAge($messageArray["age"]) : false;
+        isset($messageArray["location"]) ? $this->setLocation($messageArray["location"]) : false;
+        isset($messageArray["institution_id"]) ? $this->setInstitutionId($messageArray["institution_id"]) : false;
+        isset($messageArray["grade"]) ? $this->setGrade($messageArray["grade"]) : false;
     }
 
     function getId() {
@@ -85,5 +95,46 @@ class DataMessage {
     function setParentMessageId($parentMessageId) {
         $this->parentMessageId = $parentMessageId;
     }
+
+    function getName() {
+        return $this->name;
+    }
+
+    function getAge() {
+        return $this->age;
+    }
+
+    function getLocation() {
+        return $this->location;
+    }
+
+    function getInstitutionId() {
+        return $this->institutionId;
+    }
+
+    function getGrade() {
+        return $this->grade;
+    }
+
+    function setName($name) {
+        $this->name = $name;
+    }
+
+    function setAge($age) {
+        $this->age = $age;
+    }
+
+    function setLocation($location) {
+        $this->location = $location;
+    }
+
+    function setInstitutionId($institutionId) {
+        $this->institutionId = $institutionId;
+    }
+
+    function setGrade($grade) {
+        $this->grade = $grade;
+    }
+
 
 }

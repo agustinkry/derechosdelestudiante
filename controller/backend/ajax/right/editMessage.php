@@ -18,22 +18,34 @@ try {
         $oDataMessage->setMessage($message);
         $oDataMessage->setRightId($rightId);
         $oDataMessage->setStatus(true);
-        $oDataMessage->setEmail($userEmail);
+        // $oDataMessage->setEmail($userEmail);
         $oDataMessage->setParentMessageId($parentMessageId);
 
 
-        $oDbaBckRight= new DbaBckRight();
+        $oDbaBckRight = new DbaBckRight();
         $oRight = $oDbaBckRight->getRight($rightId);
 
-        if ($oRight) {
-            $link = WEB_PATH . "prejuicio/" . $rightId;
+        $oDbaMessage = new DbaBckMessage();
+        $oDataMessageUser = $oDbaMessage->getMessage($parentMessageId);
 
-            $html = TplBckMail::getGenericMail(UtlBckMessages::$NEW_PRE_MSG_MAIL_TITLE, UtlBckMessages::$NEW_PRE_MSG_MAIL_BODY . $message, $link, UtlBckMessages::$NEW_PRE_MSG_MAIL_LINK_TEXT);
+        $oDbaCategory = new DbaBckCategory();
+        $oDataCategory = $oDbaCategory->getCategoryByRight($rightId);
+
+        if ($oRight) {
+
+
+            //construir mail
+
+            $categoryPath = $oDataCategory->getId() . "/" . UtlText::urlOptimize($oDataCategory->getName());
+            $rightPath = $oRight->getId() . "/" . UtlText::urlOptimize($oRight->getTitle());
+            $rightUrl = WEB_PATH . "derechos/" . $categoryPath . "/" . $rightPath;
+
+            $html = TplBckMail::getContactMail($oDataMessageUser->getName(), $oDataMessageUser->getMessage(), $message, $rightUrl);
             $oMail = UtlConfigMail::getConfiguredMail();
 
             $oMail->addAddress($userEmail);
-            $oMail->Subject = UtlBckMessages::$NEW_PRE_MSG_MAIL_SUBJECT . " - ##" . $rightId;
-            $oMail->Body = UtlBckMessages::$REPLAY_ABOVE_THIS_LINE . $html;
+            $oMail->Subject = UtlBckMessages::$NEW_QUESTION_MSG_MAIL_SUBJECT . $oRight->getTitle();
+            $oMail->Body = $html;
 
             $oMail->send();
 

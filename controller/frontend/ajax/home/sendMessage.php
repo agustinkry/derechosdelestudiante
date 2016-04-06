@@ -12,24 +12,54 @@ try {
     $name = filter_var($_POST["first-name"], FILTER_SANITIZE_STRING);
     $age = filter_var($_POST["age"], FILTER_SANITIZE_NUMBER_INT);
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $institution = filter_var($_POST["institution"], FILTER_SANITIZE_STRING);
-    $subject = filter_var($_POST["subject"], FILTER_SANITIZE_STRING);
+    $institutionId = filter_var($_POST["institution"], FILTER_SANITIZE_NUMBER_INT);
+    $grade = filter_var($_POST["grade"], FILTER_SANITIZE_NUMBER_INT);
+    $location = filter_var($_POST["location"], FILTER_SANITIZE_NUMBER_INT);
+    $rightId = filter_var($_POST["right"], FILTER_SANITIZE_NUMBER_INT);
     $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
-    if ($name && $email && $institution && $message) {
-        $html = TplFrtMail::getContactMail($name, $age, $email, $institution, $subject, $message);
-        $oMail = UtlConfigMail::getConfiguredMail();
+    if ($name && $email && $rightId && $institutionId && $message) {
 
-        $oMail->addAddress($email);
-        $oMail->Subject = $subject ? $subject : "Consulta sin asunto";
-        $oMail->Body = $html;
-        $oMail->addReplyTo($email);
 
-        $oMail->send();
+        $oMessage = new DataMessage();
+        $oMessage->setAge($age);
+        $oMessage->setEmail($email);
+        $oMessage->setGrade($grade);
+        $oMessage->setInstitutionId($institutionId);
+        $oMessage->setLocation($location);
+        $oMessage->setMessage($message);
+        $oMessage->setName($name);
+        $oMessage->setRightId($rightId);
 
-        $response = array(
-            "result" => true
-        );
+
+        $oDbaMessage = new DbaFrtMessage();
+        $idMessage = $oDbaMessage->createMessage($oMessage);
+
+        if ($idMessage > 0) {
+            $response = array(
+                "result" => true
+            );
+        } else {
+            $response = array(
+                "result" => false,
+                "c" => 3
+            );
+        }
+        /*
+          $html = TplFrtMail::getContactMail($name, $age, $email, $institution, $subject, $message);
+          $oMail = UtlConfigMail::getConfiguredMail();
+
+          $oMail->addAddress($email);
+          $oMail->Subject = $subject ? $subject : "Consulta sin asunto";
+          $oMail->Body = $html;
+          $oMail->addReplyTo($email);
+
+          $oMail->send();
+
+          $response = array(
+          "result" => true
+          );
+         * */
     } else {
         $response = array(
             "result" => false,

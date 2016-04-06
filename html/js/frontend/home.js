@@ -26,7 +26,7 @@ $(document).ready(function () {
                 data: $("#contact_form").serialize(),
                 dataType: "json"
             }).done(function (data) {
-                
+
                 if (data.result === true) {
                     $("#container_form").fadeOut(200, function () {
                         sendingInfo = false;
@@ -43,6 +43,7 @@ $(document).ready(function () {
     $("#showContact").click(function (e) {
         e.preventDefault();
         $("#container_form input, #container_form textarea").val("");
+        $("#container_form select option[value=-1]").attr("selected", true)
         $("#sent").fadeOut(200, function () {
             $("#container_form").fadeIn(200);
         });
@@ -54,8 +55,10 @@ $(document).ready(function () {
 
         var firstNameInput = $('input[name="first-name"]');
         var emailInput = $('input[name="email"]');
-        var institutionInput = $('input[name="institution"]');
+        // var institutionInput = $('input[name="institution"]');
         var messageInput = $('textarea[name="message"]');
+        var rightSelect = $('select[name="right"]');
+        var institutionSelect = $('select[name="institution"]');
 
         var errorMessage = "";
 
@@ -71,10 +74,12 @@ $(document).ready(function () {
             emailInput.parent("div").addClass('error');
             emailInput.focus();
             errorMessage = "El email ingresado no es válido";
-        } else if (institutionInput.val().length === 0) {
-            institutionInput.parent("div").addClass('error');
-            institutionInput.focus();
-            errorMessage = "Debes ingresar el nombre de la institución a la que perteneces";
+        } else if (rightSelect.val() === "-1") {
+            rightSelect.parent("div").addClass('error');
+            errorMessage = "Debes seleccionar un derecho";
+        } else if (institutionSelect.val() === "-1") {
+            institutionSelect.parent("div").addClass('error');
+            errorMessage = "Debes seleccionar la institución a la que perteneces";
         } else if (messageInput.val().length === 0) {
             messageInput.parent("div").addClass('error');
             messageInput.focus();
