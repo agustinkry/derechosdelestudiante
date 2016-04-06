@@ -1382,7 +1382,7 @@ transition: all .1s ease-in-out;
    Mobile styles 
    ========================================================================== */
 .mobile { border:none;overflow: auto}
-.mobile body {border: none}
+.mobile body {border: none;}
 .mobile .centered {
     position: relative;
     width: 100%;
@@ -1416,3 +1416,6 @@ transition: all .1s ease-in-out;
 .mobile #circle_zigzag {width: 100%}
 .mobile .home {width: 100%}
 .mobile .home .btn { display: block; margin: 5px 0; width: 90%}
+
+
+.mobile form .input-container { width: 100%;}
