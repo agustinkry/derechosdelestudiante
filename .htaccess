@@ -4,11 +4,6 @@ RewriteCond %{REQUEST_URI} !^(.*)(\.)(.*)$
 RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
 
 
-AuthType Basic
-AuthName "My Protected Area"
-AuthUserFile /app/.htpasswd
-Require valid-user
-
 ##### Prevenir listado de directorios:
 #Options -Indexes
 
