@@ -1409,7 +1409,7 @@ transition: all .1s ease-in-out;
     font-size: 20px;
 }
 
-.mobile .no-color footer ul li a { padding:8px 4px}
+.mobile .no-color footer ul li a { padding:8px 4px; margin-bottom: 10px;}
 .mobile .no-color footer ul li a i {font-size: 27px}
 .mobile .arm { display: none;}
 .mobile .elements { display: none;}
@@ -1419,3 +1419,7 @@ transition: all .1s ease-in-out;
 
 
 .mobile form .input-container { width: 100%;}
+
+/*Mobile Nav*/
+
+.mobile nav { display: none;}
