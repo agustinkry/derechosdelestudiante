@@ -29,9 +29,7 @@ $(document).ready(function () {
             });
             $('html').addClass("mobile")
 
-
         }
-
     });
 
     // set initial div height / width
