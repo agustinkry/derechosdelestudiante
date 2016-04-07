@@ -88,6 +88,7 @@ body {
    
 }
 
+a { cursor: pointer;}
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -124,6 +125,9 @@ body {
 }
 .yellow_bg {
     background-color: #FAF39D;
+}
+.white_bg {
+    background-color: #fff;
 }
 
 
@@ -197,7 +201,7 @@ form .input-container {
   position: relative;
   height: 60px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #02929E;
 }
 
 form .textarea-container {
@@ -225,11 +229,11 @@ form .checkbox-container p { font-size: 14px;display: inline-block; margin: 0}
 form .checkbox-container input {display: inline-block;}
 
 form textarea {
-    border: 2px solid #fff;
+    border: 2px solid #02929E;
     background: none;
     width: 89%;
     min-height: 100px;
-    color: #fff;
+    color: #02929E;
     padding: 1%;
     border-radius: 10px;
     font-size: 13px;
@@ -243,7 +247,7 @@ form .input-container input {
   width: 100%;
   border: 0;
   top:27px;
-  color: #fff;
+  color: #02929E;
   background: none;
   z-index: 1;
   padding: 5px 0;
@@ -258,7 +262,7 @@ form .input-container select {
   width: 100%;
   border: 0;
   top:27px;
-  color: #fff;
+  color: #02929E;
   background: none;
   z-index: 1;
   padding: 5px 0;
@@ -275,7 +279,7 @@ form label {
   margin-top: 2px;
   padding: 1px
   letter-spacing: 0.012em;
-  color: #fff;
+  color: #02929E;
   font-size: 10px;
   -webkit-animation-name: labelIn;
           animation-name: labelIn;
@@ -320,7 +324,7 @@ form input:focus + label, form input:valid + label {
     left: 1em;
     opacity: 0;
     top: 0.2em;
-    color: #0075d5;
+    color: #02929E;
     font-weight: 400;
   }
   100% {
@@ -328,7 +332,7 @@ form input:focus + label, form input:valid + label {
     opacity: 1;
     left: 1px;
     top: 0.2em;
-    color: #0075d5;
+    color: #02929E;
     font-weight: 400;
   }
 }
@@ -352,7 +356,7 @@ form input:focus + label, form input:valid + label {
     left: 1em;
     opacity: 0;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
   100% {
@@ -360,7 +364,7 @@ form input:focus + label, form input:valid + label {
     opacity: 1;
     left: 1px;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
 }
@@ -384,7 +388,7 @@ form input:focus + label, form input:valid + label {
     left: 1em;
     opacity: 0;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
   100% {
@@ -392,7 +396,7 @@ form input:focus + label, form input:valid + label {
     opacity: 1;
     left: 1px;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
 }
@@ -416,7 +420,7 @@ form input:focus + label, form input:valid + label {
     left: 1em;
     opacity: 0;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
   100% {
@@ -424,7 +428,7 @@ form input:focus + label, form input:valid + label {
     opacity: 1;
     left: 1px;
     top: 0.2em;
-    color: #fff;
+    color: #02929E;
     font-weight: 400;
   }
 }
@@ -853,7 +857,7 @@ a.svg:after {
 
 .error-message {
    position:absolute;
-    width: 500px;
+    width: 250px;
     bottom:50px;
     right:40px;
     height: 80px;
@@ -883,6 +887,7 @@ a.svg:after {
     border: 25px solid;
     border-color: #ED2387 #ED2387 transparent transparent;
 }
+.error-message p { margin: 0}
 
 
 /* ==========================================================================
@@ -1075,7 +1080,7 @@ nav li a:hover:after {
    ========================================================================== */
 
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
-.btn {border-radius:10px;letter-spacing:1px;padding: 12px 35px;font-family: 'Varela Round', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
+.btn {border-radius:30px;letter-spacing:1px;padding: 12px 35px;font-family: 'Varela Round', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
 
 .btn:hover { background:ur }
 .btns small { color: #fff;float: left;}
@@ -1100,31 +1105,32 @@ nav li a:hover:after {
     font-weight: normal;
     margin:30px 0;
 }
-.md-modal p { color: #fff; margin: 40px 0}
+.md-modal p { color: #fff; line-height: 80px}
 .md-modal .container { max-width: 50%; margin: auto}
 
 .md-modal .info_txt {width: 100%; display: inline-block;}
-.md-modal .info_txt h4 {font-size: 14px; display: inline-block; color: #FAF39D;font-weight: normal;vertical-align: top; margin: 15px 0}
+.md-modal .info_txt h4 {font-size: 14px; display: inline-block; color:#ED2387;font-weight: normal;vertical-align: top; margin: 15px 0}
 .md-modal .info_txt p {
     font-size: 13px;
     display: inline-block;
     margin: 0 0 0 30px;
     width: 60%;
-    border-left: 1px solid #FAF39D;
+    border-left: 1px solid #ED2387;
     padding-left: 20px;
     line-height: 19px;
+    color: #02929E;
 }
 .md-show {
    display: block;
 }
 
 .md-close { position: absolute; height: 40px; width: 40px;text-align: center;
-border-radius: 100px; border:2px solid #fff;top: 20px;right: 20px;cursor: pointer;
+border-radius: 100px; border:2px solid #ED2387;top: 20px;right: 20px;cursor: pointer;
 transition: all .1s ease-in-out;
 }
 .md-close:hover { transform:scale(1.1);}
 
-.md-close i {color:#fff;line-height: 40px}
+.md-close i {color:#ED2387;line-height: 40px}
 
 .md-modal .btns { margin: 0}
 .md-modal .btns a { float: right;}
