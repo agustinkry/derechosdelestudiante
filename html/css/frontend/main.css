@@ -989,6 +989,7 @@ nav.hide {
   transform: translateY(-45px);
   opacity: 0;
 }
+.mobile-nav {display: none;}
 nav { 
     margin:1% 2%;
     -webkit-transform: translateY(0);
@@ -1421,13 +1422,21 @@ transition: all .1s ease-in-out;
 .mobile .home {width: 100%}
 .mobile .home .btns { margin: 0}
 .mobile .home .btn { display: block; margin: 20px 0;font-size:18px;border-radius: 40px}
-
+.mobile .home .elements {display: none;}
 
 .mobile form .input-container { width: 100%;}
 
 /*Mobile Nav*/
 .mobile nav { display: none;}
-
+.mobile .mobile-nav {
+      position: absolute;
+    background: red;
+    padding: 20px;
+    top: -20px;
+    right: 0;
+    display: block;
+    margin: 0;
+}
 /*Moible Logo*/
 .mobile #logocolor {
       position: relative;
@@ -1442,3 +1451,17 @@ transition: all .1s ease-in-out;
       display: block;
       margin: 17px 0;
 }
+
+/*Moible Consulta*/
+.mobile .md-modal .container { max-width: 100%}
+.mobile .md-modal .info_txt p {
+  width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.mobile form .guy { display: none;}
+.mobile form .textarea-container { width: 100%}
+.mobile form .btn { width: 80%; text-align: center;}
+.mobile #sent .okmessage { width: 80%}
+.mobile form .textarea-container textarea { width: 96%}
