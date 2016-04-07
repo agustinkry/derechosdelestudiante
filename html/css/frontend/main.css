@@ -501,13 +501,13 @@ form *:focus {
 .dialog .professor  {float: right;}
 .dialog .student .message {
     float: left;
-    margin: 50px 0px 0 200px;
+    margin: 50px 0px 0 222px;
     max-width: 60%;
 }
 .dialog .professor .message {
     text-align: right;
     float: right;
-    margin: 50px 200px 0 0px;
+    margin: 50px 222px 0 0px;
     max-width: 60%;
 }
 .dialog .student figure {left: 0}
