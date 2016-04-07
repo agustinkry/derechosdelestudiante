@@ -199,7 +199,7 @@ form fieldset .input-container:last-child {
 
 form .input-container {
   position: relative;
-  height: 60px;
+  height: 45px;
   margin-bottom: 20px;
   border-bottom: 2px solid #02929E;
 }
@@ -246,7 +246,7 @@ form .input-container input {
   box-sizing: border-box;
   width: 100%;
   border: 0;
-  top:27px;
+  top:21px;
   color: #02929E;
   background: none;
   z-index: 1;
@@ -261,7 +261,7 @@ form .input-container select {
   box-sizing: border-box;
   width: 100%;
   border: 0;
-  top:27px;
+  top:21px;
   color: #02929E;
   background: none;
   z-index: 1;
@@ -468,7 +468,7 @@ form *:focus {
     min-width: 690px;
  }
 .centered .logoderechos { width: 68%; margin: auto}
-.centered .info h2 { font-size: 40px; font-weight: 400;text-align: center;}
+.centered .info h2 { font-size: 40px; font-weight: 400;text-align: center; margin: 0 }
 .centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 13px; line-height: 20px;}
 /* ==========================================================================
    Categories styles 
@@ -579,7 +579,7 @@ nav.notvisible {
     transition: all .2s ease-in-out;
 }
 .page_inner ul li a i:hover { background:#E3DBC3;}
-.page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0;line-height: 50px}
+.page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0;line-height: 50px; text-transform: uppercase;}
 .page object { width: 80%}
 .page p  {font-size: 13px; line-height: 20px }
 .page-right {

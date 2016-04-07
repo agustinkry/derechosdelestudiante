@@ -68,3 +68,15 @@ $("#search").click(function () {
     $("nav li input").toggleClass("show");
 });
 
+
+
+  //Animate footer and nav on scroll
+ var header = $(".page_inner");
+   $(".page_inner").scroll(function() {
+          var scroll = $(this).scrollTop();
+          if (scroll > 10) {
+              $(".nav,.logos").addClass("hide");
+          } else {
+              $(".nav,.logos").removeClass("hide");
+          }
+   });
