@@ -47,7 +47,7 @@ class TplFrtRights extends TplFrtContainer {
         }
 
         $this->assignConstants($oTpl);
-        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
+        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border", "rights");
     }
 
     private function constructMessageBlock(&$oTpl, $oMessage) {
@@ -99,7 +99,7 @@ class TplFrtRights extends TplFrtContainer {
         $oTpl->assign("right_description", $oRight->getDescription());
 
         $this->assignConstants($oTpl);
-        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
+        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border", "rights");
     }
 
     public function getRightsBySearch($search) {

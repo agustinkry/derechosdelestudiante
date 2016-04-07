@@ -8,7 +8,7 @@ class TplFrtContainer {
         $this->oTpl = new UtlTemplate('container.html', TPL_PATH);
     }
 
-    protected function getContainer($content, $title, $bodyClasses) {
+    protected function getContainer($content, $title, $bodyClasses, $section="") {
 
         $this->oTpl->assign("CONTENT", $content);
 
@@ -56,6 +56,10 @@ class TplFrtContainer {
         }
 
         $this->assignConstants($this->oTpl);
+        
+        if($section){
+            $this->oTpl->assignGlobal("active_".$section, "active");
+        }
 
         return $this->oTpl->getOutputContent();
     }

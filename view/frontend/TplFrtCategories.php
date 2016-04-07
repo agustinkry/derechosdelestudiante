@@ -21,7 +21,7 @@ class TplFrtCategories extends TplFrtContainer {
         }
         
         
-        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
+        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border", "rights");
     }
 
 }
