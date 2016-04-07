@@ -473,6 +473,15 @@ form *:focus {
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
+.categories .centered {
+      width: 70%;
+    position: absolute;
+    margin-left: -35%;
+    left: 50%;
+    top: 5%;
+    z-index: 3;
+    min-width: 690px;
+}
 .categories .page_inner .dialog .message p {  }
 .categories .page_inner  .dialog .user { margin-bottom: 30px;}
 .categories .page_inner .btn {float: left;}
@@ -1005,6 +1014,7 @@ nav {
 }
 nav a {transition: all .2s ease-in-out;font-family: 'Varela Round', sans-serif;color: #E3DBC3;font-size: 14px;font-weight:normal;text-decoration: none; margin: 0 10px;position: relative;}
 nav a i { font-size: 22px;}
+nav form { margin: 0;padding: 0; display: inherit;}
 
 ::-webkit-input-placeholder { color:#E3DBC3; }
 ::-moz-placeholder { color:#E3DBC3; } /* firefox 19+ */
@@ -1012,7 +1022,7 @@ nav a i { font-size: 22px;}
 input:-moz-placeholder { color:#E3DBC3; }
 
 nav li input {
-      background: none;
+    background: none;
     border: 2px solid #E3DBC3;
     padding: 5px;
     border-radius: 12px;
@@ -1082,7 +1092,10 @@ nav li a:hover:after {
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
 .btn {border-radius:30px;letter-spacing:1px;padding: 12px 35px;font-family: 'Varela Round', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid;}
 
-.btn:hover { background:ur }
+.btn:hover {
+      background: #FAF39D;
+    color: #ed2387;
+}
 .btns small { color: #fff;float: left;}
 
 /* ==========================================================================
