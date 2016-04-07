@@ -39,62 +39,33 @@
 
 
             <!--Dialog-->
-            <!--            <div class="dialog">
-            
-                            <div class="user student">
-            
-                                <div class="message">
-                                    <p class="green_txt title">Estudiante</p>
-            
-                                    <div class="message_inner">
-                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                            y llevar una certificación</p>
-                                    </div>
-                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                                </div>
-            
-                            </div>
-            
-                            <div class="user professor">
-            
-                                <div class="message">
-                                    <p class="pink_txt title">Docente</p>
-            
-                                    <div class="message_inner">
-                                        <p class="pink_txt">¿Comó hago para validar mis faltas si soy federada
-                                            en ping pong?</p>
-                                    </div>
-                                    <small class="pink_txt">Enviado hoy 13:23 PM</small>  
-                                </div>
-            
-                            </div>
-                            <div class="user student">
-            
-                                <div class="message">
-                                    <p class="green_txt title">Estudiante</p>
-            
-                                    <div class="message_inner">
-                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                            y llevar una certificación</p>
-                                    </div>
-                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                                </div>
-            
-                            </div>
-                            <div class="user student">
-            
-                                <div class="message">
-                                    <p class="green_txt title">Estudiante</p>
-            
-                                    <div class="message_inner">
-                                        <p class="green_txt">Hola! tenés que ir a la administracón de tu liceo
-                                            y llevar una certificación</p>
-                                    </div>
-                                    <small class="green_txt">Enviado hoy 13:23 PM</small> 
-                                </div>
-            
-                            </div>    
-                        </div>  -->
+            <div class="dialog">
+                <!-- START BLOCK : MESSAGE -->
+                <!-- START BLOCK : MESSAGE_STUDENT -->
+                <div class="user student">
+                    <div class="message">
+                        <p class="green_txt title">Estudiante</p>
+                        <div class="message_inner">
+                            <p class="green_txt">{message}</p>
+                        </div>
+                        <small class="green_txt">Enviado {date}</small> 
+                    </div>
+                </div>
+                <!-- END BLOCK : MESSAGE_STUDENT -->
+                <!-- START BLOCK : MESSAGE_PROFESSOR -->
+                <div class="user professor">
+                    <div class="message">
+                        <p class="pink_txt title">Docente</p>
+                        <div class="message_inner">
+                            <p class="pink_txt">{message}</p>
+                        </div>
+                        <small class="pink_txt">Enviado {date}</small>  
+                    </div>
+
+                </div>
+                <!-- END BLOCK : MESSAGE_PROFESSOR -->
+                <!-- END BLOCK : MESSAGE -->
+            </div> 
 
         </article>
 

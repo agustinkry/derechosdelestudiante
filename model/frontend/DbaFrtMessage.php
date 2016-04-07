@@ -133,4 +133,36 @@ class DbaFrtMessage {
         return $db->delete(self::$table, $where);
     }
 
+    public function getMessagesByRightCategory($rightCategory) {
+
+        $join = array(
+            '[><]' . DbaFrtRight::$tableRelCategory => array(
+                'right_id' =>  'id_right'
+            )
+        );
+
+        $where = array(
+            "AND" => array(
+                "id_category" => $rightCategory
+            ),
+            "GROUP" => 'id',
+            "ORDER" => "created ASC"
+        );
+
+        $db = new medoo();
+        $messagesArr = $db->select(self::$table, $join, '*', $where);
+
+        $return = array();
+
+        if ($messagesArr) {
+            foreach ($messagesArr as $message) {
+                $oDataMessage = new DataMessage();
+                $oDataMessage->loadFromArray($message);
+                $return[] = $oDataMessage;
+            }
+        }
+
+        return $return;
+    }
+
 }

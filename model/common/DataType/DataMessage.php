@@ -15,6 +15,7 @@ class DataMessage {
     private $location;
     private $institutionId;
     private $grade;
+    private $created;
 
     function loadFromArray($messageArray) {
         isset($messageArray["id"]) ? $this->setId($messageArray["id"]) : false;
@@ -30,6 +31,7 @@ class DataMessage {
         isset($messageArray["location"]) ? $this->setLocation($messageArray["location"]) : false;
         isset($messageArray["institution_id"]) ? $this->setInstitutionId($messageArray["institution_id"]) : false;
         isset($messageArray["grade"]) ? $this->setGrade($messageArray["grade"]) : false;
+        isset($messageArray["created"]) ? $this->setCreated($messageArray["created"]) : false;
     }
 
     function getId() {
@@ -136,5 +138,12 @@ class DataMessage {
         $this->grade = $grade;
     }
 
+    function getCreated() {
+        return $this->created;
+    }
+
+    function setCreated($created) {
+        $this->created = $created;
+    }
 
 }
