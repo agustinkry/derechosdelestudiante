@@ -1395,21 +1395,19 @@ transition: all .1s ease-in-out;
 .mobile .info {top: 0}
 .mobile .centered .logoderechos { width: 100%}
 .mobile .centered h2 { margin-bottom:  0}
-.mobile .categories .title p, .centered .info p {
+.mobile .centered .info p {
   width: 90%;
   text-align:left;
 }
+.mobile .categories .title p { text-align: center;font-size: 14px; margin: 30px 0 0 0;width:100%}
+
 .mobile footer {position: relative;}
 .mobile footer ul { float: none;}
 .mobile footer ul:nth-child(2) {
   display: block;
 }
-.mobile .no-color footer ul li { display: block;}
-.mobile .no-color footer ul li p {
-    width: 100%;
-    display: block;
-    font-size: 20px;
-}
+.mobile footer ul li { margin: 0}
+
 
 .mobile .no-color footer ul li a { padding:8px 4px; margin-bottom: 10px;}
 .mobile .no-color footer ul li a i {font-size: 27px}
@@ -1427,7 +1425,20 @@ transition: all .1s ease-in-out;
 
 .mobile form .input-container { width: 100%;}
 
-
 /*Mobile Nav*/
-
 .mobile nav { display: none;}
+
+/*Moible Logo*/
+.mobile #logocolor {
+      position: relative;
+    display: block;
+    margin: 20px 0 0 0;
+}
+
+/*Moible category*/
+.mobile .category { width: 80%}
+.mobile .category label {
+      font-size: 17px;
+      display: block;
+      margin: 17px 0;
+}
