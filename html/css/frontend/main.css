@@ -463,7 +463,7 @@ form *:focus {
     position: absolute;
     margin-left: -30%;
     left: 50%;
-    top: 5%;
+    top: 12%;
     z-index: 3;
     min-width: 690px;
  }
@@ -473,16 +473,16 @@ form *:focus {
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
-.derecho .dialog .message p {  }
-.derecho .dialog .user { margin-bottom: 30px;}
-.derecho .btn {float: left;}
-.derecho .title {
+.categories .page_inner .dialog .message p {  }
+.categories .page_inner  .dialog .user { margin-bottom: 30px;}
+.categories .page_inner .btn {float: left;}
+.categories .page_inner .title {
   text-transform: uppercase;
     position: relative;
     top: -29px;
     left: 1px;
 }
-.derecho .professor .title { float: right;}
+.categories .page_inner  .professor .title { float: right;}
 
 .dialog  { margin-top: 10%}
 .dialog .user figure { width: 18%; position: absolute; }
