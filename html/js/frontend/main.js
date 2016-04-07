@@ -15,6 +15,9 @@ $(document).ready(function () {
                 'height': winHeight
             });
             $('html').removeClass("mobile")
+            // Pretty simple huh?
+            var scene = document.getElementById('elements');
+            var parallax = new Parallax(scene);
 
         } else {
 
@@ -23,6 +26,7 @@ $(document).ready(function () {
                 'height': "auto"
             });
             $('html').addClass("mobile")
+
 
         }
 
@@ -64,7 +68,3 @@ $("#search").click(function () {
     $("nav li input").toggleClass("show");
 });
 
-
-// Pretty simple huh?
-var scene = document.getElementById('elements');
-var parallax = new Parallax(scene);
