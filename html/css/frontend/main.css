@@ -1383,6 +1383,7 @@ transition: all .1s ease-in-out;
    ========================================================================== */
 .mobile { border:none;overflow: auto}
 .mobile body {border: none;}
+.mobile .container { width: 90%; margin: auto}
 .mobile .centered {
     position: relative;
     width: 100%;
@@ -1392,7 +1393,8 @@ transition: all .1s ease-in-out;
     min-width:auto;
 }
 .mobile .info {top: 0}
-.mobile .centered .logoderechos { width: 80%}
+.mobile .centered .logoderechos { width: 100%}
+.mobile .centered h2 { margin-bottom:  0}
 .mobile .categories .title p, .centered .info p {
   width: 90%;
   text-align:left;
@@ -1411,14 +1413,20 @@ transition: all .1s ease-in-out;
 
 .mobile .no-color footer ul li a { padding:8px 4px; margin-bottom: 10px;}
 .mobile .no-color footer ul li a i {font-size: 27px}
+.mobile footer .social_links  { padding: 0; text-align: center;}
+.mobile footer .social_links li p { font-size: 16px;}
+.mobile footer .social_links li a i {font-size:23px;}
+
 .mobile .arm { display: none;}
 .mobile .elements { display: none;}
-.mobile #circle_zigzag {width: 100%}
+.mobile #circle_zigzag {width: 100%; display: none !important;}
 .mobile .home {width: 100%}
-.mobile .home .btn { display: block; margin: 5px 0; width: 90%}
+.mobile .home .btns { margin: 0}
+.mobile .home .btn { display: block; margin: 20px 0;font-size:18px;border-radius: 40px}
 
 
 .mobile form .input-container { width: 100%;}
+
 
 /*Mobile Nav*/
 
