@@ -45,7 +45,7 @@ class TplFrtRights extends TplFrtContainer {
                 }
             }
         }
-        
+
         $this->assignConstants($oTpl);
         return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
     }
@@ -58,12 +58,12 @@ class TplFrtRights extends TplFrtContainer {
             $oTpl->newBlock("MESSAGE_PROFESSOR");
         }
 
-        
+
         $formattedDate = UtlDate::getMessageDate($oMessage->getCreated());
-        
+
         $oTpl->assign("message", $oMessage->getMessage());
-        $oTpl->assign("date",$formattedDate);
-        
+        $oTpl->assign("date", $formattedDate);
+
 
         $oTpl->goToBlock("_ROOT");
     }
@@ -97,6 +97,55 @@ class TplFrtRights extends TplFrtContainer {
         $oRight = $oDbaRight->getRight($idRight);
         $oTpl->assign("right_title", $oRight->getTitle());
         $oTpl->assign("right_description", $oRight->getDescription());
+
+        $this->assignConstants($oTpl);
+        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
+    }
+
+    public function getRightsBySearch($search) {
+        $oTpl = new UtlTemplate('search.html', TPL_PATH);
+
+        $oDbaCategory = new DbaFrtCategory();
+
+        $oDbaRight = new DbaFrtRight();
+        $rights = $oDbaRight->getSearch($search);
+
+        $message = "";
+        $count = count($rights);
+
+        switch ($count) {
+            case 0:
+                $message = "No se han encontrado resultados para tu b&uacute;squeda '$search'";
+                break;
+            case 1:
+                $message = "Se ha encontrado 1 resultado para tu b&uacute;squeda '$search'";
+                break;
+            default :
+                $message = "Se han encontrado $count resultados para tu b&uacute;squeda '$search'";
+                break;
+        }
+
+        $oTpl->assign("searchMessage", $message);
+
+        if ($count > 0) {
+            $oTpl->newBlock("RESULTS");
+            foreach ($rights as $oRight) {
+                //CATEGORY
+
+                $oCategory = $oDbaCategory->getCategoryByRight($oRight->getId());
+                $categoryPath = $oCategory->getId() . "/" . UtlText::urlOptimize($oCategory->getName());
+
+                $rightPath = $oRight->getId() . "/" . UtlText::urlOptimize($oRight->getTitle());
+                $oTpl->newBlock("RIGHT");
+                $oTpl->assign("title", $oRight->getTitle());
+                $oTpl->assign("description", UtlText::cut($oRight->getDescription(), 70));
+                $oTpl->assign("category_path", $categoryPath);
+                $oTpl->assign("right_path", $rightPath);
+            }
+        } else {
+            $oTpl->newBlock("NO_RESULTS");
+        }
+
 
         $this->assignConstants($oTpl);
         return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");

@@ -117,4 +117,30 @@ class DbaFrtRight {
         return $return;
     }
 
+    public function getSearch($searchQuery) {
+        $db = new medoo();
+
+        $where = array(
+            "AND" => array(
+                 "title[~]" => "%" . $searchQuery . "%"
+            ),
+            "LIMIT" => 1
+        );
+
+        $rightList = $db->select(
+                self::$table, '*', $where
+        );
+
+
+        $response = array();
+
+        foreach ($rightList as $right) {
+            $oDataRight = new DataRight();
+            $oDataRight->loadFromArray($right);
+            $response[] = $oDataRight;
+        }
+
+        return $response;
+    }
+
 }

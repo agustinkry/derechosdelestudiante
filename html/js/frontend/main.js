@@ -16,8 +16,10 @@ $(document).ready(function () {
             });
             $('html').removeClass("mobile")
             // Pretty simple huh?
-            var scene = document.getElementById('elements');
-            var parallax = new Parallax(scene);
+            if ($('#elements').length > 0) {
+                var scene = document.getElementById('elements');
+                var parallax = new Parallax(scene);
+            }
 
         } else {
 
@@ -56,11 +58,17 @@ $(document).ready(function () {
                     }
                 }
             });
-        }else{
+        } else {
             $filteredRights = $rightOptions;
         }
-        
+
         $("#right select").html($filteredRights);
+    });
+
+    $("#searchForm").submit(function (e) {
+        var searchQuery = $(this).attr("action") + $("#searchText").val();
+        window.location.href = searchQuery;
+        return false;
     });
 });
 

@@ -39,16 +39,18 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-         <nav class="mobile-nav">
-             <li>MENU</li>
+        <nav class="mobile-nav">
+            <li>MENU</li>
         </nav>
         <div class="container">
 
             <nav>
                 <ul>
                     <li>
-                        <a id="search" href="#"><i class="icon-lupa icon"></i></a>
-                        <input type="text" placeholder="Que estas buscando">
+                        <a id="search"><i class="icon-lupa icon"></i></a>
+                        <form id="searchForm" action="{WEB_PATH}busqueda/">
+                            <input id="searchText" type="text" placeholder="Que estas buscando">
+                        </form>
                     </li>
                     <li><a href="{WEB_PATH}nosotros/">Sobre nosotros</a></li>
                     <li><a href="{WEB_PATH}consultas/">Consultas</a></li>

@@ -82,3 +82,4 @@ RewriteRule                     ^consultas/$                                    
 RewriteRule                     ^categorias/$                                   controller/frontend/categories.php                                  [NC,L]
 RewriteRule                     ^derechos/([0-9]+)/(.*)/([0-9]+)/(.*)/$         controller/frontend/rights_detail.php?category_id=$1&right_id=$3    [NC,L]   
 RewriteRule                     ^derechos/([0-9]+)/(.*)/$                       controller/frontend/rights.php?id=$1                                [NC,L]   
+RewriteRule                     ^busqueda/(.*)/$                                controller/frontend/search.php?query=$1                                [NC,L]   
