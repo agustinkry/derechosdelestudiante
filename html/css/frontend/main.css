@@ -1416,7 +1416,7 @@ transition: all .1s ease-in-out;
 .mobile footer .social_links li a i {font-size:23px;}
 
 .mobile .arm { display: none;}
-.mobile .elements { display: none;}
+.mobile .elements { position: fixed;}
 .mobile #circle_zigzag {width: 100%; display: none !important;}
 .mobile .home {width: 100%}
 .mobile .home .btns { margin: 0}
