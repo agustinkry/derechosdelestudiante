@@ -1,29 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <!-- If you delete this meta tag, Half Life 3 will never be released. -->
         <meta name="viewport" content="width=device-width" />
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Email</title>
+        <title>Derechos del estudiante - Email</title>
 
-        <link rel="stylesheet" type="text/css" href="{WEB_PATH}html/css/backend/email.css" />
+        <link rel="stylesheet" type="text/css" href="css/email.css" />
 
     </head>
 
     <body bgcolor="#FFFFFF">
 
         <!-- HEADER -->
-        <table class="head-wrap" bgcolor="#999999">
+        <table max-width="700" class="head-wrap" bgcolor="">
             <tr>
                 <td></td>
                 <td class="header container" >
 
                     <div class="content">
-                        <table bgcolor="#999999">
+                        <table>
                             <tr>
-                                <td><img src="http://placehold.it/200x50/" /></td>
-                                <td align="right"><h6 class="collapse">Derechos del Estudiante/h6></td>
+                                <td><img src="{IMG_URL}logomail.jpg" alt="Derechos del estudiante"></td>
                             </tr>
                         </table>
                     </div>
@@ -35,7 +33,7 @@
 
 
         <!-- BODY -->
-        <table class="body-wrap">
+        <table max-width="700" class="body-wrap">
             <tr>
                 <td></td>
                 <td class="container" bgcolor="#FFFFFF">
@@ -44,13 +42,13 @@
                         <table>
                             <tr>
                                 <td>
-                                    <h3>{title}</h3>
-                                    <p class="lead">{lead_body}</p>
-                                    <p>{central_body}</p>
+                                    <h3 style="font-family:Arial;color:#ED2387;font-size:15px">{title}</h3>
+                                    <p style="font-family:Arial;color:#000;font-size:15px">{lead_body}</p>
                                     <!-- Callout Panel -->
-                                    <p class="callout">
-                                        {callout_body}. <a href="{link}">{link_text}</a>
-                                    </p><!-- /Callout Panel -->					
+                                    <p  style="font-family:Arial" class="callout">
+                                        {central_body}
+                                    </p><!-- /Callout Panel -->
+                                    <a style="font-family:Arial;color:#ED2387;font-size:15px;border-radius:15px;border:2px solid #ed2387;padding:10px 35px 10px 15px;text-transform:uppercase;text-decoration:none;margin:30px 0;display:inline-block;" href="{link}">{link_text}</a>					
 
 
                                 </td>
@@ -64,20 +62,22 @@
         </table><!-- /BODY -->
 
         <!-- FOOTER -->
-        <table class="footer-wrap">
+        <table  class="footer-wrap">
             <tr>
-                <td></td>
+
                 <td class="container">
 
                     <!-- content -->
                     <div class="content">
-                        <table>
+                        <table max-width="700">
                             <tr>
-                                <td align="center">
-                                    <p>
-                                        <a href="#">Terms</a> |
-                                        <a href="#">Privacy</a> |
-                                        <a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>
+                                <td style="border-bottom:1px solid #000;padding-bottom:20px"><img src="{IMG_URL}footermail.png" alt="Derechos del estudiante"></td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <p style="font-family:Arial;font-size:13px">
+                                        Derechos del estudiante es un proyecto de:<br> <a style="color:#02929E" href="{WEB_URL}">Unicef</a> y <a style="color:#02929E" href="{WEB_URL}">DATA.</a> - <a style="color:#02929E" href="{WEB_URL}">unicef@derechosdelestudiante.edu.uy </a>
+
                                     </p>
                                 </td>
                             </tr>
