@@ -639,6 +639,7 @@ nav.notvisible {
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
 .card a { font-size: 12px; text-transform: uppercase; color: #fff}
 
+.categories .title_dialog  {display: inline-block;width: 100%}
 .categories .title_dialog h3 {font-size: 40px; display: inline-block;width: 100%;text-align: center;}
 /* ==========================================================================
    Animation transition 
