@@ -33,9 +33,10 @@ class TplFrtRights extends TplFrtContainer {
 
         $messageAdded = array(); //temp
         foreach ($messages as $oMessage) {
-            $oTpl->newBlock("MESSAGE");
 
             if (!$oMessage->getParentMessageId()) {
+                $oTpl->newBlock("MESSAGE");
+                
                 $this->constructMessageBlock($oTpl, $oMessage);
                 //search childrens
                 $childrens = $this->getChildrenMessages($messages, $oMessage->getId());
@@ -43,6 +44,8 @@ class TplFrtRights extends TplFrtContainer {
                     //fill data
                     $this->constructMessageBlock($oTpl, $oChlMessage);
                 }
+                
+                $oTpl->newBlock("CONVERSATION_SEPARATOR");
             }
         }
 
