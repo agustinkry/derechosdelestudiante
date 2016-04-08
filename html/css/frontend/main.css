@@ -232,7 +232,7 @@ form textarea {
     border: 2px solid #02929E;
     background: none;
     width: 89%;
-    min-height: 100px;
+    min-height: 70px;
     color: #02929E;
     padding: 1%;
     border-radius: 10px;
@@ -469,7 +469,7 @@ form *:focus {
  }
 .centered .logoderechos { width: 68%; margin: auto}
 .centered .info h2 { font-size: 40px; font-weight: 400;text-align: center; margin: 0 }
-.centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 13px; line-height: 20px;}
+.centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 15px; line-height: 20px;}
 /* ==========================================================================
    Categories styles 
    ========================================================================== */
@@ -835,7 +835,12 @@ footer .logos {
     transform: translateY(0);
     transition: all .4s ease-in-out;
 }
-footer ul {float: left;}
+footer ul {
+  float: left;
+  -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: all .4s ease-in-out;
+}
 footer ul:nth-child(2) {float: right;}
 
 

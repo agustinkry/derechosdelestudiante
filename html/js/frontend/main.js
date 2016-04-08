@@ -63,8 +63,8 @@ $(document).ready(function () {
         $("#right select").html($filteredRights);
     });
 
-    $("#searchForm").submit(function (e) {
-        var searchQuery = $(this).attr("action") + $("#searchText").val();
+        $("#searchForm").submit(function (e) {
+            var searchQuery = $(this).attr("action") + $("#searchText").val();
         window.location.href = searchQuery;
         return false;
     });
@@ -180,9 +180,9 @@ $(document).ready(function () {
     $(".page_inner").scroll(function () {
         var scroll = $(this).scrollTop();
         if (scroll > 50) {
-            $("nav").addClass("hide");
+            $("nav,footer ul").addClass("hide");
         } else {
-            $("nav").removeClass("hide");
+            $("nav,footer ul").removeClass("hide");
         }
     });
 
