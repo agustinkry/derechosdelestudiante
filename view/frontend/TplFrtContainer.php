@@ -57,6 +57,13 @@ class TplFrtContainer {
 
         $this->assignConstants($this->oTpl);
         
+        switch ($section){
+            case "rights":
+            case "questions":
+            case "search":
+                $this->oTpl->assignGlobal("color", "color");
+                break;
+        }
         if($section){
             $this->oTpl->assignGlobal("active_".$section, "active");
         }

@@ -148,7 +148,7 @@ class TplFrtRights extends TplFrtContainer {
 
 
         $this->assignConstants($oTpl);
-        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border");
+        return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border", "search");
     }
 
 }
