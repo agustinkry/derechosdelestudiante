@@ -176,7 +176,7 @@ class SSP {
 
 				if ( $requestColumn['searchable'] == 'true' ) {
 					$binding = self::bind( $bindings, '%'.$str.'%', PDO::PARAM_STR );
-					$globalSearch[] = "`".$column['db']."` LIKE ".$binding;
+					$globalSearch[] = "".$column['db']." LIKE ".$binding;
 				}
 			}
 		}
@@ -414,8 +414,7 @@ class SSP {
 		}
 
 		$stmt = $db->prepare( $sql );
-		//echo $sql;
-
+		
 		// Bind parameters
 		if ( is_array( $bindings ) ) {
 			for ( $i=0, $ien=count($bindings) ; $i<$ien ; $i++ ) {
