@@ -185,6 +185,42 @@ $(document).ready(function () {
             $("nav").removeClass("hide");
         }
     });
+
+    $(".shareUrl").click(function (e) {
+        var width = 640,
+                height = 400;
+
+        var url;
+        var twUrl = "https://twitter.com/share?url=";
+        var fbUrl = "http://www.facebook.com/sharer.php?u=";
+
+        if ($(this).hasClass("fb")) {
+            url = fbUrl + window.location.href;
+        } else {
+            url = twUrl + window.location.href;
+        }
+
+        // popup position
+        var px = Math.floor(((screen.availWidth || 1024) - width) / 2),
+                py = Math.floor(((screen.availHeight || 700) - height) / 2);
+
+        // open popup
+        var popup = window.open(url, "social",
+                "width=" + width + ",height=" + height +
+                ",left=" + px + ",top=" + py +
+                ",location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1");
+
+        if (popup) {
+            popup.focus();
+            if (e.preventDefault)
+                e.preventDefault();
+            e.returnValue = false;
+        }
+
+        return !!popup;
+    });
+
+
 });
 
 $("#search").click(function () {
