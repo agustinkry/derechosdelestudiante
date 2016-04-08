@@ -175,6 +175,16 @@ $(document).ready(function () {
             $('.error-message.pink_bg').fadeOut();
         }, 3000);
     }
+
+    //Animate footer and nav on scroll
+    $(".page_inner").scroll(function () {
+        var scroll = $(this).scrollTop();
+        if (scroll > 50) {
+            $("nav").addClass("hide");
+        } else {
+            $("nav").removeClass("hide");
+        }
+    });
 });
 
 $("#search").click(function () {
@@ -183,13 +193,3 @@ $("#search").click(function () {
 
 
 
-//Animate footer and nav on scroll
-var header = $(".page_inner");
-$(".page_inner").scroll(function () {
-    var scroll = $(this).scrollTop();
-    if (scroll > 10) {
-        $(".nav,.logos").addClass("hide");
-    } else {
-        $(".nav,.logos").removeClass("hide");
-    }
-});
