@@ -3,12 +3,16 @@
 class TplFrtContainer {
 
     private $oTpl;
+    private static $defaultDescription = "Esta herramienta fue co-creada por Consejo de Educación Secundaria (CES), UNICEF Uruguay y DATA Uruguay y permite a estudiantes, padres y actores educativos consultar fichas con información actualizada y completa sobre derechos de los estudiantes. Además brinda una herramienta de consulta directa a los estudiantes, para que puedan conocer más sobre sus derechos, más allá de los temas cubiertos por las fichas.";
+    private static $defaultTitle = "Derechos del Estudiante";
+    public $ogDescription;
+    public $ogTitle;
 
     public function __construct() {
         $this->oTpl = new UtlTemplate('container.html', TPL_PATH);
     }
 
-    protected function getContainer($content, $title, $bodyClasses, $section="") {
+    protected function getContainer($content, $title, $bodyClasses, $section = "") {
 
         $this->oTpl->assign("CONTENT", $content);
 
@@ -56,16 +60,16 @@ class TplFrtContainer {
         }
 
         $this->assignConstants($this->oTpl);
-        
-        switch ($section){
+
+        switch ($section) {
             case "rights":
             case "questions":
             case "search":
                 $this->oTpl->assignGlobal("color", "color");
                 break;
         }
-        if($section){
-            $this->oTpl->assignGlobal("active_".$section, "active");
+        if ($section) {
+            $this->oTpl->assignGlobal("active_" . $section, "active");
         }
 
         return $this->oTpl->getOutputContent();
@@ -75,6 +79,17 @@ class TplFrtContainer {
         $oTpl->assignGlobal("IMG_URL", IMG_URL);
         $oTpl->assignGlobal("CSS_URL", CSS_URL);
         $oTpl->assignGlobal("COMMON_JS_URL", COMMON_JS_URL);
+
+        if ($this->ogTitle) {
+            $oTpl->assignGlobal("og_title", self::$defaultTitle . ' - ' . $this->ogTitle);
+        } else {
+            $oTpl->assignGlobal("og_title", self::$defaultTitle);
+        }
+        if ($this->ogDescription) {
+            $oTpl->assignGlobal("og_description", $this->ogDescription);
+        } else {
+            $oTpl->assignGlobal("og_description", self::$defaultDescription);
+        }
     }
 
 }

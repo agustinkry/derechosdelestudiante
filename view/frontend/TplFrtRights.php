@@ -99,6 +99,9 @@ class TplFrtRights extends TplFrtContainer {
         $oRight = $oDbaRight->getRight($idRight);
         $oTpl->assign("right_title", $oRight->getTitle());
         $oTpl->assign("right_description", $oRight->getDescription());
+        
+        $this->ogDescription = strip_tags($oRight->getDescription());
+        $this->ogTitle = $oRight->getTitle();
 
         $this->assignConstants($oTpl);
         return $this->getContainer($oTpl->getOutputContent(), "Categor&iacute;as", "categories no-color green_border", "rights");
