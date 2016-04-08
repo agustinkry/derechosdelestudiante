@@ -634,11 +634,12 @@ nav.notvisible {
 .page-left .back i {font-size: 30px;}
 .page-left p {color: #fff;font-size: 14px;}
 
-.card { border-radius: 20px;padding: 20px;float: left;height: 120px; width: 35%; margin: 2%}
+.card { border-radius: 20px;padding: 20px;float: left;width: 35%;margin: 2%}
 .card p {font-size: 15px;color: #fff;}
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
 .card a { font-size: 12px; text-transform: uppercase; color: #fff}
 
+.categories .title_dialog  {display: inline-block;width: 100%}
 .categories .title_dialog h3 {font-size: 40px; display: inline-block;width: 100%;text-align: center;}
 /* ==========================================================================
    Animation transition 
