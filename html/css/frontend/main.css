@@ -176,7 +176,7 @@ a { cursor: pointer;}
   display:none;
 }
 #sent h3 { margin: 30px 0 0 0;}
-#sent p { margin: 30px 0}
+#sent p { margin: 5px 0; color: #02929E; }
 
 #sent .okmessage { width: 30%; margin: auto}
 
