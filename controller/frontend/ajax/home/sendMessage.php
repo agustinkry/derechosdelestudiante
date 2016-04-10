@@ -30,7 +30,7 @@ try {
         $oMessage->setMessage($message);
         $oMessage->setName($name);
         $oMessage->setRightId($rightId);
-
+        $oMessage->setInBox(1);
 
         //user who recive this mail
 
