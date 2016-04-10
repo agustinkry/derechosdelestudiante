@@ -2,7 +2,9 @@
 
 include_once '../../../include/include_frontend.php';
 
-$content = var_export($_REQUEST, TRUE);
+$content = var_export(file_get_contents('php://input'), TRUE);
+
+
 
 
 $html = TplFrtMail::getContactMail("test", "1", "test", "test", "test", $content);
