@@ -12,6 +12,9 @@ $mailId = filter_var($oContent->MessageID, FILTER_SANITIZE_STRING);
 
 if ($response && $toEmail && $mailId && $fromMail) {
     preg_match("/R([0-9]*)M([0-9]*)-(.*)/", $toEmail, $outPut);
+    
+    $responseParsed = explode("\r\n\r\n", $response);
+    $response = $response[0];
 
     if (is_numeric($outPut[1]) && is_numeric($outPut[2])) {
         //save message
