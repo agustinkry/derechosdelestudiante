@@ -31,6 +31,7 @@ try {
         $oMessage->setName($name);
         $oMessage->setRightId($rightId);
         $oMessage->setInBox(1);
+        $oMessage->setStatus(1);
 
         //user who recive this mail
 
