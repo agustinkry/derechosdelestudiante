@@ -77,6 +77,7 @@ class DbaFrtMessage {
             "institution_id" => $oMessage->getInstitutionId(),
             "grade" => $oMessage->getGrade(),
             "email" => $oMessage->getEmail(),
+            "parent_message_id" => $oMessage->getParentMessageId(),
             "#created" => "NOW()"
         );
 
@@ -137,7 +138,7 @@ class DbaFrtMessage {
 
         $join = array(
             '[><]' . DbaFrtRight::$tableRelCategory => array(
-                'right_id' =>  'id_right'
+                'right_id' => 'id_right'
             )
         );
 
