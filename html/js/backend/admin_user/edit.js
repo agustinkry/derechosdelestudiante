@@ -71,7 +71,7 @@ function validateForm() {
     var institutionId = $("#institution").val();
     var needsInstitution = false;
 
-    if ($("#permission").size() > 0 && $("#permission").val() == "0") {
+    if ($("#permission").size() == 0 || $("#permission").val() == "0") {
         needsInstitution = true;
     }
 

@@ -20,7 +20,7 @@ if ($oUser->getRoot() == 1 || $oUser->getId() == $userId || ($userId && $oUser->
       
 
 
-        if ($email && $name && $lastName && $root != -1 || $oUser->getId() == $userId) {
+        if ($email && $name && $lastName || $oUser->getId() == $userId) {
 
 
             $oDataAdminUser = new DataAdminUser();
@@ -31,10 +31,10 @@ if ($oUser->getRoot() == 1 || $oUser->getId() == $userId || ($userId && $oUser->
             $oDataAdminUser->setRoot($root == 1);
             $oDataAdminUser->setId($userId);
             
-            if($root==0){
-                $oDataAdminUser->setInstitutionId($institutionId);
-            }else{
+            if($root==1){
                 $oDataAdminUser->setInstitutionId(-1);
+            }else{
+                $oDataAdminUser->setInstitutionId($institutionId);
             }
 
 

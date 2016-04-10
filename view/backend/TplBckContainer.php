@@ -16,6 +16,7 @@ class TplBckContainer {
         $oUser = UtlSession::getBckUser();
         if ($oUser->getRoot() == 1) {
             $this->oTpl->newBlock("USER_PERMISSION_B");
+            $this->oTpl->newBlock("USER_PERMISSION_B1");
         }
         $this->oTpl->gotoBlock("_ROOT");
         $this->oTpl->assign("userId", $oUser->getId());
