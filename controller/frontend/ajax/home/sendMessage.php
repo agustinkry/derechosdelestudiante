@@ -32,8 +32,33 @@ try {
         $oMessage->setRightId($rightId);
 
 
+        //user who recive this mail
+
+        $oDbaAdminUser = new DbaFrtAdminUser();
+        $users = $oDbaAdminUser->getUsersRootAndWithInstitutionId($institutionId);
+
         $oDbaMessage = new DbaFrtMessage();
         $idMessage = $oDbaMessage->createMessage($oMessage);
+
+
+        if (count($users) > 0) {
+
+            $html = TplFrtMail::getContactMail($name, $age, $rightId, $institutionId, $location, $grade, $message);
+            $oMail = UtlConfigMail::getConfiguredMail();
+
+            foreach ($users as $oAdminUser) {
+                $oMail->addAddress($oAdminUser->getEmail());
+            }
+
+            $oMail->addReplyTo("R" . $rightId . "M" . $idMessage . "-" . FROM_MAIL);
+
+            $oMail->Subject = "Nueva Consulta";
+            $oMail->Body = $html;
+            $oMail->send();
+        }
+        //
+
+
 
         if ($idMessage > 0) {
             $response = array(

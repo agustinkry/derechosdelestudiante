@@ -16,6 +16,7 @@ if ($oUser->getRoot() == 1 || $oUser->getId() == $userId || ($userId && $oUser->
         $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
         $lastName = filter_var($_POST["lastName"], FILTER_SANITIZE_STRING);
         $root = isset($_POST["permission"]) ? filter_var($_POST["permission"], FILTER_SANITIZE_NUMBER_INT) : -1;
+        $institutionId = isset($_POST["institution"]) ? filter_var($_POST["institution"], FILTER_SANITIZE_NUMBER_INT) : -1;
       
 
 
@@ -29,6 +30,12 @@ if ($oUser->getRoot() == 1 || $oUser->getId() == $userId || ($userId && $oUser->
             $oDataAdminUser->setLastName($lastName);
             $oDataAdminUser->setRoot($root == 1);
             $oDataAdminUser->setId($userId);
+            
+            if($root==0){
+                $oDataAdminUser->setInstitutionId($institutionId);
+            }else{
+                $oDataAdminUser->setInstitutionId(-1);
+            }
 
 
             $oDbaBckAdminUser = new DbaBckAdminUser();

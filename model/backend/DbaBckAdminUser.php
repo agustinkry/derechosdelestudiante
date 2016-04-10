@@ -58,7 +58,7 @@ class DbaBckAdminUser {
             $oUser->loadFromArray($user);
 
 
-            
+
             UtlSession::setBckUser($oUser);
         }
     }
@@ -74,7 +74,7 @@ class DbaBckAdminUser {
         );
 
         $users = $db->select(
-                "admin_user", array("id", "name", "lastName", "email", "status", "root", "removable", "createdBy"), $where
+                "admin_user", array("id", "name", "lastName", "email", "status", "root", "removable", "createdBy", "institution_id"), $where
         );
 
         if ($users) {
@@ -82,7 +82,7 @@ class DbaBckAdminUser {
             $oDataAdminUser = new DataAdminUser();
             $oDataAdminUser->loadFromArray($user);
 
-           
+
 
             return $oDataAdminUser;
         } else {
@@ -139,11 +139,11 @@ class DbaBckAdminUser {
 
         if ($users) {
             //set in session
-            
+
             $user = current($users);
             $oUser = new DataAdminUser();
             $oUser->loadFromArray($user);
-            
+
             UtlSession::setBckUser($oUser);
 
             //change password
@@ -175,12 +175,12 @@ class DbaBckAdminUser {
 
         if ($users) {
             //set in session
-            
+
             $user = current($users);
-            
+
             $oUser = new DataAdminUser();
             $oUser->loadFromArray($user);
-            
+
             UtlSession::setBckUser($oUser);
 
             //change password
@@ -209,6 +209,7 @@ class DbaBckAdminUser {
             "status" => self::$USER_STATUS_INACTIVE,
             "root" => $oUser->getRoot(),
             "createdBy" => $oUser->getCreatedBy(),
+            "institution_id" => $oUser->getInstitutionId(),
             "#created" => "NOW()"
         );
 
@@ -233,7 +234,13 @@ class DbaBckAdminUser {
         if ($assignRoot) {
             $data["root"] = $oUser->getRoot();
         }
-        
+
+        if ($oUser->getRoot() == 1) {
+            $data["institution_id"] = -1;
+        }else{
+            $data["institution_id"] = $oUser->getInstitutionId();
+        }
+
         return $db->update(self::$table, $data, array(//where
                     "id" => $oUser->getId()
         ));

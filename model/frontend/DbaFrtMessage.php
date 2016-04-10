@@ -69,8 +69,8 @@ class DbaFrtMessage {
         $data = array(
             "right_id" => $oMessage->getRightId(),
             "message" => $oMessage->getMessage(),
-            "inBox" => true,
-            "status" => 0,
+            "inBox" => $oMessage->getInBox(),
+            "status" => $oMessage->getStatus(),
             "name" => $oMessage->getName(),
             "age" => $oMessage->getAge(),
             "location" => $oMessage->getLocation(),

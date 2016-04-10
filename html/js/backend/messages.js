@@ -42,3 +42,4 @@ var CATEGORY_CREATION_SUCCESS = "Prejuicio creado con exito";
 var CATEGORY_CREATION_ERROR = "Ha ocurrido un error creando el prejuicio";
 var CATEGORY_EDITION_SUCCESS = "Prejuicio editado con exito";
 var CATEGORY_EDITION_ERROR = "Ha ocurrido un error editando a el prejuicio";
+var INVALID_INSTITUTION = "Debe seleccionar un instituto";

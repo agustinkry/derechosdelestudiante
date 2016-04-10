@@ -36,11 +36,16 @@ class TplBckAdminUser extends TplBckContainer {
         $oTpl = new UtlTemplate('edit.html', TPL_PATH . "admin_user/");
         $this->assignConstants($oTpl);
 
+        $oDbaInstituion = new DbaBckInstitution();
+        $institutions = $oDbaInstituion->getInsitutions();
+
         $oUser = UtlSession::getBckUser();
         if ($oUser->getRoot() == 1) {
             $oTpl->newBlock("ROOT_ASSIGN");
             $oTpl->gotoBlock("_ROOT");
         }
+
+        $institutionId = 0;
 
         if ($id) {
             $oDbaBckAdminUser = new DbaBckAdminUser();
@@ -54,33 +59,44 @@ class TplBckAdminUser extends TplBckContainer {
                 $oTpl->assignGlobal("rootSelected", "selected");
             } else {
                 $oTpl->assignGlobal("adminSelected", "selected");
+                $institutionId = $oDataAdminUser->getInstitutionId();
             }
         }
-/*
-        $oDbaCategory = New DbaBckCategory();
-        $userCategories = array(-1);
-        if(count($oUser->getCategories()) > 0 ){
-            $userCategories = $oUser->getCategories();
-        }else if($oUser->getRoot()){
-            $userCategories = array();
-        }
-        $categories = $oDbaCategory->getCategories($userCategories);
-
-        if ($oUser->getId() != $id || $oUser->getRoot()) {
-            foreach ($categories as $category) {
-                $oTpl->newBlock("CATEGORY");
-
-                $oTpl->assign("category_name", $category->getName());
-                $oTpl->assign("category_id", $category->getId());
-                $oTpl->assign("parent_id", $category->getParentId());
-
-                if (isset($oDataAdminUser)) {
-                    if (in_array($category->getId(), $oDataAdminUser->getCategories())) {
-                        $oTpl->assign("category_checked", "checked");
-                    }
-                }
+        
+        foreach ($institutions as $oInstitution){
+            $oTpl->newBlock("INSTITUTION");
+            $oTpl->assign("institution_name",$oInstitution->getName());
+            $oTpl->assign("institution_id",$oInstitution->getId());
+            
+            if($institutionId == $oInstitution->getId()){
+                $oTpl->assign("institution_selected", "selected");
             }
-        }*/
+        }
+        /*
+          $oDbaCategory = New DbaBckCategory();
+          $userCategories = array(-1);
+          if(count($oUser->getCategories()) > 0 ){
+          $userCategories = $oUser->getCategories();
+          }else if($oUser->getRoot()){
+          $userCategories = array();
+          }
+          $categories = $oDbaCategory->getCategories($userCategories);
+
+          if ($oUser->getId() != $id || $oUser->getRoot()) {
+          foreach ($categories as $category) {
+          $oTpl->newBlock("CATEGORY");
+
+          $oTpl->assign("category_name", $category->getName());
+          $oTpl->assign("category_id", $category->getId());
+          $oTpl->assign("parent_id", $category->getParentId());
+
+          if (isset($oDataAdminUser)) {
+          if (in_array($category->getId(), $oDataAdminUser->getCategories())) {
+          $oTpl->assign("category_checked", "checked");
+          }
+          }
+          }
+          } */
 
         return $this->getContainer($oTpl->getOutputContent());
     }

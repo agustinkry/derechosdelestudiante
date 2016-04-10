@@ -63,8 +63,8 @@ $(document).ready(function () {
         $("#right select").html($filteredRights);
     });
 
-        $("#searchForm").submit(function (e) {
-            var searchQuery = $(this).attr("action") + $("#searchText").val();
+    $("#searchForm").submit(function (e) {
+        var searchQuery = $(this).attr("action") + $("#searchText").val();
         window.location.href = searchQuery;
         return false;
     });
@@ -91,6 +91,7 @@ $(document).ready(function () {
 
         if (validateForm() && !sendingInfo) {
             sendingInfo = true;
+            $(".loading").fadeIn();
             $.ajax({
                 type: "POST",
                 url: WEB_PATH + "controller/frontend/ajax/home/sendMessage.php",
@@ -99,9 +100,11 @@ $(document).ready(function () {
             }).done(function (data) {
 
                 if (data.result === true) {
-                    $("#container_form").fadeOut(200, function () {
-                        sendingInfo = false;
-                        $("#sent").fadeIn(200);
+                    $(".loading").fadeOut(200, function () {
+                        $("#container_form").fadeOut(200, function () {
+                            sendingInfo = false;
+                            $("#sent").fadeIn(200);
+                        });
                     });
                 } else {
                     sendingInfo = false;

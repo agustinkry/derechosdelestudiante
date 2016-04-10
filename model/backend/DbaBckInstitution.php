@@ -56,6 +56,26 @@ class DbaBckInstitution {
         ));
     }
 
+    public function getInsitutions() {
+        $db = new medoo();
+
+        $where = array();
+
+        $institutionList = $db->select(
+                self::$table, array("id", "name"), $where
+        );
+
+        $response = array();
+
+        foreach ($institutionList as $institution) {
+            $oInstitution = new DataInstitution();
+            $oInstitution->loadFromArray($institution);
+            $response[] = $oInstitution;
+        }
+
+        return $response;
+    }
+
     public function deleteInstitution($institutionId) {
         $db = new medoo();
 
@@ -65,4 +85,5 @@ class DbaBckInstitution {
 
         return $db->delete(self::$table, $where);
     }
+
 }

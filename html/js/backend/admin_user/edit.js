@@ -44,8 +44,22 @@ $(document).ready(function () {
         }
     });
 
-    
-    
+    if ($("#permission").size() > 0) {
+        $("#permission").change(function () {
+            if ($(this).val() == "0") {
+                $("#institution").parents(".form-group").slideDown();
+            } else {
+                $("#institution").parents(".form-group").slideUp();
+            }
+        });
+        if ($("#permission").val() == "0") {
+            $("#institution").parents(".form-group").show();
+        } else {
+            $("#institution").parents(".form-group").hide();
+        }
+    }
+
+
 });
 
 
@@ -54,6 +68,12 @@ function validateForm() {
     var name = $("#name").val();
     var lastName = $("#lastName").val();
     var email = $("#email").val();
+    var institutionId = $("#institution").val();
+    var needsInstitution = false;
+
+    if ($("#permission").size() > 0 && $("#permission").val() == "0") {
+        needsInstitution = true;
+    }
 
     hideInputError($("#userEdit"));
 
@@ -69,7 +89,11 @@ function validateForm() {
         showInputError($("#email"));
         customAlert(INVALID_MAIL, true);
         return false;
-    }  else {
+    } else if (needsInstitution && institutionId == "0") {
+        showInputError($("#institution"));
+        customAlert(INVALID_INSTITUTION, true);
+        return false;
+    } else {
         return true;
     }
 }

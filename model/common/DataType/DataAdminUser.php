@@ -8,18 +8,21 @@ class DataAdminUser {
     private $email;
     private $status;
     private $root;
+    private $institutionId;
     private $removable;
     private $createdBy;
 
     function loadFromArray($userArray) {
-        $this->setId($userArray["id"]);
-        $this->setName($userArray["name"]);
-        $this->setLastName($userArray["lastName"]);
-        $this->setEmail($userArray["email"]);
-        $this->setStatus($userArray["status"]);
-        $this->setRoot($userArray["root"]);
+
+        isset($userArray["id"]) ? $this->setId($userArray["id"]) : false;
+        isset($userArray["name"]) ? $this->setName($userArray["name"]) : false;
+        isset($userArray["lastName"]) ? $this->setLastName($userArray["lastName"]) : false;
+        isset($userArray["email"]) ? $this->setEmail($userArray["email"]) : false;
+        isset($userArray["status"]) ? $this->setStatus($userArray["status"]) : false;
+        isset($userArray["root"]) ? $this->setRoot($userArray["root"]) : false;
         isset($userArray["removable"]) ? $this->setRemovable($userArray["removable"]) : false;
         isset($userArray["createdBy"]) ? $this->setCreatedBy($userArray["createdBy"]) : false;
+        isset($userArray["institution_id"]) ? $this->setInstitutionId($userArray["institution_id"]) : false;
     }
 
     function getId() {
@@ -86,5 +89,12 @@ class DataAdminUser {
         $this->createdBy = $createdBy;
     }
 
+    function getInstitutionId() {
+        return $this->institutionId;
+    }
+
+    function setInstitutionId($institutionId) {
+        $this->institutionId = $institutionId;
+    }
 
 }
