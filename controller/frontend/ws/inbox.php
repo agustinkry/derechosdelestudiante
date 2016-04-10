@@ -2,7 +2,7 @@
 
 include_once '../../../include/include_frontend.php';
 
-$content = var_export(file_get_contents('php://input'), TRUE);
+$content = file_get_contents('php://input');
 
 $oContent = json_decode($content);
 $response = filter_var($oContent->StrippedTextReply, FILTER_SANITIZE_STRING);
@@ -49,7 +49,7 @@ if ($response && $toEmail && $mailId && $fromMail) {
             $rightUrl = WEB_PATH . "derechos/" . $categoryPath . "/" . $rightPath;
 
 
-            $html = TplBckMail::getContactMail($oDataMessageUser->getName(), $oDataMessageUser->getMessage(), $message, $rightUrl);
+            $html = TplBckMail::getContactMail($oDataMessageUser->getName(), $oDataMessageUser->getMessage(), $response, $rightUrl);
             $oMail = UtlConfigMail::getConfiguredMail();
 
             $oMail->addAddress($oDataMessageUser->getEmail());
