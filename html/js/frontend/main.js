@@ -222,7 +222,8 @@ $(document).ready(function () {
 
         return !!popup;
     });
-
+    
+    $(".loading").fadeOut();
 
 });
 
