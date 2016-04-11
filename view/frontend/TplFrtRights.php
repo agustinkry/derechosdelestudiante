@@ -4,6 +4,8 @@ class TplFrtRights extends TplFrtContainer {
 
     public function getRights($idCategory) {
         $oTpl = new UtlTemplate('rights.html', TPL_PATH);
+        
+        $oTpl->assign("ID_CATEGORY", $idCategory);
 
         //CATEGORY
         $oDbaCategory = new DbaFrtCategory();
@@ -83,6 +85,9 @@ class TplFrtRights extends TplFrtContainer {
 
     public function getRightsDetail($idRight, $idCategory) {
         $oTpl = new UtlTemplate('rights_detail.html', TPL_PATH);
+        
+        $oTpl->assign("ID_CATEGORY", $idCategory);
+        $oTpl->assign("ID_RIGHT", $idRight);
 
         //CATEGORY
         $oDbaCategory = new DbaFrtCategory();

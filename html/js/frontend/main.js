@@ -72,6 +72,7 @@ $(document).ready(function () {
 
 
     $("#btn_consulta, #btn_consult").click(function () {
+        selectDefault();
         $(".md-modal").addClass("md-show");
         $("#container_form input, #container_form textarea").val("")
     });
@@ -121,6 +122,8 @@ $(document).ready(function () {
         $("#sent").fadeOut(200, function () {
             $("#container_form").fadeIn(200);
         });
+
+        selectDefault();
     });
 
 
@@ -222,7 +225,7 @@ $(document).ready(function () {
 
         return !!popup;
     });
-    
+
     $(".loading").fadeOut();
 
 });
@@ -231,5 +234,15 @@ $("#search").click(function () {
     $("nav li input").toggleClass("show");
 });
 
+
+function selectDefault() {
+    if (typeof id_category != "undefined") {
+        $("#category option[value=" + id_category + "]").attr("selected", true);
+    }
+    
+    if (typeof id_right != "undefined") {
+        $("#right option[value=" + id_right + "]").attr("selected", true);
+    }
+}
 
 
