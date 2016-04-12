@@ -584,9 +584,10 @@ nav.notvisible {
 
 }
 .page_inner article {padding:100px;text-align: left; margin-top: 20px;display: inline-block;}
-.page_inner ul { margin: 0}
+.page_inner ul { margin: 0;padding: 0}
 .page_inner ul li { display: inline-block; margin-right: 10px;}
-.page_inner ul li p {color: #02929E;font-size: 15px;}
+.page_inner h3 {font-size: 50px; margin: 0}
+.page_inner ul li p {color: #02929E;font-size: 15px; border-bottom: 1px solid;padding-bottom: 3px;}
 .page_inner ul li a i {
     font-size: 20px;
     background: #02929E;
@@ -598,7 +599,7 @@ nav.notvisible {
 .page_inner ul li a i:hover { background:#E3DBC3;}
 .page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0;line-height: 50px; text-transform: uppercase;}
 .page object { width: 80%}
-.page p  {font-size: 13px; line-height: 20px }
+.page p  {font-size: 16px; line-height: 20px; }
 .page-right {
       height:100%;
       left: auto;
