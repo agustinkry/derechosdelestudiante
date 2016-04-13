@@ -467,12 +467,12 @@ form *:focus {
     position: absolute;
     margin-left: -30%;
     left: 50%;
-    top: 12%;
+    top: 20%;
     z-index: 3;
     min-width: 690px;
  }
 .centered .logoderechos { width: 68%; margin: auto}
-.centered .info h2 { font-size: 40px; font-weight: 400;text-align: center; margin: 0 }
+.centered .info h2 { font-size: 40px; font-weight: 400;text-align: center; margin: -40px 0}
 .centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 15px; line-height: 20px;}
 /* ==========================================================================
    Categories styles 
@@ -486,6 +486,7 @@ form *:focus {
     z-index: 3;
     min-width: 690px;
 }
+#centenred_consultas { top: 15%}
 .categories .page_inner .dialog .message p {  }
 .categories .page_inner  .dialog .user { margin-bottom: 30px;}
 .categories .page_inner .btn {float: left;}
@@ -496,11 +497,11 @@ form *:focus {
     left: 1px;
 }
 .categories .page_inner  .professor .title { float: right;}
-.dialog  { margin-top: 10%}
+.dialog  { margin-top: 30px}
 .dialog .conversation {
     width: 100%;
     display: inline-block;
-    border-bottom: 1px solid #02929e;
+    border-bottom: 1px dotted #02929e;
 }
 .dialog .user figure { width: 18%; position: absolute; }
 .dialog .user figure p {text-transform: uppercase; font-size: 13px;font-weight: bold;}
@@ -639,12 +640,25 @@ nav.notvisible {
 .page-left .back i {font-size: 30px;}
 .page-left p {color: #fff;font-size: 14px;}
 
-.card { border-radius: 20px;padding: 20px;float: left;width: 35%;margin: 2%}
+.card { border-radius: 20px;padding: 20px;float: left;width: 35%;margin: 2%;height: 120px;}
 .card p {font-size: 15px;color: #fff;}
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
-.card a { font-size: 12px; text-transform: uppercase; color: #fff}
-
-.categories .title_dialog  {display: inline-block;width: 100%}
+.card a { 
+  font-size: 12px;
+  text-decoration:underline;
+  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+}
+.card a:hover {
+     -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px);
+}
+.categories .title_dialog  {display: inline-block;width: 100%; margin-top: 30px;}
 .categories .title_dialog h3 {font-size: 40px; display: inline-block;width: 100%;text-align: center;}
 /* ==========================================================================
    Animation transition 
@@ -852,7 +866,7 @@ footer ul:nth-child(2) {float: right;}
 
 
 footer ul li { display: inline-block; margin-right: 10px;}
-footer ul li p {color: #fff;font-size: 13px;}
+footer ul li p, .categories footer ul li p {color: #fff;font-size: 13px;}
 footer ul li a i {
     font-size: 14px;
     background: #fff;
