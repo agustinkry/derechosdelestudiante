@@ -63,6 +63,9 @@ class TplFrtContainer {
 
         switch ($section) {
             case "rights":
+                 $this->oTpl->assignGlobal("footerColor", "footerColor");
+                 $this->oTpl->assignGlobal("color", "color");
+                break;
             case "questions":
             case "search":
                 $this->oTpl->assignGlobal("color", "color");
