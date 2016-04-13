@@ -599,7 +599,7 @@ nav.notvisible {
 }
 .page_inner ul li a i:hover { background:#E3DBC3;}
 .page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0;line-height: 50px; text-transform: uppercase;}
-.page object { width: 80%}
+.page object { width: 80%; margin: 10px 0}
 .page p  {font-size: 16px; line-height: 20px; }
 .page-right {
       height:100%;
