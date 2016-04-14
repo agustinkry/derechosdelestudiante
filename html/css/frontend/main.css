@@ -266,7 +266,7 @@ form .input-container select {
   background: none;
   z-index: 1;
   padding: 5px 0;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.012em;
   left: 0px;
   -webkit-appearance:none;
@@ -866,8 +866,9 @@ footer ul:nth-child(2) {float: right;}
 
 
 footer ul li { display: inline-block; margin-right: 10px;}
-footer ul li p, .categories footer ul li p {color: #fff;font-size: 13px;}
-footer ul li a i {
+footer ul li p, .footerColor p {color: #fff;font-size: 13px;}
+.footerColor p {color: #fff !important}
+footer ul li a i{
     font-size: 14px;
     background: #fff;
     border-radius: 24px;
@@ -875,6 +876,7 @@ footer ul li a i {
     color: #02929E;
     transition: all .2s ease-in-out;
 }
+.footerColor ul li a i  { background: #fff !important; color: #02929E !important}
 footer ul li a i:hover { background:#E3DBC3;}
 
 .no-color footer ul li p {color: #02929E}
