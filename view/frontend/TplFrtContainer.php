@@ -67,6 +67,9 @@ class TplFrtContainer {
                 $this->oTpl->assignGlobal("footerColor", "footerColor");
                 $this->oTpl->assignGlobal("color", "color");
                 break;
+            case "about":
+                $this->oTpl->assignGlobal("footerColor", "footerColor");
+                break;
             case "categories":
             case "questions":
                 $this->oTpl->assignGlobal("color", "color");

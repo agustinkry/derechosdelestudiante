@@ -226,7 +226,11 @@ $(document).ready(function () {
         return !!popup;
     });
 
-    $(".loading").fadeOut();
+
+    setTimeout(function () {
+
+        $(".loading").fadeOut();
+    }, 5000);
 
 });
 
@@ -239,7 +243,7 @@ function selectDefault() {
     if (typeof id_category != "undefined") {
         $("#category option[value=" + id_category + "]").attr("selected", true);
     }
-    
+
     if (typeof id_right != "undefined") {
         $("#right option[value=" + id_right + "]").attr("selected", true);
     }
