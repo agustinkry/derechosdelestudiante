@@ -68,7 +68,7 @@
 
     // DOM Context
     this.element = element;
-    this.layers = element.getElementsByClassName('layer');
+    this.layers = element.getElementsByClassName('elements');
 
     // Data Extraction
     var data = {
