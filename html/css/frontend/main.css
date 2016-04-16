@@ -1130,8 +1130,8 @@ nav li a:hover:after {
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
 .btn {border-radius:30px;letter-spacing:1px;padding: 12px 35px;font-family: 'Varela Round', sans-serif; margin:0 10px;font-size: 14px;text-decoration: none;border-width: 1px; border-style: solid; position: relative;
 transition: all 0.2s ease-in-out;
-box-shadow: -10px 10px 0px 0px #E35EAD, -9px 9px 0px 0px #E35EAD, -8px 8px 0px 0px #E35EAD, -7px 7px 0px 0px #E35EAD, -6px 6px 0px 0px #E35EAD, -5px 5px 0px 0px #E35EAD, -4px 4px 0px 0px #E35EAD, -3px 3px 0px 0px #E35EAD, -2px 2px 0px 0px #E35EAD, -1px 1px 0px 0px #E35EAD, 0px 0px 0px 0px #E35EAD;
-
+/*box-shadow: -10px 10px 0px 0px #E35EAD, -9px 9px 0px 0px #E35EAD, -8px 8px 0px 0px #E35EAD, -7px 7px 0px 0px #E35EAD, -6px 6px 0px 0px #E35EAD, -5px 5px 0px 0px #E35EAD, -4px 4px 0px 0px #E35EAD, -3px 3px 0px 0px #E35EAD, -2px 2px 0px 0px #E35EAD, -1px 1px 0px 0px #E35EAD, 0px 0px 0px 0px #E35EAD;
+*/
 }
 .btn:hover {
       background: #FAF39D;
