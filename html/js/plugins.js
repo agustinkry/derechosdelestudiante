@@ -179,7 +179,7 @@ $(function () {
 
 /* Page Loading */
 $(window).load(function() {
-  $(".loading").fadeOut(750);
+  $(".loading").fadeOut(250);
 })
 
 
