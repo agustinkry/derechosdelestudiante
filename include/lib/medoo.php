@@ -57,7 +57,8 @@ class medoo {
                     $this->password = null;
                     break;
             }if (in_array($type, explode(' ', 'mariadb mysql pgsql sybase mssql')) && $this->charset) {
-                $commands[] = "SET NAMES '" . $this->charset . "', time_zone=\'-03:00\'";
+                $commands[] = "SET NAMES '" . $this->charset . "'";
+                $commands[] = "SET time_zone=\'-03:00\'";
             }$this->pdo = new PDO($dsn, $this->username, $this->password, $this->option);
             foreach ($commands as $value) {
                 $this->pdo->exec($value);

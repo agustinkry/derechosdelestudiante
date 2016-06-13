@@ -384,6 +384,7 @@ class SSP {
 				$sql_details['pass'],
 				array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8, time_zone=\'-03:00\'' )
 			);
+                        $db->exec("SET time_zone = '-03:00'");        
 		}
 		catch (PDOException $e) {
 			self::fatal(
