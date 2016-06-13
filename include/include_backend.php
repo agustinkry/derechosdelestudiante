@@ -14,3 +14,5 @@ define('IMG_URL', WEB_PATH . 'html/img/backend/');
 
 
 include_once 'backend_security.php';
+
+date_default_timezone_set('America/Montevideo');
