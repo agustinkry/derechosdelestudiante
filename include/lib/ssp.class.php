@@ -382,9 +382,9 @@ class SSP {
 				"mysql:host={$sql_details['host']};dbname={$sql_details['db']}",
 				$sql_details['user'],
 				$sql_details['pass'],
-				array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' )
+				array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8; SET time_zone = \'-03:00\';' )
 			);
-                        $db->exec("SET time_zone = '-03:00'");
+                        $db->exec("SET time_zone = '00:00'");
 		}
 		catch (PDOException $e) {
 			self::fatal(
