@@ -93,7 +93,7 @@ class DbaBckRight {
         $data = array(
             "title" => $oRight->getTitle(),
             "description" => $oRight->getDescription(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
         $idRight = $db->insert(self::$table, $data);

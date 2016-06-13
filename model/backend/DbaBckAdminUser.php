@@ -210,7 +210,7 @@ class DbaBckAdminUser {
             "root" => $oUser->getRoot(),
             "createdBy" => $oUser->getCreatedBy(),
             "institution_id" => $oUser->getInstitutionId(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
         $userArr = array(

@@ -73,7 +73,7 @@ class DbaBckMessage {
             "inBox" => $oMessage->getInBox(),
             "status"=> $oMessage->getStatus(),
             "mailBoxId"=>$oMessage->getMailBoxId(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
         return $db->insert(self::$table, $data);

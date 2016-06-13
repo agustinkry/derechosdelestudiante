@@ -38,7 +38,7 @@ class DbaBckCategory {
             "parent_id" => $oCategory->getParentId(),
             "description" => $oCategory->getDescription(),
             "icon" => $oCategory->getIcon(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
 

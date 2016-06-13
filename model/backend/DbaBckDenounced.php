@@ -40,7 +40,7 @@ class DbaBckDenounced {
             "description" => $oDenounced->getDescription(),
             "image" => $oDenounced->getImage(),
             "denunciation_type" => $oDenounced->getDenunciationType(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
         
 

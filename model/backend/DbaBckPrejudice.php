@@ -77,7 +77,7 @@ class DbaBckPrejudice {
             "categoryId" => $oPrejudice->getCategoryId(),
             "correction_status" => $oPrejudice->getCorrectionStatus(),
             "url_correction" => $oPrejudice->getUrlCorrection(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
         return $db->insert(self::$table, $data);
     }

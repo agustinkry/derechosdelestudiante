@@ -78,7 +78,7 @@ class DbaFrtMessage {
             "grade" => $oMessage->getGrade(),
             "email" => $oMessage->getEmail(),
             "parent_message_id" => $oMessage->getParentMessageId(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
         return $db->insert(self::$table, $data);

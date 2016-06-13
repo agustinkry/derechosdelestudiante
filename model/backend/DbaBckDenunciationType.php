@@ -36,7 +36,7 @@ class DbaBckDenunciationType {
         $data = array(
             "name" => $oDenunciationType->getName(),
             "description" => $oDenunciationType->getDescription(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
 

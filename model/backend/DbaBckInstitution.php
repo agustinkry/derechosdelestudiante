@@ -36,7 +36,7 @@ class DbaBckInstitution {
         $data = array(
             "name" => $oInstitution->getName(),
             "location" => $oInstitution->getLocation(),
-            "#created" => "NOW()"
+            "created" => date("Y-m-d H:i:s")
         );
 
 
