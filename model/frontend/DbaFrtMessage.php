@@ -147,7 +147,7 @@ class DbaFrtMessage {
                 "id_category" => $rightCategory
             ),
             "GROUP" => 'id',
-            "ORDER" => "created ASC"
+            "ORDER" => "created DESC"
         );
 
         $db = new medoo();
