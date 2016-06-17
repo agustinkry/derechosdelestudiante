@@ -49,6 +49,7 @@ class TplFrtContainer {
             $this->oTpl->newBlock("INSTITUTION");
             $this->oTpl->assign("institution_id", $oInstitution->getId());
             $this->oTpl->assign("institution_name", $oInstitution->getName());
+            $this->oTpl->assign("location_id", $oInstitution->getLocation());
         }
 
         //location

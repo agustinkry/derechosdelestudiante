@@ -1,4 +1,5 @@
 var $rightOptions;
+var $institutionOptions;
 
 $(document).ready(function () {
 
@@ -59,8 +60,37 @@ $(document).ready(function () {
         } else {
             $filteredRights = $rightOptions;
         }
+        $($filteredRights[0]).attr("selected", true);
 
         $("#right select").html($filteredRights);
+    });
+
+    $institutionOptions = $("#institution select option");
+
+    $("#departamento").change(function () {
+        var $filteredInstitutions = [];
+        var locationId = $("#departamento option:selected").val();
+
+        if (locationId != "-1") {
+            $institutionOptions.each(function (key, value) {
+                if (key == 0) {
+                    $filteredInstitutions.push($institutionOptions[key]);
+                } else {
+                    var dataLocation = $(value).attr("data-location");
+                    console.log(dataLocation, locationId);
+                    if (typeof dataLocation != "undefined") {
+                        if (dataLocation == locationId) {
+                            $filteredInstitutions.push($institutionOptions[key]);
+                        }
+                    }
+                }
+            });
+        } else {
+            $filteredInstitutions = $institutionOptions;
+        }
+
+        $($filteredInstitutions[0]).attr("selected", true);
+        $("#institution select").html($filteredInstitutions);
     });
 
     $("#searchForm").submit(function (e) {
@@ -227,10 +257,10 @@ $(document).ready(function () {
     });
 
 
-    setTimeout(function () {
-
-        $(".loading").fadeOut();
-    }, 5000);
+//    setTimeout(function () {
+//
+//        $(".loading").fadeOut();
+//    }, 5000);
 
 });
 
