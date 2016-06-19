@@ -89,6 +89,32 @@ $(document).ready(function () {
         }
     });
 
+
+    $('.deleteMessage').click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        var messageId = $this.siblings("input.messageId").val();
+        showConfirmation(GENERIC_ATENTION_MSG, RIGHT_MESSAGE_DELETE, function () {
+            $.ajax({
+                type: "POST",
+                url: WEB_PATH + "controller/backend/ajax/right/deleteMessage.php",
+                data: {"messageId":messageId},
+                dataType: "json"
+            }).done(function (data) {
+                $("#loading").fadeOut();
+                if (data.result === true) {
+                    $this.parents(".conv").slideUp()
+                    $(".parent_id_"+messageId).slideUp();
+                    customAlert(RIGHT_MESSAGE_DELETE_SUCCESS, false);
+                    //message creation
+                } else {
+                    customAlert(RIGHT_MESSAGE_DELETE_ERROR, true);
+                    //generic error
+                }
+            });
+        });
+    });
+
     tinymce.init({
         selector: '#description',
         menubar: false,

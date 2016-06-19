@@ -117,13 +117,14 @@ class DbaBckMessage {
         }
     }
 
-    public function deleteMessage($userId) {
+    public function deleteMessage($messageId) {
         $db = new medoo();
 
         $where = array(
-            "AND" => array(
-                "id" => $userId
-            ),
+            "OR" => array(
+                "id" => $messageId,
+                "parent_message_id" => $messageId
+            )
         );
 
         return $db->delete(self::$table, $where);

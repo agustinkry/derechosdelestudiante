@@ -87,7 +87,7 @@
                                     <!-- historico mensajes -->
                                     <div id="messagesContainer" class="chat">
                                         <!--START BLOCK : MESSAGE -->
-                                        <div class="{position} conv"> <!-- left - right -->
+                                        <div class="{position} conv parent_id_{parentId}"> <!-- left - right -->
 
                                             <p class="ballon color{colorNumber}">
                                                 <!-- START BLOCK : REPLY -->
@@ -96,6 +96,7 @@
                                                 <!-- START BLOCK : USER_NAME -->
                                                 <small class="message_user_email"><b>{user}</b></small>
                                                 <!-- END BLOCK : USER_NAME -->
+                                                <a class="deleteMessage"><i class="fa fa-remove"></i></a>
                                                 <span class="message_user_text">{message}</span>
                                                 <input type="hidden" value="{messageId}" class="messageId"/>
                                             </p>

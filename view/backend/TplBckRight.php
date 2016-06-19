@@ -39,6 +39,7 @@ class TplBckRight extends TplBckContainer {
                 $oTpl->newBlock("MESSAGE");
                 $oTpl->assign("message", $oMessage->getMessage());
                 $oTpl->assign("messageId", $oMessage->getId());
+                $oTpl->assign("parentId", $oMessage->getParentMessageId());
 
                 if ($oMessage->getInBox() == 1) {
                     $oTpl->assign("position", "right");
