@@ -30,14 +30,15 @@ class DbaBckMessage {
         }
     }
 
-    public function getMessagesByRight($rightId) {
+    public function getMessagesByRight($rightId, $paretnMessage=null) {
         $db = new medoo();
 
         $return = array();
 
         $where = array(
             "AND" => array(
-                "right_id" => $rightId
+                "right_id" => $rightId,
+                "parent_message_id"=> $paretnMessage
             )
         );
 
@@ -69,14 +70,24 @@ class DbaBckMessage {
         $data = array(
             "right_id" => $oMessage->getRightId(),
             "message" => $oMessage->getMessage(),
-            "parent_message_id"=>$oMessage->getParentMessageId(),
+            "parent_message_id" => $oMessage->getParentMessageId(),
             "inBox" => $oMessage->getInBox(),
-            "status"=> $oMessage->getStatus(),
-            "mailBoxId"=>$oMessage->getMailBoxId(),
+            "status" => $oMessage->getStatus(),
+            "mailBoxId" => $oMessage->getMailBoxId(),
             "created" => date("Y-m-d H:i:s")
         );
 
         return $db->insert(self::$table, $data);
+    }
+
+    public function editMessage($messageId, $message) {
+        $db = new medoo();
+        $data = array(//values
+            "message" => $message,
+        );
+        return $db->update(self::$table, $data, array(//where
+                    "id" => $messageId
+        ));
     }
 
 //    public function editMessage(DataMessage $oMessage) {

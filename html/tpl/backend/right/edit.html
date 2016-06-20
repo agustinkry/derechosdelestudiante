@@ -97,6 +97,7 @@
                                                 <small class="message_user_email"><b>{user}</b></small>
                                                 <!-- END BLOCK : USER_NAME -->
                                                 <a class="deleteMessage"><i class="fa fa-remove"></i></a>
+                                                <a class="fancybox editMessage" href="#editMessage"><i class="fa fa-edit"></i></a>
                                                 <span class="message_user_text">{message}</span>
                                                 <input type="hidden" value="{messageId}" class="messageId"/>
                                             </p>
@@ -120,22 +121,31 @@
                                     <!-- end JS TPL -->
 
                                     <form id="newMessage" style="display: none;">
-                                        
+
                                         <input type="hidden" value="" name="parentMessageId" id="parentMessageId"/>
                                         <input type="hidden" value="" name="rightId" id="rightId"/>
                                         <input type="hidden" value="" name="userEmail" class="userEmail" id="userEmail"/>
-                                        
+
                                         <div class="form-group">
                                             <label class="form-label">De:</label>
                                             <span id="userEmailLabel" class="userEmail">pprodriguez</span>
                                         </div>
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label class="form-label">Consulta:</label>
                                             <div id="userMessage">bla bla bla bla</div>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label">Mensaje</label>
                                             <textarea class="form-control" rows="3" id="messageInput" name="message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                    </form>
+
+                                    <form id="editMessage" style="display: none;">
+                                        <input type="hidden" value="" name="messageId" id="messageEditId"/>
+                                        <div class="form-group">
+                                            <label class="form-label">Mensaje</label>
+                                            <textarea class="form-control" rows="3" id="messageEditInput" name="message"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">Enviar</button>
                                     </form>

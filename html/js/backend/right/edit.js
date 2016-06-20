@@ -54,7 +54,7 @@ $(document).ready(function () {
         } else {
 
             if (message == "") {
-                showInputError($("#urlPage"));
+                showInputError($("#messageInput"));
                 customAlert(RIGHT_EMPTY_MESSAGE, true);
             } else {
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: WEB_PATH + "controller/backend/ajax/right/editMessage.php",
+                    url: WEB_PATH + "controller/backend/ajax/right/replayMessage.php",
                     data: $("#newMessage").serialize(),
                     dataType: "json"
                 }).done(function (data) {
@@ -98,13 +98,13 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: WEB_PATH + "controller/backend/ajax/right/deleteMessage.php",
-                data: {"messageId":messageId},
+                data: {"messageId": messageId},
                 dataType: "json"
             }).done(function (data) {
                 $("#loading").fadeOut();
                 if (data.result === true) {
                     $this.parents(".conv").slideUp()
-                    $(".parent_id_"+messageId).slideUp();
+                    $(".parent_id_" + messageId).slideUp();
                     customAlert(RIGHT_MESSAGE_DELETE_SUCCESS, false);
                     //message creation
                 } else {
@@ -148,6 +148,48 @@ $(document).ready(function () {
         $("#userMessage").html(user_text);
         $("#rightId").val($("#id").val());
         $("#parentMessageId").val($(this).siblings(".messageId").val());
+    });
+
+    $(".editMessage").click(function () {
+        var $this = $(this);
+        var messageId = $this.siblings("input.messageId").val();
+        $("#messageEditId").val(messageId);
+        var user_text = $this.siblings(".message_user_text").html();
+        console.log(user_text)
+        $("#messageEditInput").val(user_text);
+    });
+
+    $("#editMessage").on("submit", function (e) {
+        e.preventDefault();
+        var message = $("#messageEditInput").val();
+        if (message == "") {
+            showInputError($("#messageEditInput"));
+            customAlert(RIGHT_EMPTY_MESSAGE, true);
+        } else {
+
+            $("#loading").fadeIn();
+
+            $.ajax({
+                type: "POST",
+                url: WEB_PATH + "controller/backend/ajax/right/editMessage.php",
+                data: $("#editMessage").serialize(),
+                dataType: "json"
+            }).done(function (data) {
+                $("#loading").fadeOut();
+                if (data.result === true) {
+                    customAlert(RIGHT_MESSAGE_EDIT_SUCCESS, false);
+                    $("input.messageId[value='"+$("#messageEditId").val()+"']").siblings('.message_user_text').html(message);
+                    $.fancybox.close();
+                    //message creation
+                } else {
+                    customAlert(RIGHT_MESSAGE_EDIT_ERROR, true);
+                    //generic error
+                }
+            });
+
+
+        }
+
     });
 });
 

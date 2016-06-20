@@ -36,24 +36,11 @@ class TplBckRight extends TplBckContainer {
             $messages = $oDbaMessage->getMessagesByRight($id);
 
             foreach ($messages as $oMessage) {
-                $oTpl->newBlock("MESSAGE");
-                $oTpl->assign("message", $oMessage->getMessage());
-                $oTpl->assign("messageId", $oMessage->getId());
-                $oTpl->assign("parentId", $oMessage->getParentMessageId());
-
-                if ($oMessage->getInBox() == 1) {
-                    $oTpl->assign("position", "right");
-                    $oTpl->assign("colorNumber", 1);
-                    $oTpl->newBlock("USER_NAME");
-                    $oTpl->assign("user", $oMessage->getEmail());
-                    $oTpl->newBlock("REPLY");
-
-                } else {
-                    $oTpl->assign("position", "left");
-                    $oTpl->assign("colorNumber", 2);
+                $this->prepareMessage($oTpl, $oMessage);
+                $childMessages = $oDbaMessage->getMessagesByRight($id, $oMessage->getId());
+                foreach ($childMessages as $oMessage) {
+                    $this->prepareMessage($oTpl, $oMessage);
                 }
-
-                $oTpl->gotoBlock("_ROOT");
             }
         } else {
             $oTpl->assign("ACTION_NAME", "Crear");
@@ -80,6 +67,26 @@ class TplBckRight extends TplBckContainer {
 
     public function __destructor() {
         
+    }
+
+    function prepareMessage(&$oTpl, $oMessage) {
+        $oTpl->newBlock("MESSAGE");
+        $oTpl->assign("message", $oMessage->getMessage());
+        $oTpl->assign("messageId", $oMessage->getId());
+        $oTpl->assign("parentId", $oMessage->getParentMessageId());
+
+        if ($oMessage->getInBox() == 1) {
+            $oTpl->assign("position", "right");
+            $oTpl->assign("colorNumber", 1);
+            $oTpl->newBlock("USER_NAME");
+            $oTpl->assign("user", $oMessage->getEmail());
+            $oTpl->newBlock("REPLY");
+        } else {
+            $oTpl->assign("position", "left");
+            $oTpl->assign("colorNumber", 2);
+        }
+
+        $oTpl->gotoBlock("_ROOT");
     }
 
 }
