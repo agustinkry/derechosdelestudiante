@@ -220,6 +220,8 @@ form .input-container { display: inline-block; width: 45%; margin-right: 3%}
 
 form .btn { float: right;margin: 0 40px 0 0}
 
+form .textarea-container small { font-size: 70%; display: inline-block;}
+
 form .checkbox-container {
     position: relative;
     margin-bottom: 20px;
