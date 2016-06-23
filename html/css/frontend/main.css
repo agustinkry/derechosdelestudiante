@@ -591,6 +591,7 @@ nav.notvisible {
 .page_inner ul { margin: 0;padding: 0}
 .page_inner ul li { display: inline-block; margin-right: 10px;}
 .page_inner h3 {font-size: 50px; margin: 0}
+.page_inner a {color: #ED2387}
 .page_inner ul li p {color: #02929E;font-size: 15px; border-bottom: 1px solid;padding-bottom: 3px;}
 .page_inner ul li a i {
     font-size: 20px;
