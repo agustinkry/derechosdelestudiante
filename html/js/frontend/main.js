@@ -186,7 +186,7 @@ $(document).ready(function () {
             errorMessage = "Debes seleccionar un derecho";
         } else if (institutionSelect.val() === "-1") {
             institutionSelect.parent("div").addClass('error');
-            errorMessage = "Debes seleccionar la institución a la que perteneces";
+            errorMessage = "Debes seleccionar institución";
         } else if (messageInput.val().length === 0) {
             messageInput.parent("div").addClass('error');
             messageInput.focus();
