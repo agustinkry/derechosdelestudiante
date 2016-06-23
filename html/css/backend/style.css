@@ -1453,6 +1453,11 @@ Mailbox
       position: absolute;
     right: 15px;
 }
+.editMessage{
+  position: absolute;
+    bottom: 17px;
+    right: 0px;
+}
 .chat .conv .color1 {
   background: #B9F98E;
   color: #0A451D;
