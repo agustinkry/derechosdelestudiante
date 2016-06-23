@@ -610,7 +610,7 @@ nav.notvisible {
       right: 0;
       width: 65%;
 }
-.page_right a {color: #ED2387}
+.page-right a {color: #ED2387}
 
 .page-left { width: 35%; text-align: center;
  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
