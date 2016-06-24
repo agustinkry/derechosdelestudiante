@@ -603,7 +603,7 @@ nav.notvisible {
 .page_inner ul li a i:hover { background:#E3DBC3;}
 .page h2 { font-size: 50px; color: #fff;font-weight: normal; margin: 10px 0;line-height: 50px; text-transform: uppercase;}
 .page object { width: 80%; margin: 10px 0}
-.page p  {font-size: 16px; line-height: 20px; }
+.page p  {font-size: 13px; line-height: 20px; }
 .page-right {
       height:100%;
       left: auto;
@@ -646,7 +646,7 @@ nav.notvisible {
 .page-left p {color: #fff;font-size: 14px;}
 
 .card { border-radius: 20px;padding: 20px;float: left;width: 39%;margin: 2%;height: 150px; border: 2px solid #02929e;}
-.card p {font-size: 15px;color: #02929e;}
+.card p {font-size: 13px;color: #02929e;}
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
 .card a { 
   font-size: 12px;
@@ -784,7 +784,7 @@ nav.notvisible {
 #category_slide { margin-top:5%}
 .categories .title {display: inline-block; width: 100%;}
 .categories .title h3 { font-size: 40px;display: inline-block;}
-.categories .title p { display: inline-block;text-align: left; width: 40%; color: #6A7272}
+.categories .title p { display: inline-block;text-align: left; width: 34%; color: #6A7272}
 
 .arm {cursor: pointer; width: 45px; position: absolute;top:30%;transition: all .2s ease-in-out;}
 .arm:hover {transform:translate(0,-1em);}
@@ -1159,13 +1159,14 @@ transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 2000;
     display:none;
+    overflow: scroll;
 /*    backface-visibility: hidden;
     transform: translateX(-50%) translateY(-50%);*/
 }
 .md-modal h3 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: normal;
-    margin:30px 0;
+    margin:10px 0;
 }
 .md-modal p { color: #fff; line-height: 80px}
 .md-modal .container { max-width: 50%; margin: auto}
@@ -1173,7 +1174,7 @@ transition: all 0.2s ease-in-out;
 .md-modal .info_txt {width: 100%; display: inline-block;}
 .md-modal .info_txt h4 {font-size: 14px; display: inline-block; color:#ED2387;font-weight: normal;vertical-align: top; margin: 15px 0}
 .md-modal .info_txt p {
-    font-size: 13px;
+    font-size: 11px;
     display: inline-block;
     margin: 0 0 0 30px;
     width: 70%;
@@ -1182,6 +1183,7 @@ transition: all 0.2s ease-in-out;
     line-height: 19px;
     color: #02929E;
 }
+.md-modal .info_txt a { color: #ED2387}
 .md-show {
    display: block;
 }
@@ -1497,11 +1499,12 @@ transition: all .1s ease-in-out;
 /*Mobile Nav*/
 .mobile nav { display: none;}
 .mobile .mobile-nav {
-      position: absolute;
-    background: red;
+    position: absolute;
+    background:#008F9E;
     padding: 20px;
     top: -20px;
     right: 0;
+    color: #fff;
     display: block;
     margin: 0;
 }
