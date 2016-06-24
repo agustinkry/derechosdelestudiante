@@ -1159,6 +1159,7 @@ transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 2000;
     display:none;
+    overflow: scroll;
 /*    backface-visibility: hidden;
     transform: translateX(-50%) translateY(-50%);*/
 }
