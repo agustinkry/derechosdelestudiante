@@ -646,7 +646,7 @@ nav.notvisible {
 .page-left p {color: #fff;font-size: 14px;}
 
 .card { border-radius: 20px;padding: 20px;float: left;width: 39%;margin: 2%;height: 150px; border: 2px solid #02929e;}
-.card p {font-size: 15px;color: #02929e;}
+.card p {font-size: 13px;color: #02929e;}
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
 .card a { 
   font-size: 12px;
