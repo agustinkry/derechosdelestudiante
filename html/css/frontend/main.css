@@ -1499,11 +1499,12 @@ transition: all .1s ease-in-out;
 /*Mobile Nav*/
 .mobile nav { display: none;}
 .mobile .mobile-nav {
-      position: absolute;
-    background: red;
+    position: absolute;
+    background:#008F9E;
     padding: 20px;
     top: -20px;
     right: 0;
+    color: #fff;
     display: block;
     margin: 0;
 }
