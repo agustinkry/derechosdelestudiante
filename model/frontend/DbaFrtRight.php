@@ -121,10 +121,10 @@ class DbaFrtRight {
         $db = new medoo();
 
         $where = array(
-            "AND" => array(
-                 "title[~]" => "%" . $searchQuery . "%"
-            ),
-            "LIMIT" => 1
+            "OR" => array(
+                 "title[~]" => "%" . $searchQuery . "%",
+                 "description[~]" => "%" . $searchQuery . "%"
+            )
         );
 
         $rightList = $db->select(
