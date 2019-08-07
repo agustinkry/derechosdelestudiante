@@ -33,7 +33,7 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     color: #fff !important;
 }
-input:focus { 
+input:focus {
     outline:none;
 }
 
@@ -81,12 +81,12 @@ body {
     font-family: 'Varela Round', sans-serif;
     position: relative;
     border: 20px solid;
-  
+
 
 }
 
 .wrapper {
-   
+
 }
 
 a { cursor: pointer;}
@@ -152,7 +152,7 @@ a { cursor: pointer;}
 }
 
 /* ==========================================================================
-   Loading styles 
+   Loading styles
    ========================================================================== */
 
 .loading {
@@ -167,7 +167,7 @@ a { cursor: pointer;}
 
 
 /* ==========================================================================
-   Form styles 
+   Form styles
    ========================================================================== */
 #sent {
 
@@ -213,7 +213,7 @@ form .textarea-container {
 }
 form .textarea-container label { position: relative; margin-bottom: 32px;}
 form .textarea-container:before {
-} 
+}
 form .input-container.error { border-color:#ED2387}
 
 form .input-container { display: inline-block; width: 45%; margin-right: 3%}
@@ -461,7 +461,7 @@ form *:focus {
 
 
 /* ==========================================================================
-   Layout Home styles 
+   Layout Home styles
    ========================================================================== */
 .info { position: relative;z-index: 2;top:100px}
 #circle_zigzag { width: 60%; position: absolute;z-index: 0;top: 0; margin-left: -30%; left: 50% !important}
@@ -478,7 +478,7 @@ form *:focus {
 .centered .info h2 { font-size: 40px; font-weight: 400;text-align: center; margin: -40px 0}
 .centered .info p { color: #fff; text-align: center; width: 60%; margin:10px  auto;font-size: 15px; line-height: 20px;}
 /* ==========================================================================
-   Categories styles 
+   Categories styles
    ========================================================================== */
 .categories .centered {
       width: 70%;
@@ -556,7 +556,7 @@ form *:focus {
 
 
 /* ==========================================================================
-   Layout Derecho styles 
+   Layout Derecho styles
    ========================================================================== */
 
 nav.notvisible {
@@ -648,7 +648,7 @@ nav.notvisible {
 .card { border-radius: 20px;padding: 20px;float: left;width: 39%;margin: 2%;height: 150px; border: 2px solid #02929e;}
 .card p {font-size: 13px;color: #02929e;}
 .card h4 {font-size: 15px;text-transform: uppercase; margin: 0}
-.card a { 
+.card a {
   font-size: 12px;
   text-decoration:underline;
   -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
@@ -666,7 +666,7 @@ nav.notvisible {
 .categories .title_dialog  {display: inline-block;width: 100%; margin-top: 30px;}
 .categories .title_dialog h3 {font-size: 40px; display: inline-block;width: 100%;text-align: center;}
 /* ==========================================================================
-   Animation transition 
+   Animation transition
    ========================================================================== */
 
 .ripple-wrap {
@@ -679,21 +679,21 @@ nav.notvisible {
 }
 @-webkit-keyframes RIPPLER {
   0%   { border-width: 0; }
-  40% { 
+  40% {
     height: 0;
     width: 0;
     border-width: 1500px;
     margin-top: -1500px;
-    margin-left:-1500px; 
+    margin-left:-1500px;
     border-color: #02929E;
   }
-  
-  41% { 
+
+  41% {
     height: 0;
     width: 0;
     border-width: 1500px;
     margin-top: -1500px;
-    margin-left:-1500px; 
+    margin-left:-1500px;
     border-color: #02929E;
   }
   100% {
@@ -707,20 +707,20 @@ nav.notvisible {
 }
 @keyframes RIPPLER {
   0%   { border-width: 0; }
-  40% { 
+  40% {
     height: 0;
     width: 0;
     border-width: 1500px;
     margin-top: -1500px;
-    margin-left:-1500px; 
+    margin-left:-1500px;
     border-color: #02929E;
   }
-  41% { 
+  41% {
     height: 0;
     width: 0;
     border-width: 1500px;
     margin-top: -1500px;
-    margin-left:-1500px; 
+    margin-left:-1500px;
     border-color: #02929E;
   }
   100% {
@@ -760,11 +760,11 @@ nav.notvisible {
 }
 
 /* ==========================================================================
-   Sobre nosotros  styles 
+   Sobre nosotros  styles
    ========================================================================== */
  #aboutus object { margin: auto; width: 100%}
 /* ==========================================================================
-   Animation Dialog 
+   Animation Dialog
    ========================================================================== */
 
   /* .student .message .message_inner {
@@ -776,7 +776,7 @@ nav.notvisible {
   .student .message .message_inner:hover  {transform:translateY(-20px); opacity:0;}
 */
 /* ==========================================================================
-   Categories styles 
+   Categories styles
    ========================================================================== */
 
 #logocolor   { width: 15%; position: absolute;top: 3%; left: 3%; z-index: 2; min-width: 210px}
@@ -805,7 +805,7 @@ nav.notvisible {
     text-align: center;
     margin: 1%;
     transition: all .2s ease-in-out;
-    display: inline-block; 
+    display: inline-block;
     z-index: 2;
     cursor: pointer;
 
@@ -819,7 +819,7 @@ nav.notvisible {
 .category:hover > i { transform:translate(2em,0);}
 
 @media  only screen and (min-width:681px) {
-  
+
   .category { width: 20%}
 
 }
@@ -831,7 +831,7 @@ nav.notvisible {
 }
 
 /* ==========================================================================
-   Footer  styles 
+   Footer  styles
    ========================================================================== */
 footer { position:absolute;bottom: 0;left: 0; width:100%;z-index: 2;}
 .no-color footer { border-color:#E3DBC3 }
@@ -896,10 +896,10 @@ footer ul li a i:hover { background:#E3DBC3;}
 footer a.svg { max-width: 6%; width: 6%; min-width:90px}
 footer a.svg {
  position: relative;
- display: inline-block; 
+ display: inline-block;
 }
 a.svg:after {
-  content: ""; 
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -921,7 +921,7 @@ a.svg:after {
     border-radius: 80px;
     -webkit-box-shadow: 2px 2px 4px #888;
     -moz-box-shadow: 2px 2px 4px #888;
-    box-shadow: 2px 2px 4px #888; 
+    box-shadow: 2px 2px 4px #888;
     color: #fff;
     font-family: 'Varela Round', sans-serif;
     display: none;
@@ -943,14 +943,14 @@ a.svg:after {
 
 
 /* ==========================================================================
-   Headlines  styles 
+   Headlines  styles
    ========================================================================== */
 
 h2, h3 { font-family: 'Amatic SC', cursive;}
 
 
 /* ==========================================================================
-   Elements  styles 
+   Elements  styles
    ========================================================================== */
 #elements { z-index: 1;}
 
@@ -990,7 +990,7 @@ h2, h3 { font-family: 'Amatic SC', cursive;}
 }
 
 /* ==========================================================================
-   Arrow  styles 
+   Arrow  styles
    ========================================================================== */
 
 [class*="icono"] {
@@ -1039,7 +1039,7 @@ h2, h3 { font-family: 'Amatic SC', cursive;}
           transform: rotate(-135deg);
 }
 /* ==========================================================================
-   Nav  styles 
+   Nav  styles
    ========================================================================== */
 nav.hide {
   -webkit-transform: translateY(-45px);
@@ -1047,7 +1047,7 @@ nav.hide {
   opacity: 0;
 }
 .mobile-nav {display: none;}
-nav { 
+nav {
     margin:1% 2%;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -1129,7 +1129,7 @@ nav li a:hover:after {
     }
 
 /* ==========================================================================
-   Btn  styles 
+   Btn  styles
    ========================================================================== */
 
 .btns { width: 100%; display: inline-block; text-align: center; margin-top: 30px}
@@ -1148,7 +1148,7 @@ transition: all 0.2s ease-in-out;
 
 
 /* ==========================================================================
-   Modal  styles 
+   Modal  styles
    ========================================================================== */
 
 .md-modal {
@@ -1209,37 +1209,37 @@ transition: all .1s ease-in-out;
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
- 
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
- 
+
 
 .icon-cross:before { content: '\e800'; } /* '' */
 .icon-facebook:before { content: '\e801'; } /* '' */
@@ -1247,6 +1247,23 @@ transition: all .1s ease-in-out;
 .icon-comment:before { content: '\e803'; } /* '' */
 .icon-lupa:before { content: '\e804'; } /* '' */
 .icon-arrow:before { content: '\e805'; } /* '' */
+
+/*WARNING-MESSAGE*/
+.warning-message .message-header {
+  max-width: calc(30% - 52px);
+  float: left;
+}
+.warning-message h4 {
+  width: 100%;
+  text-align: center;
+}
+.warning-message img {
+  width: 60%;
+  margin: 0 20%;
+}
+.warning-message p {
+  font-size: 13px;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -1450,7 +1467,7 @@ transition: all .1s ease-in-out;
 }
 
 /* ==========================================================================
-   Mobile styles 
+   Mobile styles
    ========================================================================== */
 .mobile { border:none;overflow: auto}
 .mobile body {border: none;}
